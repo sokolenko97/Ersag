@@ -21,8 +21,13 @@ fetch(apiUrl)
     function createElementForNextSibling(elementsArray, productsArray) {
       elementsArray.forEach(element => {
         const elementTitle = element.innerText.trim();
+        
+        // Check if productsArray is an array
+        if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(product => {
-           product.title === elementTitle;
+            const found = product.title === elementTitle;
+            console.log(`Product ${elementTitle} ${found ? 'found' : 'not found'}`);
+            return found;
           });
           
           if (matchingProduct) {
@@ -33,7 +38,9 @@ fetch(apiUrl)
             // Insert the new element as the next sibling
             element.parentNode.insertBefore(newElement, element.nextElementSibling);
           }
-
+        } else {
+          console.error('productsArray is not an array.');
+        }
       });
     }
     
@@ -42,16 +49,7 @@ fetch(apiUrl)
   let  productSibling = document.querySelectorAll('.product-list-item__title');
 
   createElementForNextSibling(productSibling, productsData)
-  // if (productParent) {
-  //     // The element exists, so execute the code
-  //     let subtitle = document.createElement('p');
-  //     subtitle.innerHTML = productsData.products[6].subtitle;
-  //     productParent.prepend (subtitle);
-  //     console.log(productParent[0]);
-  // } else {
-  //     // The element does not exist
-  //     console.log('.product-list-item__price-wrapper element not found');
-  // }
+
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);
