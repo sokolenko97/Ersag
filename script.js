@@ -1,3 +1,7 @@
+window.addEventListener('load', function() {
+  // Execute code only after the page and its resources are fully loaded
+setTimeout(function() {
+
 const apiUrl = 'https://api-ecommerce.zyro.com/store/store_01HW8RT3XXCQ1MM8AF42T8QGP5/products';
 
 // Fetch products from the API
@@ -59,7 +63,12 @@ fetch(apiUrl)
   //     console.log('.product-list-item__price-wrapper element not found');
   // }
 })
+.catch(error => {
+  console.error('There was a problem with the fetch operation:', error);
+});
 
+}, 1000); // Adjust the delay as needed
+});
 
 
 
