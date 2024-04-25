@@ -1,9 +1,3 @@
-    //   window.onload = function () {
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   var productParent = document.querySelector('.product-list-item__price-wrapper')
-    //   console.log(productParent);
-    // });
-    //   }
 
 window.addEventListener('load', function() {
     // Execute code only after the page and its resources are fully loaded
