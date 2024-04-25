@@ -15,20 +15,14 @@ fetch(apiUrl)
   .then(products => {
     // Assign the products to a constant
     const productsData = products.products;
-    console.log(productsData); // This will log the productsData inside the callback
     // You can call your function here that uses productsData
 
 
     function createElementForNextSibling(elementsArray, productsArray) {
       elementsArray.forEach(element => {
         const elementTitle = element.innerText.trim();
-        
-        // Check if productsArray is an array
-        if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(product => {
-            const found = product.title === elementTitle;
-            console.log(`Product ${elementTitle} ${found ? 'found' : 'not found'}`);
-            return found;
+           product.title === elementTitle;
           });
           
           if (matchingProduct) {
@@ -39,17 +33,13 @@ fetch(apiUrl)
             // Insert the new element as the next sibling
             element.parentNode.insertBefore(newElement, element.nextElementSibling);
           }
-        } else {
-          console.error('productsArray is not an array.');
-        }
+
       });
     }
     
   // Now you can use the productsData constant to work with the products
       // Check if the .product-list-item__price-wrapper element has been loaded
-      console.log(productsData);
   let  productSibling = document.querySelectorAll('.product-list-item__title');
-  console.log(productSibling);
 
   createElementForNextSibling(productSibling, productsData)
   // if (productParent) {
