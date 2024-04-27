@@ -18,6 +18,9 @@
     }
     .block-header-item__dropdown{
         align-items: flex-start !important;
+        .block-header-item{
+            margin-bottom: 12px !important;
+        }
     }
 
     .block-product-list__link{
