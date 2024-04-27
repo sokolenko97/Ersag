@@ -5,7 +5,7 @@
 }
 .product-list-item__image-wrapper[data-v-ad1657c2]{
     border-radius:50%;
-    /* height: null !important; */
+    height: auto !important;
 }
 
 
@@ -16,9 +16,6 @@
     padding:10px;
     border-radius:20px;
 }
-/* .product-list-item__image-wrapper{
-    height: null;
-} */
 
         .block-product-list__content {
             grid-template-columns: repeat(2, 1fr) !important;
