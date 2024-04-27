@@ -15,6 +15,10 @@
     .block-header-item__item{
         display: flex !important;
     }
+    .block-header-item__dropdown{
+        align-items: flex-start;
+    }
+
     .block-product-list__link{
         background-color:#e8e3c7;
         padding:10px;
