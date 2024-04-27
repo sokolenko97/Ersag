@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 920px){
     .block-header__links{
-        right: auto;
+        right: auto !important;
     }
     .block-header-item__item{
         display: flex !important;
