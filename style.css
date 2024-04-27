@@ -16,7 +16,7 @@
         display: flex !important;
     }
     .block-header-item__dropdown{
-        align-items: flex-start;
+        align-items: flex-start !important;
     }
 
     .block-product-list__link{
