@@ -1,5 +1,5 @@
-    @media screen and (min-width: 301px) and (max-width: 920px) {
 .product-list-item__image-wrapper{border-radius:50%}
+    @media screen and (min-width: 301px) and (max-width: 920px) {
 .block-product-list__link{background-color:#c8c5b1;padding:10px;border-radius:20px;}
         .block-product-list__content {
             grid-template-columns: repeat(2, 1fr) !important;
@@ -9,7 +9,6 @@
         .product-list-item__price-wrapper *,
         .product-list-item__title {
             font-size: 14px !important;
-            text-align: center;
         }
         .product-list-item__button{
             padding: 5px !important;
