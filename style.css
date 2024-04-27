@@ -1,6 +1,23 @@
-.product-list-item__image-wrapper{border-radius:50%}
+.block-product-list__link{
+    background-color: #e8e3c7;
+    padding: 15px 10px;
+    border-radius: 20px;
+}
+.product-list-item__image-wrapper{
+    border-radius:50%;
+    height: null !important;
+}
+
+
     @media screen and (min-width: 301px) and (max-width: 920px) {
-.block-product-list__link{background-color:#c8c5b1;padding:10px;border-radius:20px;}
+
+.block-product-list__link{
+    background-color:#e8e3c7;
+    padding:10px;
+    border-radius:20px;
+}
+
+
         .block-product-list__content {
             grid-template-columns: repeat(2, 1fr) !important;
             min-width: 300px;
