@@ -8,15 +8,22 @@
     height: auto !important;
 }
 
-
-    @media screen and (min-width: 301px) and (max-width: 920px) {
-
-.block-product-list__link{
-    background-color:#e8e3c7;
-    padding:10px;
-    border-radius:20px;
+@media screen and (max-width: 920px){
+    .block-header__links{
+        right: auto;
+    }
+    .block-header-item__item{
+        display: flex !important;
+    }
+    .block-product-list__link{
+        background-color:#e8e3c7;
+        padding:10px;
+        border-radius:20px;
+    }
 }
 
+
+    @media screen and (min-width: 301px) and (max-width: 920px) {
         .block-product-list__content {
             grid-template-columns: repeat(2, 1fr) !important;
             min-width: 300px;
