@@ -9,6 +9,7 @@
         .product-list-item__price-wrapper *,
         .product-list-item__title {
             font-size: 14px !important;
+            text-align: center;
         }
         .product-list-item__button{
             padding: 5px !important;
