@@ -1,10 +1,10 @@
 .block-product-list__link{
     background-color: #e8e3c7;
-    padding: 15px 10px;
-    border-radius: 20px;
+    padding: 15px 10px !important;
+    border-radius: 20px !important;
 }
 .product-list-item__image-wrapper[data-v-ad1657c2]{
-    border-radius:50%;
+    border-radius:50% !important;
     height: auto !important;
 }
 
@@ -31,11 +31,11 @@
         }
     }
 
-    .block-product-list__link{
+    /* .block-product-list__link{
         background-color:#e8e3c7;
         padding:10px;
         border-radius:20px;
-    }
+    } */
 }
 
 
