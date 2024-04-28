@@ -12,6 +12,10 @@
     .block-header__links{
         right: auto !important;
         width: 100% !important;
+        padding-left: 90px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
     }
     .block-header-item__item{
         display: flex !important;
