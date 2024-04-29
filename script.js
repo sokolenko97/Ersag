@@ -52,7 +52,7 @@ fetch(apiUrl)
   console.error('There was a problem with the fetch operation:', error);
 });
 
-}, 1000); // Adjust the delay as needed
+}, 800); // Adjust the delay as needed
 });
 
 
