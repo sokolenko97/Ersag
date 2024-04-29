@@ -24,16 +24,16 @@
     }
     .block-header-item__item{
         display: flex !important;
-        .block-header-item__dropdown-area{
-            margin-top: 0px;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-            padding-top: 0px;
-        }
+    }
+    .block-header-item__dropdown-area{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
     }
     .block-header-item__item[data-qa="navigation-item-товари"]{
         /* margin-bottom: 20px; */
-        display: none;
+        display: none !important;
     }
     .block-header-item__dropdown{
         align-items: flex-start !important;
