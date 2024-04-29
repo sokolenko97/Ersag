@@ -51,6 +51,9 @@ fetch(apiUrl)
   dropDownArrow.setAttribute('checked','')
   dropDownArrow.setAttribute('disabled','')
 
+  let productsMenuButton = document.querySelector('[href="/tovari"]')
+  productsMenuButton.removeAttribute('href')
+
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);
