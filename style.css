@@ -23,9 +23,9 @@
     }
     .block-header-item__item{
         display: flex !important;
-        [data-qa="navigation-item-товари"]{
-            margin-bottom: 20px;
-        }
+    }
+    .block-header-item__item[data-qa="navigation-item-товари"]{
+        margin-bottom: 20px;
     }
     .block-header-item__dropdown{
         align-items: flex-start !important;
