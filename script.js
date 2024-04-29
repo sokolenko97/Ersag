@@ -47,6 +47,10 @@ fetch(apiUrl)
 
   createElementForNextSibling(productSibling, productsData)
 
+  let dropDownArrow = document.querySelector('.block-header-item__mobile-dropdown-trigger')
+  dropDownArrow.setAttribute('checked','')
+  dropDownArrow.setAttribute('disabled','')
+
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);

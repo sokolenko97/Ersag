@@ -23,12 +23,18 @@
     }
     .block-header-item__item{
         display: flex !important;
+        [data-qa="navigation-item-товари"]{
+            margin-bottom: 20px;
+        }
     }
     .block-header-item__dropdown{
         align-items: flex-start !important;
-        .block-header-item{
-            margin-bottom: 12px !important;
+        .block-header-item:not(:last-child){
+            margin-bottom: 20px !important;
         }
+    }
+    .item-content__icon-container-wrapper{
+        display: none;
     }
 }
 
