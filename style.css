@@ -20,16 +20,16 @@
         align-items: flex-start !important;
         height: 100vh !important;
         max-height: 100vh !important;
-        grid-gap: 0px !important;
+        grid-gap: 20px !important;
     }
     .block-header-item__item{
         display: flex !important;
     }
     .block-header-item__dropdown-area{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-        padding-top: 0px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
     }
     .block-header-item__item[data-qa="navigation-item-товари"]{
         /* margin-bottom: 20px; */
@@ -40,8 +40,8 @@
         .block-header-item:not(:last-child){
             margin-bottom: 20px !important;
         }
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
     }
     .item-content__icon-container-wrapper{
         display: none;
