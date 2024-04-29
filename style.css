@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 920px){
     .block-header__links{
-        right: auto !important;
+        /* right: auto !important; */
         width: 100% !important;
 
         padding-left: 90px !important;
@@ -30,12 +30,6 @@
             margin-bottom: 12px !important;
         }
     }
-
-    /* .block-product-list__link{
-        background-color:#e8e3c7;
-        padding:10px;
-        border-radius:20px;
-    } */
 }
 
 
