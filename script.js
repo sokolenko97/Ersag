@@ -1,8 +1,11 @@
 window.addEventListener('load', function() {
+  console.log('Page loaded');
   // Execute code only after the page and its resources are fully loaded
 setTimeout(function() {
 
 const apiUrl = 'https://api-ecommerce.zyro.com/store/store_01HW8RT3XXCQ1MM8AF42T8QGP5/products';
+
+// window.localStorage.getItem("shopping-cart-items");
 
 // Fetch products from the API
 fetch(apiUrl)
