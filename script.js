@@ -1,5 +1,4 @@
 window.addEventListener('load', function() {
-  console.log('Page loaded');
   // Execute code only after the page and its resources are fully loaded
 setTimeout(function() {
 
