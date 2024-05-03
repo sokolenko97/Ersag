@@ -58,42 +58,110 @@ fetch(apiUrl)
 
 
 
+// 1
 
 
+//   function moveProductPageHTMLBlocks() {
+//     console.log("initializeYourCode is running");
+//     const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
+//     console.log("Product Details Element:", productDetailsElement);
+//     const productBuyButton = document.querySelector('.block-product__button-wrapper');
+//     console.log("Product Button Element:", productBuyButton);
+  
+//     if (productDetailsElement && productBuyButton) {
+//         productDetailsElement.append(productBuyButton);
+//     }
+  
+//     let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
+//     console.log("Product Image Container:", productImageContainer);
+//     if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
+//         productImageContainer.parentElement.append(productDetailsElement);
+//     } else {
+//         console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
+//     }
+  
+//     console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
+//   }
+  
 
-  function moveProductPageHTMLBlocks() {
-    console.log("initializeYourCode is running");
-    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
-    console.log("Product Details Element:", productDetailsElement);
-    const productBuyButton = document.querySelector('.block-product__button-wrapper');
-    console.log("Product Button Element:", productBuyButton);
+
+//   function waitForElementToDisplay(selector, time) {
+//     if(document.querySelector(selector) != null) {
+//         console.log(selector + " is now loaded in the DOM");
+//         observeElement(selector);
+//     } else {
+//         setTimeout(function() {
+//             waitForElementToDisplay(selector, time);
+//         }, time);
+//     }
+// }
+
+// function observeElement(selector) {
+//   const targetNode = document.querySelector(selector);
+//   if (!targetNode) {
+//       console.log("Target node not found for observer:", selector);
+//       return; // Exit if no target node
+//   }
   
-    if (productDetailsElement && productBuyButton) {
-        productDetailsElement.append(productBuyButton);
-    }
+//   const config = { attributes: false, childList: true, subtree: true };
+//   const callback = function(mutationsList, observer) {
+//     mutationsList.forEach(mutation => {
+//         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+//             console.log('Mutation detected:', mutation);
+//             moveProductPageHTMLBlocks();
+//             if (shouldObserverDisconnect()) {
+//                 observer.disconnect();
+//                 console.log('Observer disconnected');
+//             }
+//         }
+//     });
+//   };
   
-    let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
-    console.log("Product Image Container:", productImageContainer);
-    if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
-        productImageContainer.parentElement.append(productDetailsElement);
-    } else {
-        console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
-    }
   
-    console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
+//   const observer = new MutationObserver(callback);
+//   observer.observe(targetNode, config);
+//   console.log('MutationObserver has been set up on', selector);
+//   }
+
+//   function shouldObserverDisconnect() {
+//     const allProductsLoaded = document.querySelector('.block-product__description'); // hypothetical marker
+//     return allProductsLoaded !== null;
+//   }
+
+
+//2
+
+function moveProductPageHTMLBlocks() {
+  console.log("initializeYourCode is running");
+  const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
+  console.log("Product Details Element:", productDetailsElement);
+  const productBuyButton = document.querySelector('.block-product__button-wrapper');
+  console.log("Product Buy Button Element:", productBuyButton);
+
+  if (productDetailsElement && productBuyButton) {
+      productDetailsElement.append(productBuyButton);
   }
-  
 
+  let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
+  console.log("Product Image Container:", productImageContainer);
+  if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
+      productImageContainer.parentElement.append(productDetailsElement);
+  } else {
+      console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
+  }
 
-  function waitForElementToDisplay(selector, time) {
-    if(document.querySelector(selector) != null) {
-        console.log(selector + " is now loaded in the DOM");
-        observeElement(selector);
-    } else {
-        setTimeout(function() {
-            waitForElementToDisplay(selector, time);
-        }, time);
-    }
+  console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
+}
+
+function waitForElementToDisplay(selector, time) {
+  if (document.querySelector(selector) != null) {
+      console.log(selector + " is now loaded in the DOM");
+      observeElement(selector);
+  } else {
+      setTimeout(function() {
+          waitForElementToDisplay(selector, time);
+      }, time);
+  }
 }
 
 function observeElement(selector) {
@@ -102,32 +170,31 @@ function observeElement(selector) {
       console.log("Target node not found for observer:", selector);
       return; // Exit if no target node
   }
-  
+
   const config = { attributes: false, childList: true, subtree: true };
   const callback = function(mutationsList, observer) {
-    mutationsList.forEach(mutation => {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            console.log('Mutation detected:', mutation);
-            moveProductPageHTMLBlocks();
-            if (shouldObserverDisconnect()) {
-                observer.disconnect();
-                console.log('Observer disconnected');
-            }
-        }
-    });
+      console.log("Mutations detected:", mutationsList);
+      mutationsList.forEach(mutation => {
+          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              console.log('Child node mutation detected:', mutation);
+              moveProductPageHTMLBlocks();
+              if (shouldObserverDisconnect()) {
+                  observer.disconnect();
+                  console.log('Observer disconnected');
+              }
+          }
+      });
   };
-  
-  
+
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
   console.log('MutationObserver has been set up on', selector);
-  }
+}
 
-  function shouldObserverDisconnect() {
-    const allProductsLoaded = document.querySelector('.block-product__description'); // hypothetical marker
-    return allProductsLoaded !== null;
-  }
-
+function shouldObserverDisconnect() {
+  const allProductsLoaded = document.querySelector('.block-product__description'); // hypothetical marker
+  return allProductsLoaded !== null;
+}
 
   // const callback = function(mutationsList, observer) {
   //     console.log("Mutations detected:", mutationsList); // Log all mutations
@@ -139,16 +206,6 @@ function observeElement(selector) {
   //     });
   // };
 
-
-
-
-  const targetNode = document.querySelector('.block-product');
-  if (targetNode) {
-      const newNode = document.createElement('div');
-      newNode.innerHTML = 'Test node';
-      targetNode.appendChild(newNode);
-      console.log('Test node added');
-  }
 
 
 // function observeElement(selector) {
