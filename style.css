@@ -10,6 +10,8 @@
 
 /* Product page */
 
+    /*image*/
+
 .product-carousel__image-wrapper.product-carousel__image-wrapper--contain{
     justify-content: center !important;
     border-color: transparent !important;
@@ -19,6 +21,21 @@
     }
 }
 
+    /*blocks position*/
+
+.block-product-wrapper{
+    .block-product{
+        flex-direction: column;
+    }
+}
+
+.block-product__price-data-wrapper{
+    transform: translate(100px, 0px);
+}
+
+.block-product__content-wrapper{
+    max-width: 100%;
+}
 
 @media screen and (max-width: 920px){
     .block-header__links{
