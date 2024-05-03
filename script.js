@@ -81,7 +81,7 @@ fetch(apiUrl)
   function initializeYourCode() {
     console.log("initializeYourCode is running");
     // Check each operation inside
-    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
+    const productDetailsElement = document.querySelector('.block-product__description');
     console.log("Product Details Element:", productDetailsElement);
     // Continue with your function
 }
