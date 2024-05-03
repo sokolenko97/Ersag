@@ -57,7 +57,7 @@ fetch(apiUrl)
   productsMenuButton.removeAttribute('href')
 
 
-// Moving HTML elements
+// Moving Product HTML elements
 
   
   const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
@@ -74,7 +74,7 @@ fetch(apiUrl)
   console.error('There was a problem with the fetch operation:', error);
 });
 
-}, 600); // Adjust the delay as needed
+}, 500); // Adjust the delay as needed
 });
 
 //// First
