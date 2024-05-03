@@ -101,6 +101,7 @@ function moveProductPageHTMLBlocks() {
     let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
   
     productImageContainer.parentElement.append(productDetailsElement)
+    console.log(productDetailsElement,productBuyButton,productImageContainer);
 }
 
 })
