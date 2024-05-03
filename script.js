@@ -57,32 +57,6 @@ fetch(apiUrl)
   productsMenuButton.removeAttribute('href')
 
 
-
-
-
-
-  function moveProductPageHTMLBlocks() {
-    console.log("initializeYourCode is running");
-    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
-    console.log("Product Details Element:", productDetailsElement);
-    const productBuyButton = document.querySelector('.block-product__button-wrapper');
-    console.log("Product Button Element:", productBuyButton);
-  
-    if (productDetailsElement && productBuyButton) {
-        productDetailsElement.append(productBuyButton);
-    }
-  
-    let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
-    console.log("Product Image Container:", productImageContainer);
-    if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
-        productImageContainer.parentElement.append(productDetailsElement);
-    } else {
-        console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
-    }
-  
-    console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
-  }
-
   moveProductPageHTMLBlocks()
   
 // // Usage
@@ -90,18 +64,16 @@ fetch(apiUrl)
 
 // Moving Product HTML elements
   
-// function moveProductPageHTMLBlocks() {
-//     const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
-//     const productBuyButton = document.querySelector('.block-product__button-wrapper')
+function moveProductPageHTMLBlocks() {
+    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
+    const productBuyButton = document.querySelector('.block-product__button-wrapper')
   
-//     productDetailsElement.append(productBuyButton)
+    productDetailsElement.append(productBuyButton)
   
-//     let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
+    let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
   
-//     productImageContainer.parentElement.append(productDetailsElement)
-//     console.log(productDetailsElement,productBuyButton,productImageContainer);
-    
-// }
+    productImageContainer.parentElement.append(productDetailsElement)    
+}
 
 
 })
