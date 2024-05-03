@@ -57,28 +57,38 @@ fetch(apiUrl)
   productsMenuButton.removeAttribute('href')
 
 
-// Select the node that will be observed for mutations
-const targetNode = document.querySelector('.block-product'); // Adjust this ID to the container of your products
-
-// Options for the observer (which mutations to observe)
-const config = { attributes: false, childList: true, subtree: true };
-
-// Callback function to execute when mutations are observed
-const callback = function(mutationsList, observer) {
-    for(let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            console.log('A child node has been added or removed.');
-            moveProductPageHTMLBlocks(); // Call your function
-            observer.disconnect(); // Optional: disconnect observer after initial load
-        }
+  function waitForElementToDisplay(selector, time) {
+    if(document.querySelector(selector) != null) {
+        console.log(selector + " is now loaded in the DOM");
+        observeElement(selector);
+    } else {
+        setTimeout(function() {
+            waitForElementToDisplay(selector, time);
+        }, time);
     }
-};
+}
 
-// Create an instance of MutationObserver with the callback
-const observer = new MutationObserver(callback);
+function observeElement(selector) {
+    const targetNode = document.querySelector(selector);
 
-// Start observing the target node for configured mutations
-observer.observe(targetNode, config);
+    const config = { attributes: false, childList: true, subtree: true };
+    const callback = function(mutationsList, observer) {
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                console.log('A child node has been added or removed.');
+                moveProductPageHTMLBlocks(); // Replace this with your function
+                observer.disconnect(); // Optional: disconnect observer after initial load
+            }
+        }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+    console.log('MutationObserver has been set up on ' + selector);
+}
+
+// Usage
+    waitForElementToDisplay(".block-product", 100); // Adjust selector and check interval
 
 // Moving Product HTML elements
   
