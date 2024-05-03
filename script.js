@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
   // Execute code only after the page and its resources are fully loaded
-setTimeout(function() {
+// setTimeout(function() {
 
 const apiUrl = 'https://api-ecommerce.zyro.com/store/store_01HW8RT3XXCQ1MM8AF42T8QGP5/products';
 
@@ -57,24 +57,48 @@ fetch(apiUrl)
   productsMenuButton.removeAttribute('href')
 
 
+// Select the node that will be observed for mutations
+const targetNode = document.querySelector('.block-product'); // Adjust this ID to the container of your products
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: false, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+const callback = function(mutationsList, observer) {
+    for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            console.log('A child node has been added or removed.');
+            moveProductPageHTMLBlocks(); // Call your function
+            observer.disconnect(); // Optional: disconnect observer after initial load
+        }
+    }
+};
+
+// Create an instance of MutationObserver with the callback
+const observer = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
 // Moving Product HTML elements
-
   
-  const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
-  const productBuyButton = document.querySelector('.block-product__button-wrapper')
-
-  productDetailsElement.append(productBuyButton)
-
-  let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
-
-  productImageContainer.parentElement.append(productDetailsElement)
+function moveProductPageHTMLBlocks() {
+    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
+    const productBuyButton = document.querySelector('.block-product__button-wrapper')
+  
+    productDetailsElement.append(productBuyButton)
+  
+    let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
+  
+    productImageContainer.parentElement.append(productDetailsElement)
+}
 
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);
 });
 
-}, 400); // Adjust the delay as needed
+// }, 400); // Adjust the delay as needed
 });
 
 //// First
