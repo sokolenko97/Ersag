@@ -126,7 +126,7 @@ function observeElement(selector) {
 }
 
 // Usage
-    waitForElementToDisplay(".block-product", 100); // Adjust selector and check interval
+    waitForElementToDisplay(".product-carousel__main-image", 100); // Adjust selector and check interval
 
 // Moving Product HTML elements
   
