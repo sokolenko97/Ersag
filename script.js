@@ -98,6 +98,10 @@ fetch(apiUrl)
 
 function observeElement(selector) {
   const targetNode = document.querySelector(selector);
+  if (!targetNode) {
+      console.log("Target node not found for observer:", selector);
+      return; // Exit if no target node
+  }
   
   const config = { attributes: false, childList: true, subtree: true };
   const callback = function(mutationsList, observer) {
@@ -117,10 +121,6 @@ function observeElement(selector) {
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
   console.log('MutationObserver has been set up on', selector);
-  }
-  if (!targetNode) {
-      console.log("Target node not found for observer:", selector);
-      return; // Exit if no target node
   }
 
   function shouldObserverDisconnect() {
