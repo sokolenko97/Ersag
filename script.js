@@ -122,6 +122,16 @@ function observeElement(selector) {
   console.log('MutationObserver has been set up on', selector);
 }
 
+setTimeout(() => {
+  const targetNode = document.querySelector('.block-product');
+  if (targetNode) {
+      const newNode = document.createElement('div');
+      newNode.innerHTML = 'Test node';
+      targetNode.appendChild(newNode);
+      console.log('Test node added');
+  }
+}, 3000);
+
 // function observeElement(selector) {
 //     const targetNode = document.querySelector(selector);
 
