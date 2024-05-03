@@ -82,95 +82,11 @@ fetch(apiUrl)
   
     console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
   }
+
+  moveProductPageHTMLBlocks()
   
-
-
-  function waitForElementToDisplay(selector, time) {
-    if(document.querySelector(selector) != null) {
-        console.log(selector + " is now loaded in the DOM");
-        observeElement(selector);
-    } else {
-        setTimeout(function() {
-            waitForElementToDisplay(selector, time);
-        }, time);
-    }
-}
-
-function observeElement(selector) {
-  const targetNode = document.querySelector(selector);
-  if (!targetNode) {
-      console.log("Target node not found for observer:", selector);
-      return; // Exit if no target node
-  }
-  
-  const config = { attributes: false, childList: true, subtree: true };
-  const callback = function(mutationsList, observer) {
-    mutationsList.forEach(mutation => {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            console.log('Mutation detected:', mutation);
-            moveProductPageHTMLBlocks();
-            if (shouldObserverDisconnect()) {
-                observer.disconnect();
-                console.log('Observer disconnected');
-            }
-        }
-    });
-  };
-  
-  
-  const observer = new MutationObserver(callback);
-  observer.observe(targetNode, config);
-  console.log('MutationObserver has been set up on', selector);
-  }
-
-  function shouldObserverDisconnect() {
-    const allProductsLoaded = document.querySelector('.block-product__description'); // hypothetical marker
-    return allProductsLoaded !== null;
-  }
-
-
-  // const callback = function(mutationsList, observer) {
-  //     console.log("Mutations detected:", mutationsList); // Log all mutations
-  //     mutationsList.forEach(mutation => {
-  //         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-  //             console.log('Child node mutation detected:', mutation);
-  //             moveProductPageHTMLBlocks();
-  //         }
-  //     });
-  // };
-
-
-
-// function observeElement(selector) {
-//     const targetNode = document.querySelector(selector);
-
-//     const config = { attributes: false, childList: true, subtree: true };
-//     // const callback = function(mutationsList, observer) {
-//     //     for(let mutation of mutationsList) {
-//     //         if (mutation.type === 'childList') {
-//     //             console.log('A child node has been added or removed.');
-//     //             moveProductPageHTMLBlocks(); // Replace this with your function
-//     //             observer.disconnect(); // Optional: disconnect observer after initial load
-//     //         }
-//     //     }
-//     // };
-//     const callback = function(mutationsList, observer) {
-//       console.log("Mutations observed:", mutationsList); // Log all mutations to see what's happening
-//       mutationsList.forEach(mutation => {
-//           if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-//               console.log('Child nodes added:', mutation.addedNodes);
-//               moveProductPageHTMLBlocks(); // Call your function here
-//           }
-//       });
-//   };
-
-//     const observer = new MutationObserver(callback);
-//     observer.observe(targetNode, config);
-//     console.log('MutationObserver has been set up on ' + selector);
-// }
-
-// Usage
-    waitForElementToDisplay(".block-product__description", 100); // Adjust selector and check interval
+// // Usage
+//     waitForElementToDisplay(".block-product__description", 100); // Adjust selector and check interval
 
 // Moving Product HTML elements
   
