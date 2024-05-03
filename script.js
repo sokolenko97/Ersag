@@ -74,7 +74,7 @@ fetch(apiUrl)
   console.error('There was a problem with the fetch operation:', error);
 });
 
-}, 400); // Adjust the delay as needed
+}, 100); // Adjust the delay as needed
 });
 
 //// First
