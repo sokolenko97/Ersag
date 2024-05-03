@@ -25,16 +25,16 @@
 
 .block-product-wrapper{
     .block-product{
-        flex-direction: column;
+        flex-direction: column !important;
     }
 }
 
 .block-product__price-data-wrapper{
-    transform: translate(100px, 0px);
+    transform: translate(100px, 0px) !important;
 }
 
 .block-product__content-wrapper{
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 @media screen and (max-width: 920px){
