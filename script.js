@@ -64,12 +64,7 @@ fetch(apiUrl)
 }, 600); // Adjust the delay as needed
 });
 
-
-
 //// First
-
-
-
 
 // window.addEventListener('load', function() {
 //   // Execute code only after the page and its resources are fully loaded
@@ -190,3 +185,11 @@ fetch(apiUrl)
 // }, 1000); // Adjust the delay as needed
 // });
 
+const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
+const productBuyButton = document.querySelector('.block-product__button-wrapper')
+
+productDetailsElement.append(productBuyButton)
+
+let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
+
+productImageContainer.parentElement.append(productDetailsElement)

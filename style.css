@@ -26,6 +26,10 @@
 .block-product-wrapper{
     .block-product{
         flex-direction: column !important;
+        .product-carousel{
+            flex-direction: row !important;
+            max-width: 100% !important;
+        }
     }
 }
 
