@@ -56,6 +56,19 @@ fetch(apiUrl)
   let productsMenuButton = document.querySelector('[href="/tovari"]')
   productsMenuButton.removeAttribute('href')
 
+
+// Moving HTML elements
+
+  
+  const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
+  const productBuyButton = document.querySelector('.block-product__button-wrapper')
+
+  productDetailsElement.append(productBuyButton)
+
+  let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
+
+  productImageContainer.parentElement.append(productDetailsElement)
+
 })
 .catch(error => {
   console.error('There was a problem with the fetch operation:', error);
@@ -184,12 +197,3 @@ fetch(apiUrl)
 
 // }, 1000); // Adjust the delay as needed
 // });
-
-const productDetailsElement = document.querySelector('.block-product__price-data-wrapper')
-const productBuyButton = document.querySelector('.block-product__button-wrapper')
-
-productDetailsElement.append(productBuyButton)
-
-let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
-
-productImageContainer.parentElement.append(productDetailsElement)
