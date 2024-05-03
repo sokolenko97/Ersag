@@ -81,7 +81,7 @@ fetch(apiUrl)
   function initializeYourCode() {
     console.log("initializeYourCode is running");
     // Check each operation inside
-    const productDetailsElement = document.querySelector('.block-product__description');
+    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
     console.log("Product Details Element:", productDetailsElement);
     // Continue with your function
 }
@@ -126,7 +126,7 @@ function observeElement(selector) {
 }
 
 // Usage
-    waitForElementToDisplay(".product-carousel__main-image", 100); // Adjust selector and check interval
+    waitForElementToDisplay(".block-product__description", 100); // Adjust selector and check interval
 
 // Moving Product HTML elements
   
