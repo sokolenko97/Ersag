@@ -56,6 +56,24 @@ fetch(apiUrl)
   let productsMenuButton = document.querySelector('[href="/tovari"]')
   productsMenuButton.removeAttribute('href')
 
+  function moveProductPageHTMLBlocks() {
+    const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
+    const productBuyButton = document.querySelector('.block-product__button-wrapper');
+  
+    if (productDetailsElement && productBuyButton) {
+        productDetailsElement.append(productBuyButton);
+    }
+  
+    let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
+  
+    if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
+        productImageContainer.parentElement.append(productDetailsElement);
+    } else {
+        console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
+    }
+  
+    console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
+  }
 
   function waitForElementToDisplay(selector, time) {
     if(document.querySelector(selector) != null) {
@@ -104,25 +122,6 @@ function observeElement(selector) {
 //     console.log(productDetailsElement,productBuyButton,productImageContainer);
     
 // }
-
-function moveProductPageHTMLBlocks() {
-  const productDetailsElement = document.querySelector('.block-product__price-data-wrapper');
-  const productBuyButton = document.querySelector('.block-product__button-wrapper');
-
-  if (productDetailsElement && productBuyButton) {
-      productDetailsElement.append(productBuyButton);
-  }
-
-  let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain');
-
-  if (productImageContainer && productImageContainer.parentElement && productDetailsElement) {
-      productImageContainer.parentElement.append(productDetailsElement);
-  } else {
-      console.error("Required elements not found:", { productDetailsElement, productBuyButton, productImageContainer });
-  }
-
-  console.log('Elements:', { productDetailsElement, productBuyButton, productImageContainer });
-}
 
 
 })
