@@ -58,10 +58,10 @@
     .block-product__price-data-wrapper{
         transform: translate(0px, 0px) !important;
         align-items: center !important;
+        margin-top: 30px !important;
     }
     .block-product__button-wrapper{
         align-items: center !important;
-        margin-top: 30px !important;
     }
 
     .block-header__links{
