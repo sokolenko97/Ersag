@@ -47,7 +47,7 @@
         max-width: 100% !important;
         .block-product{
             .product-carousel{
-                flex-direction: row !important;
+                flex-direction: column !important;
             }
         }
     }
