@@ -57,8 +57,6 @@ fetch(apiUrl)
   productsMenuButton.removeAttribute('href')
 
   // const productLoadCheck = document.querySelector('.product-carousel > .block-product__price-data-wrapper')
-  const productLoadCheck = document.querySelector('.block-product__description > h2')
-  console.log(productLoadCheck);
   
 // // Usage
 //     waitForElementToDisplay(".block-product__description", 100); // Adjust selector and check interval
@@ -89,7 +87,8 @@ function addImagetoTitle(url, innerText,h2Number) {
   }
 }
 
-setInterval(() => {
+function productCheck() {
+  const productLoadCheck = document.querySelector('.block-product__description > h2')
   if (productLoadCheck) {
     if (productLoadCheck.innerText === 'Історія'){
       moveProductPageHTMLBlocks()
@@ -126,6 +125,11 @@ setInterval(() => {
     
     }
   }
+}
+
+setTimeout(() => {
+  productCheck()
+  setInterval(productCheck, 500);
 }, 500);
 
 })
