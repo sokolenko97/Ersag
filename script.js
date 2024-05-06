@@ -127,7 +127,7 @@ function productCheck() {
   }
 }
 
-let check = setInterval(productCheck, 10);
+let check = setInterval(productCheck, 5);
 
 })
 .catch(error => {
