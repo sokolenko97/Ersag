@@ -125,11 +125,12 @@ function productCheck() {
     
     }
   }
+  clearInterval(check);
 }
 
 setTimeout(() => {
   productCheck()
-  setInterval(productCheck, 500);
+  check = setInterval(productCheck, 500);
 }, 500);
 
 })
