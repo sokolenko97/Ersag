@@ -89,42 +89,44 @@ function addImagetoTitle(url, innerText,h2Number) {
   }
 }
 
-if (productLoadCheck) {
-  if (productLoadCheck.innerText === 'Історія'){
-    moveProductPageHTMLBlocks()
-  
-    addImagetoTitle(
-      'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
-      'Історія',
-      0
-    )
-  
-    addImagetoTitle(
-      'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-A1aKrKQJw6HELKn3.svg',
-      'Хімічні властивості',
-      1
-    )
-  
-    addImagetoTitle(
-      'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-ALpJbJOoeaU3lQoa.svg',
-      'застосовують',
-      2
-    )
-  
-    addImagetoTitle(
-      'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-nd3-4nd-d-d3-4doddegd-ddegd1-2d1-2n-YanBzBM97WcZQolZ.svg',
-      'Протипоказання',
-      3
-    )
-  
-    addImagetoTitle(
-      'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--A85prpZ4qzhM3yxX.svg',
-      'Спосіб застосування',
-      4
-    )
-  
+setInterval(() => {
+  if (productLoadCheck) {
+    if (productLoadCheck.innerText === 'Історія'){
+      moveProductPageHTMLBlocks()
+    
+      addImagetoTitle(
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
+        'Історія',
+        0
+      )
+    
+      addImagetoTitle(
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-A1aKrKQJw6HELKn3.svg',
+        'Хімічні властивості',
+        1
+      )
+    
+      addImagetoTitle(
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-ALpJbJOoeaU3lQoa.svg',
+        'застосовують',
+        2
+      )
+    
+      addImagetoTitle(
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-nd3-4nd-d-d3-4doddegd-ddegd1-2d1-2n-YanBzBM97WcZQolZ.svg',
+        'Протипоказання',
+        3
+      )
+    
+      addImagetoTitle(
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--A85prpZ4qzhM3yxX.svg',
+        'Спосіб застосування',
+        4
+      )
+    
+    }
   }
-}
+}, 500);
 
 })
 .catch(error => {
