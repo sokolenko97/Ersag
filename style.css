@@ -51,7 +51,8 @@
         img{
             max-width: 200px;
         }
-        span{
+        span,
+        strong{
             align-self: center;
         }
     }
