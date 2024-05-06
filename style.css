@@ -41,6 +41,22 @@
     max-width: 100% !important;
 }
 
+/* History Image  */
+
+.block-product__description{
+    .history-title{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        img{
+            max-width: 200px;
+        }
+        span{
+            align-self: center;
+        }
+    }
+}
+
 @media screen and (max-width: 920px){
     /* Product page replacements */
     .block-product-wrapper{

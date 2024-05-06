@@ -72,7 +72,20 @@ function moveProductPageHTMLBlocks() {
   
     let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
   
-    productImageContainer.parentElement.append(productDetailsElement)    
+    productImageContainer.parentElement.append(productDetailsElement)
+
+// Add history section image
+
+    const producDescriptionParagraph = document.querySelector('.block-product__description')
+    const productHistoryImg = document.createElement('img')
+    productHistoryImg.setAttribute('src', 'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg')
+
+    const historyH2El = producDescriptionParagraph.firstElementChild
+
+    if (historyH2El.innerText === 'Історія'){
+      historyH2El.prepend(productHistoryImg)
+      historyH2El.className = 'history-title'
+    }
 }
 
 
