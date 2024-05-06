@@ -88,7 +88,7 @@ function moveProductPageHTMLBlocks() {
     // }
 }
 
-function addImagetoTitle(url, innerText, className,h2Number) {
+function addImagetoTitle(url, innerText,h2Number) {
   const producDescriptionParagraph = document.querySelectorAll('.block-product__description > h2')
   const productHistoryImg = document.createElement('img')
   productHistoryImg.setAttribute('src', url)
@@ -117,7 +117,7 @@ addImagetoTitle(
 addImagetoTitle(
   'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-ALpJbJOoeaU3lQoa.svg',
   'застосовують',
-  1
+  2
 )
 
 
