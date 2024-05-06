@@ -88,7 +88,7 @@ function moveProductPageHTMLBlocks() {
     // }
 }
 
-function addImagetoTitle(selector, url, innerText, className,h2Number) {
+function addImagetoTitle(url, innerText, className,h2Number) {
   const producDescriptionParagraph = document.querySelectorAll('.block-product__description > h2')
   const productHistoryImg = document.createElement('img')
   productHistoryImg.setAttribute('src', url)
