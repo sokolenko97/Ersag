@@ -125,13 +125,10 @@ function productCheck() {
     
     }
   }
-  clearInterval(check);
+  clearInterval(check)
 }
 
-let check = setTimeout(() => {
-  productCheck()
-  check()
-}, 500);
+let check = setInterval(productCheck, 500);
 
 })
 .catch(error => {
