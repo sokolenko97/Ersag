@@ -76,17 +76,37 @@ function moveProductPageHTMLBlocks() {
 
 // Add history section image
 
-    const producDescriptionParagraph = document.querySelector('.block-product__description')
-    const productHistoryImg = document.createElement('img')
-    productHistoryImg.setAttribute('src', 'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg')
+    // const producDescriptionParagraph = document.querySelector('.block-product__description')
+    // const productHistoryImg = document.createElement('img')
+    // productHistoryImg.setAttribute('src', 'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg')
 
-    const historyH2El = producDescriptionParagraph.firstElementChild
+    // const historyH2El = producDescriptionParagraph.firstElementChild
 
-    if (historyH2El.innerText === 'Історія'){
-      historyH2El.prepend(productHistoryImg)
-      historyH2El.className = 'history-title'
-    }
+    // if (historyH2El.innerText === 'Історія'){
+    //   historyH2El.prepend(productHistoryImg)
+    //   historyH2El.className = 'history-title'
+    // }
 }
+
+function addImagetoTitle(selector, url, innerText, className) {
+  const producDescriptionParagraph = document.querySelector(selector)
+  const productHistoryImg = document.createElement('img')
+  productHistoryImg.setAttribute('src', url)
+
+  const historyH2El = producDescriptionParagraph.firstElementChild
+
+  if (historyH2El.innerText === innerText){
+    historyH2El.prepend(productHistoryImg)
+    historyH2El.className = className
+  }
+}
+
+addImagetoTitle(
+  '.block-product__description',
+  'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
+  'Історія',
+  'history-title'
+)
 
 
 })
