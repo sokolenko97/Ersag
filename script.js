@@ -122,10 +122,9 @@ function productCheck() {
         'Спосіб застосування',
         4
       )
-    
+      clearInterval(check)
     }
   }
-  clearInterval(check)
 }
 
 let check = setInterval(productCheck, 500);
