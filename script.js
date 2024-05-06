@@ -95,7 +95,7 @@ function addImagetoTitle(url, innerText,h2Number) {
 
   const h2El = producDescriptionParagraph[h2Number]
 
-  if (h2El.innerText === innerText){
+  if (h2El.innerText.includes(innerText)){
     h2El.prepend(productHistoryImg)
     h2El.className = 'subtitle'
   }
