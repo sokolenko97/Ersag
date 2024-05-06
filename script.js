@@ -98,21 +98,25 @@ function addImagetoTitle(url, innerText, className,h2Number) {
 
   if (h2El.innerText === innerText){
     h2El.prepend(productHistoryImg)
-    h2El.className = className
+    h2El.className = 'subtitle'
   }
 }
 
 addImagetoTitle(
   'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
   'Історія',
-  'history-title',
   0
 )
 
 addImagetoTitle(
   'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-A1aKrKQJw6HELKn3.svg',
   'Хімічні властивості',
-  'properties-title',
+  1
+)
+
+addImagetoTitle(
+  'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-ALpJbJOoeaU3lQoa.svg',
+  'застосовують',
   1
 )
 
