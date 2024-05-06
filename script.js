@@ -88,24 +88,31 @@ function moveProductPageHTMLBlocks() {
     // }
 }
 
-function addImagetoTitle(selector, url, innerText, className) {
-  const producDescriptionParagraph = document.querySelector(selector)
+function addImagetoTitle(selector, url, innerText, className,h2Number) {
+  const producDescriptionParagraph = document.querySelectorAll('.block-product__description > h2')
   const productHistoryImg = document.createElement('img')
   productHistoryImg.setAttribute('src', url)
 
-  const historyH2El = producDescriptionParagraph.firstElementChild
+  const h2El = producDescriptionParagraph[h2Number].firstElementChild
 
-  if (historyH2El.innerText === innerText){
-    historyH2El.prepend(productHistoryImg)
-    historyH2El.className = className
+  if (h2El.innerText === innerText){
+    h2El.prepend(productHistoryImg)
+    h2El.className = className
   }
 }
 
 addImagetoTitle(
-  '.block-product__description',
   'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
   'Історія',
-  'history-title'
+  'history-title',
+  0
+)
+
+addImagetoTitle(
+  'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-A1aKrKQJw6HELKn3.svg',
+  'Хімічні властивості',
+  'properties-title',
+  1
 )
 
 
