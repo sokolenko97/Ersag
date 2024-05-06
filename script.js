@@ -56,9 +56,8 @@ fetch(apiUrl)
   let productsMenuButton = document.querySelector('[href="/tovari"]')
   productsMenuButton.removeAttribute('href')
 
-  const productLoadCheck = document.querySelector('.product-carousel > .block-product__price-data-wrapper')
-
- 
+  // const productLoadCheck = document.querySelector('.product-carousel > .block-product__price-data-wrapper')
+  const productLoadCheck = document.querySelector('.block-product__description > h2')
   
 // // Usage
 //     waitForElementToDisplay(".block-product__description", 100); // Adjust selector and check interval
@@ -74,19 +73,6 @@ function moveProductPageHTMLBlocks() {
     let productImageContainer = document.querySelector('.product-carousel__image-wrapper--contain')
   
     productImageContainer.parentElement.append(productDetailsElement)
-
-// Add history section image
-
-    // const producDescriptionParagraph = document.querySelector('.block-product__description')
-    // const productHistoryImg = document.createElement('img')
-    // productHistoryImg.setAttribute('src', 'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg')
-
-    // const historyH2El = producDescriptionParagraph.firstElementChild
-
-    // if (historyH2El.innerText === 'Історія'){
-    //   historyH2El.prepend(productHistoryImg)
-    //   historyH2El.className = 'history-title'
-    // }
 }
 
 function addImagetoTitle(url, innerText,h2Number) {
@@ -102,7 +88,7 @@ function addImagetoTitle(url, innerText,h2Number) {
   }
 }
 
-if (productLoadCheck === null){
+if (productLoadCheck.innerText === 'Історія'){
   moveProductPageHTMLBlocks()
 
   addImagetoTitle(
