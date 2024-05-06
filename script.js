@@ -93,7 +93,8 @@ function addImagetoTitle(selector, url, innerText, className,h2Number) {
   const productHistoryImg = document.createElement('img')
   productHistoryImg.setAttribute('src', url)
 
-  const h2El = producDescriptionParagraph[h2Number].firstElementChild
+  const h2El = producDescriptionParagraph[h2Number]
+  console.log(h2El);
 
   if (h2El.innerText === innerText){
     h2El.prepend(productHistoryImg)
