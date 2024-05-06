@@ -128,7 +128,7 @@ function productCheck() {
   clearInterval(check);
 }
 
-const check = setTimeout(() => {
+let check = setTimeout(() => {
   productCheck()
   check = setInterval(productCheck, 500);
 }, 500);
