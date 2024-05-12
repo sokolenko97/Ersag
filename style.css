@@ -124,8 +124,9 @@
         align-items: flex-start !important;
         .block-header__nav{
             .block-header__nav-links{
+                column-gap: 20px !important;
                 .block-header-item{
-                    align-self: flex-start;
+                    align-self: flex-start !important;
                 }
             }
         }
