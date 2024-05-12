@@ -120,6 +120,16 @@
     .block-header-item__item{
         display: flex !important;
     }
+    .block-header-layout-mobile__dropdown--open{
+        align-items: flex-start !important;
+        .block-header__nav{
+            .block-header__nav-links{
+                .block-header-item{
+                    align-self: flex-start;
+                }
+            }
+        }
+    }
     div.block-header-item__dropdown-area[data-v-3dad4ebb]{
         margin-top: 0px !important;
         margin-bottom: 0px !important;
