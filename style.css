@@ -120,7 +120,7 @@
     .block-header-item__item{
         display: flex !important;
     }
-    .block-header-layout-mobile__dropdown--open{
+    .block-header-layout-mobile__dropdown{
         align-items: flex-start !important;
         .block-header__nav{
             .block-header__nav-links{
