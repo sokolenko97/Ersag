@@ -120,11 +120,12 @@
     .block-header-item__item{
         display: flex !important;
     }
-    .block-header-item__dropdown-area{
+    div.block-header-item__dropdown-area[data-v-3dad4ebb]{
         margin-top: 0px !important;
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
         padding-top: 0px !important;
+        display: block !important; 
     }
     .block-header-item__item[data-qa="navigation-item-товари"]{
         /* margin-bottom: 20px; */
