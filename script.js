@@ -128,7 +128,6 @@ function productCheck() {
 }
 
 let check = setInterval(productCheck, 1);
-check()
 
 })
 .catch(error => {
