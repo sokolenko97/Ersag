@@ -46,7 +46,7 @@
 .block-product__description{
     .subtitle{
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         column-gap: 30px;
         img{
             max-width: 200px;
