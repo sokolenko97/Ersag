@@ -50,7 +50,7 @@
         /* flex-wrap: wrap; */
         column-gap: 30px;
         img{
-            max-width: 150px;
+            max-width: 100px;
         }
         span,
         strong{
