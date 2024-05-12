@@ -94,19 +94,19 @@ function productCheck() {
       moveProductPageHTMLBlocks()
     
       addImagetoTitle(
-        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-YleM5M6ykpIZnZML.svg',
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-cropped-m7VpwbLZWNCKgeJQ.svg',
         'Історія',
         0
       )
     
       addImagetoTitle(
-        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-A1aKrKQJw6HELKn3.svg',
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-mePLvJBXVjc9MMXJ.svg',
         'Хімічні властивості',
         1
       )
     
       addImagetoTitle(
-        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-ALpJbJOoeaU3lQoa.svg',
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-dJoJ6bVOwOtKXJB4.svg',
         'застосовують',
         2
       )
@@ -118,7 +118,7 @@ function productCheck() {
       )
     
       addImagetoTitle(
-        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--A85prpZ4qzhM3yxX.svg',
+        'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--YKbJ6lpvXDcDa0Gy.svg',
         'Спосіб застосування',
         3
       )
