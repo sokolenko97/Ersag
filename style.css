@@ -60,6 +60,9 @@
 
 @media screen and (max-width: 920px){
     /* Product page replacements */
+    .product-carousel__dots-wrapper{
+        display: none !important;
+    }
     .block-product-wrapper{
         max-width: 100% !important;
         .block-product{
