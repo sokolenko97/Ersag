@@ -39,6 +39,7 @@
 
 .block-product__content-wrapper{
     max-width: 100% !important;
+    padding-top: 0px !important;
 }
 
 /* History Image  */
