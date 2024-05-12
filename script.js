@@ -114,13 +114,13 @@ function productCheck() {
       addImagetoTitle(
         'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-nd3-4nd-d-d3-4doddegd-ddegd1-2d1-2n-YanBzBM97WcZQolZ.svg',
         'Протипоказання',
-        3
+        4
       )
     
       addImagetoTitle(
         'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--A85prpZ4qzhM3yxX.svg',
         'Спосіб застосування',
-        4
+        3
       )
       clearInterval(check)
     }
