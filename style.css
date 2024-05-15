@@ -51,6 +51,9 @@
         column-gap: 30px;
         div{
             max-width: 100px;
+            img{
+                min-width: 60px;
+            }
         }
         span,
         strong{
