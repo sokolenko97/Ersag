@@ -76,13 +76,15 @@ function moveProductPageHTMLBlocks() {
 
 function addImagetoTitle(url, innerText,h2Number) {
   const producDescriptionParagraph = document.querySelectorAll('.block-product__description > h2')
+  const productHistoryImgCont = document.createElement('div')
   const productHistoryImg = document.createElement('img')
   productHistoryImg.setAttribute('src', url)
 
   const h2El = producDescriptionParagraph[h2Number]
 
   if (h2El.innerText.includes(innerText)){
-    h2El.prepend(productHistoryImg)
+    h2El.prepend(productHistoryImgCont)
+    productHistoryImgCont.append(productHistoryImg)
     h2El.className = 'subtitle'
   }
 }

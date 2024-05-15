@@ -49,7 +49,7 @@
         display: flex;
         /* flex-wrap: wrap; */
         column-gap: 30px;
-        img{
+        div{
             max-width: 100px;
         }
         span,
