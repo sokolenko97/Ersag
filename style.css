@@ -120,7 +120,7 @@
     .block-header-item__item{
         display: flex !important;
     }
-    .block-header-layout-mobile__dropdown[data-v-c6507d22]{
+    .block-header-layout-mobile__dropdown{
         align-items: flex-start !important;
         padding-left: 35px !important;
         .block-header__nav{
