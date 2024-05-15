@@ -152,9 +152,11 @@
     }
     .block-header-item__dropdown{
         align-items: flex-start !important;
-        .block-header-item:not(:last-child){
+        gap: 20px !important;
+        margin-top: 0px !important;
+        /* .block-header-item:not(:last-child){
             margin-bottom: 20px !important;
-        }
+        } */
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
     }
