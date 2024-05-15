@@ -52,7 +52,8 @@
         div{
             max-width: 100px;
             img{
-                min-width: 60px;
+                min-width: 100px;
+                max-width: 100px;
             }
         }
         span,
@@ -74,8 +75,10 @@
     .block-product__description{
         .subtitle{
             column-gap: 15px;
-            img{
-                max-width: 60px;
+            div{
+                img{
+                    min-width: 60px;
+                }
             }
         }
     }
