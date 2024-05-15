@@ -76,8 +76,10 @@
         .subtitle{
             column-gap: 15px;
             div{
+                max-width: 60px;
                 img{
                     min-width: 60px;
+                    max-width: 60px;
                 }
             }
         }
