@@ -104,6 +104,10 @@
         align-items: center !important;
     }
 
+    .block-header-item__item{
+        display: flex !important;
+    }
+    /*old class of burger*/
     .block-header__links{
         /* right: auto !important; */
         width: 100% !important;
@@ -117,10 +121,13 @@
         max-height: 100vh !important;
         grid-gap: 20px !important;
     }
-    .block-header-item__item{
-        display: flex !important;
-    }
+    /*New class for burger menu below*/
     .block-header-layout-mobile__dropdown{
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
         align-items: flex-start !important;
         padding-left: 35px !important;
         .block-header__nav{
