@@ -137,9 +137,6 @@ function productCheck() {
         'Спосіб застосування',
         3
       )
-      const closeBagBtn = document.querySelector('.close-button')
-      closeBagBtn.firstElementChild.setAttribute('width','26')
-      closeBagBtn.firstElementChild.setAttribute('height','26')
       clearInterval(check)
     }
   }
