@@ -21,8 +21,8 @@ fetch(apiUrl)
 
     function checkProductList() {
       const productImgLoadCheck = document.querySelector('.product-list-item__image')
-      const closeBagBtn = document.querySelector('.close-button')
-      if (productImgLoadCheck && closeBagBtn) {
+      if (productImgLoadCheck) {
+          const closeBagBtn = document.querySelector('.close-button')
           closeBagBtn.firstElementChild.setAttribute('width','26')
           closeBagBtn.firstElementChild.setAttribute('height','26')
 
