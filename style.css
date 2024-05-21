@@ -78,6 +78,7 @@ main{
 .product-subtitle{
     font-size: 15px;
     margin-bottom: 8px;
+    flex-grow: 1;
 }
 
 @media screen and (max-width: 920px){
