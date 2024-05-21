@@ -76,7 +76,9 @@ main{
 }
 
 @media screen and (max-width: 920px){
-
+    .block-product__title{
+        text-align: center !important;
+    }
     .product-list-item__button--primary{
         pointer-events: auto !important;
     }
