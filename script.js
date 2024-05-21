@@ -50,8 +50,7 @@ fetch(apiUrl)
             const subtitle = matchingProduct.subtitle;
             const newElement = document.createElement('p');
             newElement.innerText = subtitle;
-            newElement.style.fontSize = '15px'
-            newElement.style.marginBottom = '8px'
+            newElement.className = '.product-subtitle'
             
             // Insert the new element as the next sibling
             element.parentNode.insertBefore(newElement, element.nextElementSibling);

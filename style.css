@@ -75,8 +75,15 @@ main{
         }
     }
 }
+.product-subtitle{
+    font-size: 15px;
+    margin-bottom: 8px;
+}
 
 @media screen and (max-width: 920px){
+    .product-subtitle{
+        font-size: 13px;
+    }
     .block-product__title{
         text-align: center !important;
     }
