@@ -1,6 +1,6 @@
 .block-product-list__link{
     background-color: #e8e3c7;
-    padding: 15px 10px !important;
+    padding: 10px !important;
     border-radius: 20px !important;
 }
 .product-list-item__image-wrapper{
@@ -71,6 +71,10 @@
 }
 
 @media screen and (max-width: 920px){
+
+    .product-list-item__button--primary{
+        pointer-events: auto !important;
+    }
     /* Product page replacements */
     .block-product__description{
         .subtitle{
