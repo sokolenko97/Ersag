@@ -19,6 +19,22 @@ fetch(apiUrl)
     const productsData = products.products;
     // You can call your function here that uses productsData
 
+    function checkProductList() {
+      const productImgLoadCheck = document.querySelector('.product-list-item__image')
+      if (productImgLoadCheck) {
+          const closeBagBtn = document.querySelector('.close-button')
+          closeBagBtn.firstElementChild.setAttribute('width','26')
+          closeBagBtn.firstElementChild.setAttribute('height','26')
+
+          let  productSibling = document.querySelectorAll('.product-list-item__title');
+
+          createElementForNextSibling(productSibling, productsData)
+          
+          clearInterval(checkProductListInterval)
+      }
+    }
+    
+    let checkProductListInterval = setInterval(checkProductList, 1);
 
     function createElementForNextSibling(elementsArray, productsArray) {
       elementsArray.forEach(element => {
@@ -45,9 +61,6 @@ fetch(apiUrl)
     
   // Now you can use the productsData constant to work with the products
       // Check if the .product-list-item__price-wrapper element has been loaded
-  let  productSibling = document.querySelectorAll('.product-list-item__title');
-
-  createElementForNextSibling(productSibling, productsData)
 
   let dropDownArrow = document.querySelector('.block-header-item__mobile-dropdown-trigger')
   dropDownArrow.setAttribute('checked','')
