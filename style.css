@@ -112,12 +112,12 @@
         align-items: center !important;
     }
 
-    .block-header-item__item{
+    /* .block-header-item__item{
         display: flex !important;
-    }
+    } */
     /*old class of burger*/
-    .block-header__links{
-        /* right: auto !important; */
+    /* .block-header__links{
+         right: auto !important; 
         width: 100% !important;
 
         padding-left: 90px !important;
@@ -128,9 +128,9 @@
         height: 100vh !important;
         max-height: 100vh !important;
         grid-gap: 20px !important;
-    }
+    } */
     /*New class for burger menu below*/
-    .block-header-layout-mobile__dropdown{
+    /* .block-header-layout-mobile__dropdown{
         width: 100% !important;
         display: flex !important;
         flex-direction: column !important;
@@ -146,12 +146,12 @@
                 }
             }
         }
-    }
+    } */
     div.block-header-item__dropdown-area{
-        margin-top: 0px !important;
+        /* margin-top: 0px !important;
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
-        padding-top: 0px !important;
+        padding-top: 0px !important; */
         display: block !important; 
     }
     .block-header-item__item[data-qa="navigation-item-товари"]{
@@ -167,6 +167,7 @@
         } */
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
+        margin-left: 0px !important;
     }
     .item-content__icon-container-wrapper{
         display: none;
