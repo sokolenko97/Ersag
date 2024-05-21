@@ -204,6 +204,7 @@ main{
         .product-list-item__price-wrapper *,
         .product-list-item__title {
             font-size: 14px !important;
+            flex-grow: 1 !important;
         }
         .product-list-item__button{
             padding: 5px !important;
