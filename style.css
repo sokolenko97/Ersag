@@ -80,9 +80,9 @@ main{
     margin-bottom: 8px;
     flex-grow: 1;
 }
-.product-list-item__title{
+/* .product-list-item__title{
     flex-grow: 1 !important;
-}
+} */
 
 @media screen and (max-width: 920px){
     .product-subtitle{
