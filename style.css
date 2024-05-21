@@ -80,6 +80,9 @@ main{
     margin-bottom: 8px;
     flex-grow: 1;
 }
+.product-list-item__title{
+    flex-grow: 1 !important;
+}
 
 @media screen and (max-width: 920px){
     .product-subtitle{
@@ -204,7 +207,6 @@ main{
         .product-list-item__price-wrapper *,
         .product-list-item__title {
             font-size: 14px !important;
-            flex-grow: 1 !important;
         }
         .product-list-item__button{
             padding: 5px !important;
