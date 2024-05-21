@@ -23,9 +23,9 @@ fetch(apiUrl)
       const productImgLoadCheck = document.querySelector('.product-list-item__image')
       if (productImgLoadCheck) {
         
-          const closeBagBtn = document.querySelector('.close-button')
-          closeBagBtn.firstElementChild.setAttribute('width','26')
-          closeBagBtn.firstElementChild.setAttribute('height','26')
+          // const closeBagBtn = document.querySelector('.close-button')
+          // closeBagBtn.firstElementChild.setAttribute('width','26')
+          // closeBagBtn.firstElementChild.setAttribute('height','26')
 
           let  productSibling = document.querySelectorAll('.product-list-item__title');
 
