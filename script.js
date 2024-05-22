@@ -28,6 +28,7 @@ fetch(apiUrl)
           // closeBagBtn.firstElementChild.setAttribute('height','26')
 
           let  productSibling = document.querySelectorAll('.product-list-item__title');
+          console.log(productsData);
 
           createElementForNextSibling(productSibling, productsData)
 
