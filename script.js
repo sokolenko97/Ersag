@@ -97,7 +97,7 @@ function addImagetoTitle(url, innerText,h2Number) {
 
   const h2El = producDescriptionParagraph[h2Number]
 
-  if (h2El.innerText.includes(innerText)){
+  if (h2El?.innerText.includes(innerText)){
     h2El.prepend(productHistoryImgCont)
     productHistoryImgCont.append(productHistoryImg)
     h2El.className = 'subtitle'
@@ -107,7 +107,7 @@ function addImagetoTitle(url, innerText,h2Number) {
 function productCheck() {
   const productLoadCheck = document.querySelector('.block-product__description > h2')
   const shampooProductCheck = document.querySelector('.block-product__description > h3')
-    if (productLoadCheck?.innerText === 'Історія' || shampooProductCheck?.innerText.includes('Властивості')){
+    if (productLoadCheck?.innerText === 'Історія'){
       moveProductPageHTMLBlocks()
     
       addImagetoTitle(
@@ -139,6 +139,10 @@ function productCheck() {
         'Спосіб застосування',
         3
       )
+      clearInterval(check)
+    }
+    else if (shampooProductCheck?.innerText.includes('Властивості')) {
+      moveProductPageHTMLBlocks()
       clearInterval(check)
     }
 }
