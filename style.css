@@ -114,7 +114,6 @@ main {
     flex-direction: column !important;
     max-height: 97vh !important;
     .product-carousel{
-        margin-top: 60px;
         min-height: 335px;
     }
     .block-product__content-wrapper {
