@@ -54,7 +54,7 @@ fetch(apiUrl)
             newElement.className = 'product-subtitle'
             
             // Insert the new element as the next sibling
-            element.parentNode.insertBefore(newElement, element.nextElementSibling);
+            element.after(newElement);
           }
         } else {
           console.error('productsArray is not an array.');
