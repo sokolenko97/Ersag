@@ -158,10 +158,9 @@ function checkProductPreview(mutationRecords) {
 const config = {
   childList: true
 }
-const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
 const observer = new MutationObserver(checkProductPreview)
 
-observer.observe(prevProdContWrapper,config)
+observer.observe(document.querySelector('.block-product__content-wrapper'),config)
 
 })
 .catch(error => {
