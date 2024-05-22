@@ -142,7 +142,7 @@ function productCheck() {
       const config = {
         childList: true
       }
-      const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
+      const prevProdContWrapper = document.querySelector('main')
       const observer = new MutationObserver(checkProductPreview)
       
       observer.observe(prevProdContWrapper,config)
@@ -153,7 +153,7 @@ function productCheck() {
       const config = {
         childList: true
       }
-      const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
+      const prevProdContWrapper = document.querySelector('main')
       const observer = new MutationObserver(checkProductPreview)
       
       observer.observe(prevProdContWrapper,config)
