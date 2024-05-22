@@ -28,7 +28,6 @@ fetch(apiUrl)
           // closeBagBtn.firstElementChild.setAttribute('height','26')
 
           let  productSibling = document.querySelectorAll('.product-list-item__title');
-          console.log(productsData);
 
           createElementForNextSibling(productSibling, productsData)
 
@@ -55,6 +54,9 @@ fetch(apiUrl)
             
             // Insert the new element as the next sibling
             element.after(newElement);
+          }
+          else{
+            console.log(product.title, elementTitle);
           }
         } else {
           console.error('productsArray is not an array.');
