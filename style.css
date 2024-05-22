@@ -113,6 +113,10 @@ main {
   .block-product--in-preview {
     flex-direction: column !important;
     max-height: 97vh !important;
+    .product-carousel{
+        margin-top: 60px;
+        min-height: 335px;
+    }
     .block-product__content-wrapper {
       padding-left: 0 !important;
     }
