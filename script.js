@@ -56,7 +56,7 @@ fetch(apiUrl)
             element.after(newElement);
           }
           else{
-            console.log(product.title, elementTitle);
+            console.log(elementTitle);
           }
         } else {
           console.error('productsArray is not an array.');
