@@ -64,7 +64,6 @@ main {
   .block-product-wrapper {
     .block-product.block-product--in-preview {
       flex-direction: row !important;
-      max-height: 97vh !important;
     }
   }
 }
@@ -113,6 +112,7 @@ main {
 @media screen and (max-width: 920px) {
   .block-product--in-preview {
     flex-direction: column !important;
+    max-height: 97vh !important;
     .block-product__content-wrapper {
       padding-left: 0 !important;
     }
