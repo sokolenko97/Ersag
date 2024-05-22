@@ -1,3 +1,18 @@
+// Disable context menu (right-click)
+    document.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+    });
+
+    // Disable copy action
+    document.addEventListener('copy', (event) => {
+        event.preventDefault();
+    });
+
+    // Disable cut action
+    document.addEventListener('cut', (event) => {
+        event.preventDefault();
+    });
+
 window.addEventListener('load', function() {
   // Execute code only after the page and its resources are fully loaded
 // setTimeout(function() {
