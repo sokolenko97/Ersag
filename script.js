@@ -113,7 +113,7 @@ function productCheck() {
   const shampooProductCheck = document.querySelector('.block-product__description > h3')
 
   const productBtn = document.querySelector('.block-product__button--primary')
-  if (productBtn.innerText) {
+  if (productBtn?.innerText) {
     moveProductPageHTMLBlocks()
   }
     if (productLoadCheck?.innerText === 'Історія'){
