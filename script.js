@@ -145,7 +145,6 @@ function productCheck() {
       clearInterval(check)
     }
     else if (shampooProductCheck?.innerText.includes('Властивості')) {
-      moveProductPageHTMLBlocks()
       clearInterval(check)
     }
 }
