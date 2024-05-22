@@ -64,6 +64,7 @@ main {
   .block-product-wrapper {
     .block-product.block-product--in-preview {
       flex-direction: row !important;
+      max-height: 97vh !important;
     }
   }
 }
