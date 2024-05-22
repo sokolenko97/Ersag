@@ -1,7 +1,3 @@
-window.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded')
-})
-
 window.addEventListener('load', function() {
   // Execute code only after the page and its resources are fully loaded
 // setTimeout(function() {
