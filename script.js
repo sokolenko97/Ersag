@@ -153,6 +153,8 @@ let check = setInterval(productCheck, 1);
 
 function checkProductPreview(mutationRecords) {
   console.log(mutationRecords);
+  const moreDetailsButton = document.querySelector('.block-product__link')
+  if (moreDetailsButton) moreDetailsButton.remove()
 }
 
 const config = {
