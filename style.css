@@ -49,12 +49,12 @@ main{
     .product-carousel{
         flex-direction: column;
         max-width: 400px !important;
-        .block-product__content-wrapper{
-            .block-product__price-data-wrapper{
-                transform: translate(0px, 0px);
-                .block-product__title{
-                    font-size: 40px;
-                }
+    }
+    .block-product__content-wrapper{
+        .block-product__price-data-wrapper{
+            transform: translate(0px, 0px);
+            .block-product__title{
+                font-size: 40px;
             }
         }
     }
