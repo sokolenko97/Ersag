@@ -110,8 +110,8 @@ function addImagetoTitle(url, innerText,h2Number) {
 function productCheck() {
   const productLoadCheck = document.querySelector('.block-product__description > h2')
   const shampooProductCheck = document.querySelector('.block-product__description > h3')
+  moveProductPageHTMLBlocks()
     if (productLoadCheck?.innerText === 'Історія'){
-      moveProductPageHTMLBlocks()
     
       addImagetoTitle(
         'https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-cropped-m7VpwbLZWNCKgeJQ.svg',
