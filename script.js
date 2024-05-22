@@ -139,10 +139,24 @@ function productCheck() {
         'Спосіб застосування',
         3
       )
+      const config = {
+        childList: true
+      }
+      const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
+      const observer = new MutationObserver(checkProductPreview)
+      
+      observer.observe(prevProdContWrapper,config)
       clearInterval(check)
     }
     else if (shampooProductCheck?.innerText.includes('Властивості')) {
       moveProductPageHTMLBlocks()
+      const config = {
+        childList: true
+      }
+      const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
+      const observer = new MutationObserver(checkProductPreview)
+      
+      observer.observe(prevProdContWrapper,config)
       clearInterval(check)
     }
 }
@@ -155,12 +169,7 @@ function checkProductPreview(mutationRecords) {
   console.log(mutationRecords);
 }
 
-const config = {
-  childList: true
-}
-const observer = new MutationObserver(checkProductPreview)
 
-observer.observe(document.querySelector('.block-product__content-wrapper'),config)
 
 })
 .catch(error => {
