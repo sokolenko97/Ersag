@@ -43,8 +43,12 @@ fetch(apiUrl)
         
         // Check if productsArray is an array
         if (Array.isArray(productsArray)) {
-          const matchingProduct = productsArray.find(product => 
-            product.title === elementTitle);
+          const matchingProduct = productsArray.find(product => {
+            if (product.title !== elementTitle) {
+                console.log(`Non-matching product title: ${product.title} El title: ${elementTitle}`);
+            }
+            return product.title === elementTitle;
+          });
           
           if (matchingProduct) {
             const subtitle = matchingProduct.subtitle;
@@ -54,9 +58,6 @@ fetch(apiUrl)
             
             // Insert the new element as the next sibling
             element.after(newElement);
-          }
-          else{
-            console.log(elementTitle);
           }
         } else {
           console.error('productsArray is not an array.');
@@ -110,7 +111,11 @@ function addImagetoTitle(url, innerText,h2Number) {
 function productCheck() {
   const productLoadCheck = document.querySelector('.block-product__description > h2')
   const shampooProductCheck = document.querySelector('.block-product__description > h3')
-  moveProductPageHTMLBlocks()
+
+  const productBtn = document.querySelector('.block-product__button--primary')
+  if (productBtn.innerText) {
+    moveProductPageHTMLBlocks()
+  }
     if (productLoadCheck?.innerText === 'Історія'){
     
       addImagetoTitle(
