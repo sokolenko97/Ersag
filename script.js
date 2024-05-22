@@ -43,12 +43,8 @@ fetch(apiUrl)
         
         // Check if productsArray is an array
         if (Array.isArray(productsArray)) {
-          const matchingProduct = productsArray.find(product => {
-            if (product.title !== elementTitle) {
-                console.log(`Non-matching product title: ${product.title} El title: ${elementTitle}`);
-            }
-            return product.title === elementTitle;
-          });
+          const matchingProduct = productsArray.find(product => 
+            product.title === elementTitle);
           
           if (matchingProduct) {
             const subtitle = matchingProduct.subtitle;
