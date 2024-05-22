@@ -39,6 +39,19 @@ main{
     }
 }
 
+.block-product--in-preview{
+    flex-direction: row !important;
+    .product-carousel{
+        flex-direction: column;
+        max-width: 400px !important;
+        .block-product__content-wrapper{
+            .block-product__price-data-wrapper{
+                transform: translate(0px, 0px);
+            }
+        }
+    }
+}
+
 .block-product__price-data-wrapper{
     transform: translate(100px, 0px);
 }
@@ -85,6 +98,11 @@ main{
 } */
 
 @media screen and (max-width: 920px){
+
+    .block-product--in-preview{
+        flex-direction: column !important;
+    }
+
     .product-subtitle{
         font-size: 13px;
     }
