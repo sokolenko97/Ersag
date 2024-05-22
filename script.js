@@ -149,6 +149,19 @@ function productCheck() {
 
 let check = setInterval(productCheck, 1);
 
+// Preview product - delete More details link
+
+function checkProductPreview(mutationRecords) {
+  console.log(mutationRecords);
+}
+
+const config = {
+  childList: true
+}
+const prevProdContWrapper = document.querySelector('.block-product__content-wrapper')
+const observer = new MutationObserver(checkProductPreview)
+
+observer.observe(prevProdContWrapper,config)
 
 })
 .catch(error => {
