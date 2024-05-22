@@ -106,8 +106,9 @@ function addImagetoTitle(url, innerText,h2Number) {
 
 function productCheck() {
   const productLoadCheck = document.querySelector('.block-product__description > h2')
+  const shampooProductCheck = document.querySelector('.block-product__description > h3')
   if (productLoadCheck) {
-    if (productLoadCheck.innerText === 'Історія'){
+    if (productLoadCheck.innerText === 'Історія' || shampooProductCheck.innerText.includes('Властивості')){
       moveProductPageHTMLBlocks()
     
       addImagetoTitle(
