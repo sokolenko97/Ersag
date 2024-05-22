@@ -39,7 +39,8 @@ main{
     }
 }
 
-.block-product--in-preview{
+.block-product-wrapper{
+.block-product.block-product--in-preview{
     flex-direction: row !important;
     .product-carousel{
         flex-direction: column;
@@ -50,6 +51,7 @@ main{
             }
         }
     }
+}
 }
 
 .block-product__price-data-wrapper{
