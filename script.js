@@ -171,6 +171,7 @@ let check = setInterval(productCheck, 1);
 
 function checkProductPreview(mutationRecords) {
   const moreDetailsButton = document.querySelector('.block-product__link')
+  console.log(moreDetailsButton);
   if (moreDetailsButton) moreDetailsButton.remove()
 }
 
