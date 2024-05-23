@@ -122,6 +122,9 @@ main {
 } */
 
 @media screen and (max-width: 920px) {
+  .block-product__option-select-wrapper{
+    margin-top: 0px !important;
+  }
   .block-product--in-preview {
     flex-direction: column !important;
     max-height: 97vh !important;
