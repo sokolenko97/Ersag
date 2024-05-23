@@ -122,7 +122,8 @@ main {
 } */
 
 @media screen and (max-width: 920px) {
-  .block-product__option-select-wrapper{
+  .block-product__option-select-wrapper,
+  .block-product__quantity-wrapper{
     margin-top: 0px !important;
   }
   .block-product--in-preview {
