@@ -197,7 +197,7 @@ window.addEventListener("load", function () {
 
       function checkProductPreview(mutationRecords) {
         const closeButton = document.querySelector('.close-button > svg')
-        if (moreDetailsButton){
+        if (closeButton){
           closeButton.setAttribute('width', '26')
           closeButton.setAttribute('height', '26')
         }
