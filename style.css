@@ -11,6 +11,9 @@ main {
   --body-font-weight: 400 !important;
 }
 
+.option-select__select-wrapper{
+  padding-right: 35px !important;
+}
 .block-product__link{
   display: none !important;
 }
