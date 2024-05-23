@@ -195,19 +195,21 @@ window.addEventListener("load", function () {
 
       // Preview product - delete More details link
 
-      // function checkProductPreview(mutationRecords) {
-      //   const moreDetailsButton = document.querySelector('.block-product__link')
-      //   console.log(moreDetailsButton);
-      //   if (moreDetailsButton) moreDetailsButton.remove()
-      // }
+      function checkProductPreview(mutationRecords) {
+        const closeButton = document.querySelector('.close-button > svg')
+        if (moreDetailsButton){
+          closeButton.setAttribute('width', '26')
+          closeButton.setAttribute('height', '26')
+        }
+      }
 
-      // const config = {
-      //   childList: true
-      // }
-      // const prevProdContWrapper = document.querySelector('main')
-      // const observer = new MutationObserver(checkProductPreview)
+      const config = {
+        childList: true
+      }
+      const mainTag = document.querySelector('main')
+      const observer = new MutationObserver(checkProductPreview)
 
-      // observer.observe(prevProdContWrapper,config)
+      observer.observe(mainTag,config)
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
