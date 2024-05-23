@@ -62,6 +62,7 @@ main {
   .block-product__content-wrapper {
     .block-product__price-data-wrapper {
       transform: translate(0px, 0px);
+      margin-top: 0px !important;
       @media screen and (min-width: 920px) {
         .block-product__title {
           font-size: 40px;
