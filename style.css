@@ -147,9 +147,9 @@ main {
     } */
     .block-product__content-wrapper {
       padding-left: 0 !important;
-      .block-product__button-wrapper{
+      /* .block-product__button-wrapper{
         margin-top: 10px !important;
-      }
+      } */
     }
   }
 
