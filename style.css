@@ -10,6 +10,11 @@ main {
   --font-secondary: "Montserrat", serif !important;
   --body-font-weight: 400 !important;
 }
+
+.block-product__link{
+  display: none !important;
+}
+
 .block-product-list__link {
   background-color: #e8e3c7;
   padding: 10px !important;

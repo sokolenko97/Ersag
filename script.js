@@ -169,19 +169,19 @@ let check = setInterval(productCheck, 1);
 
 // Preview product - delete More details link
 
-function checkProductPreview(mutationRecords) {
-  const moreDetailsButton = document.querySelector('.block-product__link')
-  console.log(moreDetailsButton);
-  if (moreDetailsButton) moreDetailsButton.remove()
-}
+// function checkProductPreview(mutationRecords) {
+//   const moreDetailsButton = document.querySelector('.block-product__link')
+//   console.log(moreDetailsButton);
+//   if (moreDetailsButton) moreDetailsButton.remove()
+// }
 
-const config = {
-  childList: true
-}
-const prevProdContWrapper = document.querySelector('main')
-const observer = new MutationObserver(checkProductPreview)
+// const config = {
+//   childList: true
+// }
+// const prevProdContWrapper = document.querySelector('main')
+// const observer = new MutationObserver(checkProductPreview)
 
-observer.observe(prevProdContWrapper,config)
+// observer.observe(prevProdContWrapper,config)
 
 })
 .catch(error => {
