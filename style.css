@@ -139,9 +139,9 @@ main {
   .block-product--in-preview {
     flex-direction: column !important;
     max-height: 95vh !important;
-    .product-carousel{
+    /* .product-carousel{
         min-height: 335px;
-    }
+    } */
     .block-product__content-wrapper {
       padding-left: 0 !important;
       .block-product__button-wrapper{
