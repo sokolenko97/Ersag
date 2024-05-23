@@ -61,6 +61,10 @@ main {
   }
   .block-product__content-wrapper {
     .block-product__price-data-wrapper {
+      .block-product__quantity-wrapper{
+        align-items: center !important;
+        column-gap: 30px;
+      }
       transform: translate(0px, 0px);
       margin-top: 0px !important;
       @media screen and (min-width: 920px) {

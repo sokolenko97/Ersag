@@ -104,12 +104,12 @@ window.addEventListener("load", function () {
         const previewBlockClass = document.querySelector(
           ".block-product--in-preview"
         );
+        const productBuyButton = document.querySelector(
+          ".block-product__button-wrapper"
+        );
         if (previewBlockClass === null) {
           const productDetailsElement = document.querySelector(
             ".block-product__price-data-wrapper"
-          );
-          const productBuyButton = document.querySelector(
-            ".block-product__button-wrapper"
           );
 
           productDetailsElement.append(productBuyButton);
@@ -119,6 +119,10 @@ window.addEventListener("load", function () {
           );
 
           productImageContainer.parentElement.append(productDetailsElement);
+        }
+        else{
+          const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
+          productQuantityWrapperDiv.append(productBuyButton)
         }
       }
 
