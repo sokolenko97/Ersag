@@ -124,10 +124,6 @@ function productCheck() {
   const shampooProductCheck = document.querySelector('.block-product__description > h3')
 
   const productBtn = document.querySelector('.block-product__button--primary')
-  if (productBtn?.innerText) {
-    moveProductPageHTMLBlocks()
-    clearInterval(check)
-  }
     if (productLoadCheck?.innerText === 'Історія'){
     
       addImagetoTitle(
@@ -159,9 +155,15 @@ function productCheck() {
         'Спосіб застосування',
         3
       )
+      moveProductPageHTMLBlocks()
       clearInterval(check)
     }
     else if (shampooProductCheck?.innerText.includes('Властивості')) {
+      moveProductPageHTMLBlocks()
+      clearInterval(check)
+    }
+    else if (productBtn?.innerText) {
+      moveProductPageHTMLBlocks()
       clearInterval(check)
     }
 }
