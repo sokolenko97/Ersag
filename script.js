@@ -126,6 +126,7 @@ function productCheck() {
   const productBtn = document.querySelector('.block-product__button--primary')
   if (productBtn?.innerText) {
     moveProductPageHTMLBlocks()
+    clearInterval(check)
   }
     if (productLoadCheck?.innerText === 'Історія'){
     
