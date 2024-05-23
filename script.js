@@ -203,7 +203,9 @@ window.addEventListener("load", function () {
         }
         const previewBlockClass = document.querySelector(
           ".block-product--in-preview");
-
+          const productBuyButton = document.querySelector(
+            ".block-product__button-wrapper"
+          );
         if (previewBlockClass) {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
