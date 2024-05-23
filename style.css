@@ -67,6 +67,9 @@ main {
       .block-product__quantity-wrapper{
         align-items: center !important;
         column-gap: 30px;
+        .block-product__button-wrapper{
+          margin-top: 0px !important;
+        }
       }
       transform: translate(0px, 0px);
       margin-top: 0px !important;
