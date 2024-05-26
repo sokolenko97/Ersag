@@ -232,11 +232,12 @@ window.addEventListener("load", function () {
         childList: true
       }
       const mainTag = document.querySelector('main')
-      const observer = new MutationObserver(checkProductPreview)
+      const previewObserver = new MutationObserver(checkProductPreview)
+      const cartObserver = new MutationObserver(checkProductPreview)
 
       const asideCartTag = document.getElementsByTagName('aside')
-      observer.observe(asideCartTag,config)
-      observer.observe(mainTag,config)
+      cartObserver.observe(asideCartTag,config)
+      previewObserver.observe(mainTag,config)
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
