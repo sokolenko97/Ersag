@@ -207,33 +207,44 @@ window.addEventListener("load", function () {
       // Preview product - delete More details link
 
       function checkProductPreview(mutationRecords) {
-        const closeButton = document.querySelector('.close-button > svg')
-        if (closeButton){
-          closeButton.setAttribute('width', '26')
-          closeButton.setAttribute('height', '26')
+        const closeButton = document.querySelector('.close-button > svg');
+        if (closeButton) {
+            closeButton.setAttribute('width', '26');
+            closeButton.setAttribute('height', '26');
         }
-        const previewBlockClass = document.querySelector(
-          ".block-product--in-preview");
-        const productBuyButton = document.querySelector(
-          ".block-product__button-wrapper"
-        );
+        const previewBlockClass = document.querySelector(".block-product--in-preview");
+        const productBuyButton = document.querySelector(".block-product__button-wrapper");
         if (previewBlockClass) {
-          const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
-          productQuantityWrapperDiv.append(productBuyButton)
+            const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper');
+            productQuantityWrapperDiv.append(productBuyButton);
         }
-        const checkoutButton = document.querySelector('.cart__checkout-button')
-        if (checkoutButton) {
-          checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+    
+        const asideCartTag = document.querySelector('aside');
+        if (asideCartTag) {
+            const checkoutButton = document.querySelector('.cart__checkout-button');
+            if (checkoutButton) {
+                checkoutButton.replaceWith(checkoutButton.cloneNode(true));
+            }
         }
-      }
-
-      const config = {
+    }
+    
+    const config = {
         childList: true
-      }
-      const mainTag = document.querySelector('main')
-      const observer = new MutationObserver(checkProductPreview)
-
-      observer.observe(mainTag,config)
+    };
+    
+    const mainTag = document.querySelector('main');
+    const asideCartTag = document.querySelector('aside');
+    
+    if (mainTag) {
+        const observer = new MutationObserver(checkProductPreview);
+        observer.observe(mainTag, config);
+    }
+    
+    if (asideCartTag) {
+        const observer = new MutationObserver(checkProductPreview);
+        observer.observe(asideCartTag, config);
+    }
+    
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
