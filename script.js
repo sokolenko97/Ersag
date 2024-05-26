@@ -222,7 +222,8 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
-        const asideCartTag = document.getElementsByTagName('aside')
+        const asideCartTag = document.querySelector('aside')
+        console.log(asideCartTag);
         if (asideCartTag) {
           const checkoutButton = document.querySelector('.cart__checkout-button')
           checkoutButton.replaceWith(checkoutButton.cloneNode(true))
