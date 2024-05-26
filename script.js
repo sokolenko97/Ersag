@@ -235,7 +235,7 @@ window.addEventListener("load", function () {
 
       const config = {
         childList: true,
-        subtree: true
+        // subtree: true
       }
       const mainTag = document.querySelector('main')
       const observer = new MutationObserver(checkProductPreview)
