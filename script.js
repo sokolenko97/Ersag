@@ -69,10 +69,6 @@ window.addEventListener("load", function () {
 
               // Insert the new element as the next sibling
               element.after(newElement);
-
-              // const productPoints = matchingProduct.variants.weight
-              // const productSKU = matchingProduct.variants.sku
-              // addProductSKUandPoints(productPoints,productSKU)
             }
           } else {
             console.error("productsArray is not an array.");
@@ -91,6 +87,21 @@ window.addEventListener("load", function () {
         SKUElement.className = 'block-product__SKU'
         additionalInfoDiv.append(SKUElement)
         SKUElement.innerText = `Артікул: ${SKU}`
+      }
+
+      function matchTheProduct(productsArray) {
+        const elementTitle = document.querySelector('.block-product__title')
+        if (Array.isArray(productsArray)) {
+          const matchingProduct = productsArray.find(
+            (product) => product.title === elementTitle
+          );
+
+          if (matchingProduct){
+            const productPoints = matchingProduct.variants.weight
+            const productSKU = matchingProduct.variants.sku
+            addProductSKUandPoints(productPoints,productSKU)
+          }
+        }
       }
 
       // Now you can use the productsData constant to work with the products
@@ -128,6 +139,7 @@ window.addEventListener("load", function () {
 
           productImageContainer.parentElement.append(productDetailsElement);
         }
+        matchTheProduct(productsArray)
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
