@@ -69,11 +69,28 @@ window.addEventListener("load", function () {
 
               // Insert the new element as the next sibling
               element.after(newElement);
+
+              const productPoints = matchingProduct.variants.weight
+              const productSKU = matchingProduct.variants.sku
+              addProductSKUandPoints(productPoints,productSKU)
             }
           } else {
             console.error("productsArray is not an array.");
           }
         });
+      }
+
+      function addProductSKUandPoints(points,SKU) {
+        const additionalInfoDiv = document.querySelector('.block-product__additional-info')
+        const pointsElement = document.createElement('p')
+        pointsElement.className = 'block-product__points'
+        additionalInfoDiv.append(pointsElement)
+        pointsElement.innerText = `Бали: ${points}`
+
+        const SKUElement = document.createElement('p')
+        SKUElement.className = 'block-product__SKU'
+        additionalInfoDiv.append(SKUElement)
+        SKUElement.innerText = `Артікул: ${SKU}`
       }
 
       // Now you can use the productsData constant to work with the products

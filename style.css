@@ -91,6 +91,18 @@ main {
   }
 }
 
+/* Points and SKU */
+
+.block-product__price-wrapper{
+  column-gap: 70px !important;
+  .block-product__additional-info{
+    flex-direction: column !important;
+    p{
+      font-size: 17px !important;
+    }
+  }
+}
+
 @media screen and (min-width: 920px) {
   .block-product-wrapper {
     .block-product.block-product--in-preview {
