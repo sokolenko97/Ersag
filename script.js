@@ -226,7 +226,7 @@ window.addEventListener("load", function () {
           let checkoutButton = document.querySelector('.cart__checkout-button')
           if (checkoutButton) {
             console.log(checkoutButton);
-            // checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+            checkoutButton.replaceWith(checkoutButton.cloneNode(true))
             checkoutButton.classList.remove('cart__checkout-button')
             checkoutButton = undefined
             console.log(checkoutButton);
