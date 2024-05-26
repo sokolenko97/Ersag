@@ -225,7 +225,7 @@ window.addEventListener("load", function () {
         if (asideCartTag) {
           const checkoutButton = document.querySelector('.cart__checkout-button')
           // checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-          checkoutButton.removeEventListener('click')
+          checkoutButton.removeEventListener('click', p)
         }
       }
 
