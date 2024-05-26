@@ -225,15 +225,13 @@ window.addEventListener("load", function () {
         // if (asideCartTag) {
           let checkoutButton = document.querySelector('.cart__checkout-button')
           if (checkoutButton) {
-            console.log(checkoutButton);
             observer.disconnect()
 
             checkoutButton.replaceWith(checkoutButton.cloneNode(true))
             checkoutButton.classList.remove('cart__checkout-button')
             checkoutButton = false
-            
+
             observer.observe(mainTag, config);
-            console.log(checkoutButton);
         }
       }
 
