@@ -207,6 +207,7 @@ window.addEventListener("load", function () {
       // Preview product - delete More details link
 
       function checkProductPreview(mutationRecords) {
+        console.log('Observed');
         const closeButton = document.querySelector('.close-button > svg')
         if (closeButton){
           closeButton.setAttribute('width', '26')
@@ -221,7 +222,7 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
-
+        const asideCartTag = document.getElementsByTagName('aside')
         if (asideCartTag) {
           const checkoutButton = document.querySelector('.cart__checkout-button')
           checkoutButton.replaceWith(checkoutButton.cloneNode(true))
@@ -229,15 +230,13 @@ window.addEventListener("load", function () {
       }
 
       const config = {
-        childList: true
+        childList: true,
+        subtree: true
       }
       const mainTag = document.querySelector('main')
-      const previewObserver = new MutationObserver(checkProductPreview)
-      const cartObserver = new MutationObserver(checkProductPreview)
+      const observer = new MutationObserver(checkProductPreview)
 
-      const asideCartTag = document.getElementsByTagName('aside')
-      cartObserver.observe(asideCartTag,config)
-      previewObserver.observe(mainTag,config)
+      observer.observe(mainTag,config)
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
