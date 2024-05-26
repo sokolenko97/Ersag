@@ -221,18 +221,16 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
-        // const asideCartTag = document.querySelector('aside')
-        // if (asideCartTag) {
-          let checkoutButton = document.querySelector('.cart__checkout-button')
-          if (checkoutButton) {
-            observer.disconnect()
+        //   let checkoutButton = document.querySelector('.cart__checkout-button')
+        //   if (checkoutButton) {
+        //     observer.disconnect()
 
-            checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-            // checkoutButton.classList.remove('cart__checkout-button')
-            // checkoutButton = false
+        //     checkoutButton.replaceWith(checkoutButton.cloneNode(true))
 
-            observer.observe(mainTag, config);
-        }
+        //     checkoutButton.addEventListener('click', )
+
+        //     observer.observe(mainTag, config);
+        // }
       }
 
       const config = {
