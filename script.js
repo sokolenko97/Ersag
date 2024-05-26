@@ -139,7 +139,7 @@ window.addEventListener("load", function () {
 
           productImageContainer.parentElement.append(productDetailsElement);
         }
-        matchTheProduct(productsArray)
+        matchTheProduct(productsData)
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
