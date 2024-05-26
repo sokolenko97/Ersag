@@ -204,6 +204,10 @@ main {
     align-items: center !important;
   }
 
+  .site-drawer__close-button{
+    padding-bottom: 0px !important;
+  }
+
   /* .block-header-item__item{
         display: flex !important;
     } */
