@@ -49,6 +49,7 @@ main {
     .product-carousel {
       flex-direction: row;
       max-width: 100% !important;
+      overflow: visible !important;
     }
   }
 }
@@ -183,7 +184,6 @@ main {
     .block-product {
       .product-carousel {
         flex-direction: column !important;
-        overflow: visible !important;
       }
     }
   }
