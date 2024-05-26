@@ -207,7 +207,6 @@ window.addEventListener("load", function () {
       // Preview product - delete More details link
 
       function checkProductPreview(mutationRecords) {
-        console.log('Observed');
         const closeButton = document.querySelector('.close-button > svg')
         if (closeButton){
           closeButton.setAttribute('width', '26')
