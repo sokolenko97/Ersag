@@ -78,6 +78,7 @@ window.addEventListener("load", function () {
 
       function addProductSKUandPoints(points,SKU) {
         const additionalInfoDiv = document.querySelector('.block-product__additional-info')
+        console.log(additionalInfoDiv);
         const pointsElement = document.createElement('p')
         pointsElement.className = 'block-product__points'
         additionalInfoDiv.append(pointsElement)
@@ -87,18 +88,23 @@ window.addEventListener("load", function () {
         SKUElement.className = 'block-product__SKU'
         additionalInfoDiv.append(SKUElement)
         SKUElement.innerText = `Артікул: ${SKU}`
+        console.log(pointsElement,SKUElement);
       }
 
       function matchTheProduct(productsArray) {
+        console.log('Searching products');
         const elementTitle = document.querySelector('.block-product__title')
+        console.log(elementTitle);
         if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(
             (product) => product.title === elementTitle
           );
 
           if (matchingProduct){
+            console.log(matchingProduct);
             const productPoints = matchingProduct.variants.weight
             const productSKU = matchingProduct.variants.sku
+            console.log(productPoints,productSKU);
             addProductSKUandPoints(productPoints,productSKU)
           }
         }
