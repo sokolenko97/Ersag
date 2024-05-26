@@ -57,8 +57,10 @@ window.addEventListener("load", function () {
       let checkProductListInterval = setInterval(checkProductList, 1);
 
       function correctGiftsPriceTo0() {
-        const giftDiscountedPrice = document.querySelector('.product-list-item__price-content')
-        giftDiscountedPrice.innerText = '₴0.00'
+        const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
+        giftDiscountedPrice.forEach(element => {
+          element.innerText = '₴0.00'
+        });
       }
 
       function createElementForNextSibling(elementsArray, productsArray) {
