@@ -230,6 +230,7 @@ window.addEventListener("load", function () {
             checkoutButton.classList.remove('cart__checkout-button')
             checkoutButton = false
             console.log(checkoutButton);
+            observer.disconnect()
           // }
         }
       }
