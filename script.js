@@ -51,20 +51,6 @@ window.addEventListener("load", function () {
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
-      function correctGiftsPriceTo0(giftPrice='₴0.00') {
-        const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
-        giftDiscountedPrice.forEach(element => {
-          element.innerText = giftPrice
-        });
-        const giftProductPage = document.querySelector('.block-product__price--sale')
-        if (giftProductPage) {
-          const discountedPriceDiv = document.querySelector('block-product__additional-info')
-          if (discountedPriceDiv?.firstElementChild?.innerText) {
-            discountedPriceDiv.firstElementChild.innerText = giftPrice
-          }
-        }
-      }
-
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
           const elementTitle = element.innerText;
@@ -125,7 +111,6 @@ window.addEventListener("load", function () {
 
           productImageContainer.parentElement.append(productDetailsElement);
         }
-        correctGiftsPriceTo0()
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
