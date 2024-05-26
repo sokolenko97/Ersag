@@ -47,14 +47,19 @@ window.addEventListener("load", function () {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
-
+          correctGiftsPriceTo0()
           createElementForNextSibling(productSibling, productsData);
-
+          
           clearInterval(checkProductListInterval);
         }
       }
 
       let checkProductListInterval = setInterval(checkProductList, 1);
+
+      function correctGiftsPriceTo0() {
+        const giftDiscountedPrice = document.querySelector('.product-list-item__price-content')
+        giftDiscountedPrice.innerText = '₴0.00'
+      }
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
