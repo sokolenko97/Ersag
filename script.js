@@ -222,13 +222,13 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton)
         }
         const asideCartTag = document.querySelector('aside')
-        if (asideCartTag) {
-          const checkoutButton = document.querySelector('.cart__checkout-button')
-          if (checkoutButton.classList.contains('cart__checkout-button')) {
-            checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-            checkoutButton.classList.remove('cart__checkout-button')
-          }
-        }
+        // if (asideCartTag) {
+        //   const checkoutButton = document.querySelector('.cart__checkout-button')
+        //   if (checkoutButton.classList.contains('cart__checkout-button')) {
+        //     checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+        //     checkoutButton.classList.remove('cart__checkout-button')
+        //   }
+        // }
       }
 
       function name(params) {
