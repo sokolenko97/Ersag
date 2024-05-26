@@ -97,7 +97,7 @@ window.addEventListener("load", function () {
         console.log(elementTitle);
         if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(
-            (product) => product.title === elementTitle
+            (product) => product.title === elementTitle.innerText
           );
 
           if (matchingProduct){
