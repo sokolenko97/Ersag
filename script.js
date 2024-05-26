@@ -206,12 +206,16 @@ window.addEventListener("load", function () {
 
       // Preview product - delete More details link
 
-      function checkProductPreview(mutationRecords) {
+      function changeCloseButtonSize() {
         const closeButton = document.querySelector('.close-button > svg')
         if (closeButton){
           closeButton.setAttribute('width', '26')
           closeButton.setAttribute('height', '26')
         }
+      }
+
+      function checkProductPreview(mutationRecords) {
+        changeCloseButtonSize()
         const previewBlockClass = document.querySelector(
           ".block-product--in-preview");
         const productBuyButton = document.querySelector(
@@ -223,14 +227,12 @@ window.addEventListener("load", function () {
         }
       }
         function watchCart(mutationRecords) {
-            let checkoutButton = document.querySelector('.cart__checkout-button')
+            const checkoutButton = document.querySelector('.cart__checkout-button')
             if (checkoutButton) {
               // observer.disconnect()
-  
+              changeCloseButtonSize()
               checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-  
               // checkoutButton.addEventListener('click', )
-  
               // observer.observe(mainTag, config);
           }
         }
