@@ -221,26 +221,32 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
-        //   let checkoutButton = document.querySelector('.cart__checkout-button')
-        //   if (checkoutButton) {
-        //     observer.disconnect()
-
-        //     checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-
-        //     checkoutButton.addEventListener('click', )
-
-        //     observer.observe(mainTag, config);
-        // }
       }
+        function watchCart(mutationRecords) {
+            let checkoutButton = document.querySelector('.cart__checkout-button')
+            if (checkoutButton) {
+              // observer.disconnect()
+  
+              checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+  
+              // checkoutButton.addEventListener('click', )
+  
+              // observer.observe(mainTag, config);
+          }
+        }
+
 
       const config = {
         childList: true,
         // subtree: true
       }
       const mainTag = document.querySelector('main')
-      const observer = new MutationObserver(checkProductPreview)
+      const productPreviewObserver = new MutationObserver(checkProductPreview)
+      productPreviewObserver.observe(mainTag,config)
 
-      observer.observe(mainTag,config)
+      const cartElement = document.querySelector('[data-qa="user-section-zyroecommerceshoppingcart"]')
+      const cartObserver = new MutationObserver(watchCart)
+      cartObserver.observe(cartElement,config)
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
