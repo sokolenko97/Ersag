@@ -51,17 +51,19 @@ window.addEventListener("load", function () {
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
-      // function correctGiftsPriceTo0() {
-      //   const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
-      //   giftDiscountedPrice.forEach(element => {
-      //     element.innerText = '₴0.00'
-      //   });
-      //   const giftProductPage = document.querySelector('.block-product__price--sale')
-      //   if (giftProductPage) {
-      //     const discountedPriceDiv = document.querySelector('block-product__additional-info')
-
-      //   }
-      // }
+      function correctGiftsPriceTo0(giftPrice='₴0.00') {
+        const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
+        giftDiscountedPrice.forEach(element => {
+          element.innerText = giftPrice
+        });
+        const giftProductPage = document.querySelector('.block-product__price--sale')
+        if (giftProductPage) {
+          const discountedPriceDiv = document.querySelector('block-product__additional-info')
+          if (discountedPriceDiv?.firstElementChild?.innerText) {
+            discountedPriceDiv.firstElementChild.innerText = giftPrice
+          }
+        }
+      }
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
@@ -123,6 +125,7 @@ window.addEventListener("load", function () {
 
           productImageContainer.parentElement.append(productDetailsElement);
         }
+        correctGiftsPriceTo0()
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -198,11 +201,11 @@ window.addEventListener("load", function () {
 
       // Preview product - delete More details link
 
-      function changeCloseButtonSize() {
+      function changeCloseButtonSize(size='26') {
         const closeButton = document.querySelector('.close-button > svg')
         if (closeButton){
-          closeButton.setAttribute('width', '26')
-          closeButton.setAttribute('height', '26')
+          closeButton.setAttribute('width', size)
+          closeButton.setAttribute('height', size)
         }
       }
 
