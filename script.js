@@ -228,8 +228,8 @@ window.addEventListener("load", function () {
             observer.disconnect()
 
             checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-            checkoutButton.classList.remove('cart__checkout-button')
-            checkoutButton = false
+            // checkoutButton.classList.remove('cart__checkout-button')
+            // checkoutButton = false
 
             observer.observe(mainTag, config);
         }
