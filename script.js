@@ -221,15 +221,15 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
-        const asideCartTag = document.querySelector('aside')
-        if (asideCartTag) {
+        // const asideCartTag = document.querySelector('aside')
+        // if (asideCartTag) {
           let checkoutButton = document.querySelector('.cart__checkout-button')
           if (checkoutButton) {
             console.log(checkoutButton);
             checkoutButton.replaceWith(checkoutButton.cloneNode(true))
             console.log(checkoutButton);
             checkoutButton = undefined
-          }
+          // }
         }
       }
 
