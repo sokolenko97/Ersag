@@ -70,9 +70,9 @@ window.addEventListener("load", function () {
               // Insert the new element as the next sibling
               element.after(newElement);
 
-              const productPoints = matchingProduct.variants.weight
-              const productSKU = matchingProduct.variants.sku
-              addProductSKUandPoints(productPoints,productSKU)
+              // const productPoints = matchingProduct.variants.weight
+              // const productSKU = matchingProduct.variants.sku
+              // addProductSKUandPoints(productPoints,productSKU)
             }
           } else {
             console.error("productsArray is not an array.");
