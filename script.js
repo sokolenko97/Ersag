@@ -228,7 +228,7 @@ window.addEventListener("load", function () {
             console.log(checkoutButton);
             checkoutButton.replaceWith(checkoutButton.cloneNode(true))
             checkoutButton.classList.remove('cart__checkout-button')
-            checkoutButton = undefined
+            checkoutButton = false
             console.log(checkoutButton);
           // }
         }
