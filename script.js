@@ -100,8 +100,8 @@ window.addEventListener("load", function () {
             (product) => product.title === elementTitle.innerText
           );
 
+          console.log(matchingProduct);
           if (matchingProduct){
-            console.log(matchingProduct);
             const productPoints = Number(matchingProduct.ribbon_text)
             const productSKU = matchingProduct.variants[0].sku
             console.log(productPoints,productSKU);
