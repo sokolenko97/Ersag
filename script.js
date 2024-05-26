@@ -226,7 +226,7 @@ window.addEventListener("load", function () {
           const checkoutButton = document.querySelector('.cart__checkout-button')
           if (checkoutButton) {
             checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-            checkoutButton.className = '.cart-checkout-button'
+            checkoutButton.classList.remove('cart__checkout-button')
           }
         }
       }
