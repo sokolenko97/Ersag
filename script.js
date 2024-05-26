@@ -47,7 +47,6 @@ window.addEventListener("load", function () {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
-          correctGiftsPriceTo0()
           createElementForNextSibling(productSibling, productsData);
           
           clearInterval(checkProductListInterval);
@@ -56,12 +55,17 @@ window.addEventListener("load", function () {
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
-      function correctGiftsPriceTo0() {
-        const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
-        giftDiscountedPrice.forEach(element => {
-          element.innerText = '₴0.00'
-        });
-      }
+      // function correctGiftsPriceTo0() {
+      //   const giftDiscountedPrice = document.querySelectorAll('.product-list-item__price-content')
+      //   giftDiscountedPrice.forEach(element => {
+      //     element.innerText = '₴0.00'
+      //   });
+      //   const giftProductPage = document.querySelector('.block-product__price--sale')
+      //   if (giftProductPage) {
+      //     const discountedPriceDiv = document.querySelector('block-product__additional-info')
+
+      //   }
+      // }
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
