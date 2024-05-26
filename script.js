@@ -226,17 +226,15 @@ window.addEventListener("load", function () {
           let checkoutButton = document.querySelector('.cart__checkout-button')
           if (checkoutButton) {
             console.log(checkoutButton);
-            // checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+            observer.disconnect()
+
+            checkoutButton.replaceWith(checkoutButton.cloneNode(true))
             checkoutButton.classList.remove('cart__checkout-button')
             checkoutButton = false
+            
+            observer.observe(mainTag, config);
             console.log(checkoutButton);
-            observer.disconnect()
-          // }
         }
-      }
-
-      function name(params) {
-        
       }
 
       const config = {
