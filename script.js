@@ -102,7 +102,7 @@ window.addEventListener("load", function () {
 
           if (matchingProduct){
             console.log(matchingProduct);
-            const productPoints = matchingProduct.ribbon_text
+            const productPoints = matchingProduct.ribbon_text+""
             const productSKU = matchingProduct.variants[0].sku
             console.log(productPoints,productSKU);
             addProductSKUandPoints(productPoints,productSKU)
