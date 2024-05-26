@@ -28,6 +28,14 @@ main {
   height: auto !important;
 }
 
+/* Hide gifts price */
+
+#zYS1VA{
+  .product-list-item__price-wrapper{
+    display: none !important;
+  }
+}
+
 /* Product page */
 
 /*image*/
