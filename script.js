@@ -221,6 +221,10 @@ window.addEventListener("load", function () {
           const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
           productQuantityWrapperDiv.append(productBuyButton)
         }
+        const checkoutButton = document.querySelector('.cart__checkout-button')
+        if (checkoutButton) {
+          checkoutButton.replaceWith(checkoutButton.cloneNode(true))
+        }
       }
 
       const config = {
