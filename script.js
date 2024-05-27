@@ -336,7 +336,7 @@ window.addEventListener("load", function () {
         const sendOrderBtn = formCopy.firstElementChild.lastElementChild;
         // sendOrderBtn.setAttribute('type','button')
         sendOrderBtn.classList.add('form-button')
-        changeButtonEvent('submit','.form-button', showThankYouPopup);
+        // changeButtonEvent('submit','.form-button', showThankYouPopup);
       }
 
       function showThankYouPopup(e) {
