@@ -295,7 +295,11 @@ window.addEventListener("load", function () {
         if (checkoutButton) {
           changeCloseButtonSize();
           checkoutButton.replaceWith(checkoutButton.cloneNode(true));
+          checkoutButton.addEventListener('click', openCheckputFormPopup)
         }
+      }
+      function openCheckputFormPopup() {
+        
       }
     })
     .catch((error) => {
