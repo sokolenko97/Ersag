@@ -258,13 +258,9 @@ window.addEventListener("load", function () {
           const cartElement = document.querySelector(
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
-          const cartObserver = new MutationObserver(
-            changeButtonEvent(
-              undefined,
-              ".cart__checkout-button",
-              openCheckputFormPopup
-            )
-          );
+          const cartObserver = new MutationObserver((mutationRecords) => {
+            changeButtonEvent(mutationRecords, ".cart__checkout-button", openCheckputFormPopup);
+          });
           cartObserver.observe(cartElement, config);
         }
       }
