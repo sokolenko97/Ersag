@@ -67,6 +67,7 @@ main {
 }
 
 .block-product.block-product--in-preview {
+  align-items: center !important;
   .product-carousel {
     flex-direction: column;
     max-width: 400px !important;
