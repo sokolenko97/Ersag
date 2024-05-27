@@ -295,8 +295,8 @@ window.addEventListener("load", function () {
         if (checkoutButton) {
           changeCloseButtonSize();
           checkoutButton.replaceWith(checkoutButton.cloneNode(true));
-          checkoutButton.addEventListener('click', openCheckputFormPopup)
         }
+        checkoutButton.addEventListener('click', openCheckputFormPopup)
       }
       function openCheckputFormPopup(e) {
         const modalWrapper = document.createElement('div')
