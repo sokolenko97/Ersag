@@ -259,7 +259,7 @@ window.addEventListener("load", function () {
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
           const cartObserver = new MutationObserver((mutationRecords) => {
-            changeButtonEvent(".cart__checkout-button", openCheckputFormPopup);
+            changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
           });
           cartObserver.observe(cartElement, config);
         }
@@ -292,13 +292,13 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-      function changeButtonEvent(selector, clickFunc) {
+      function changeButtonEvent(event,selector, clickFunc) {
         const checkoutButton = document.querySelector(selector);
         if (checkoutButton) {
           changeCloseButtonSize();
           const clonedButton = checkoutButton.cloneNode(true);
           checkoutButton.replaceWith(clonedButton);
-          clonedButton.addEventListener("click", clickFunc);
+          clonedButton.addEventListener(event, clickFunc);
         }
       }
       function openCheckputFormPopup(e) {
@@ -336,7 +336,7 @@ window.addEventListener("load", function () {
         const sendOrderBtn = formCopy.firstElementChild.lastElementChild;
         // sendOrderBtn.setAttribute('type','button')
         sendOrderBtn.classList.add('form-button')
-        changeButtonEvent('.form-button', showThankYouPopup);
+        changeButtonEvent('submit','.form-button', showThankYouPopup);
       }
 
       function showThankYouPopup(e) {
