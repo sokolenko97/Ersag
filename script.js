@@ -86,9 +86,11 @@ window.addEventListener("load", function () {
                   productID = key[1].productId[1]
                 }
               }
+              console.log(productID);
               matchingProduct = productsArray.find(
                 (product) => product.id === productID
               );
+              console.log(matchingProduct);
               if (matchingProduct) {
                 createProductSubtitle(matchingProduct)
               }
