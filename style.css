@@ -164,6 +164,9 @@ main {
     --size: 38px !important;
   }
   .block-product__option-select-wrapper,
+  .block-product__option-select{
+    margin: 0 auto !important;
+  }
   .block-product__quantity-wrapper{
     margin-top: 0px !important;
   }
