@@ -31,9 +31,7 @@ window.addEventListener("load", function () {
       return response.json();
     })
     .then((products) => {
-      // Assign the products to a constant
       const productsData = products.products;
-      // You can call your function here that uses productsData
 
       function checkProductList() {
         const productImgLoadCheck = document.querySelector(
