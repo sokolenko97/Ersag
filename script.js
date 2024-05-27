@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
               let productID
 
               for (const key in astraIslandPagesObj) {
-                if (key[1]?.name[1]) {
+                if (key[1]?.name) {
                   if (key[1].name[1] === elementTitle) {
                     productID = key[1].productId[1]
                   }
