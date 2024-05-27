@@ -200,6 +200,7 @@ window.addEventListener("load", function () {
         const productBtn = document.querySelector(
           ".block-product__button--primary"
         );
+        const astraIslandEl = document.querySelector('[props^="{\\"page-data"]')
         if (productLoadCheck?.innerText === "Історія") {
           addImagetoTitle(
             "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-cropped-m7VpwbLZWNCKgeJQ.svg",
@@ -238,6 +239,18 @@ window.addEventListener("load", function () {
         } else if (productBtn?.innerText) {
           moveProductPageHTMLBlocks();
           clearInterval(check);
+        } else if (astraIslandEl){
+          const config = {
+            childList: true,
+            // subtree: true
+          }
+          const mainTag = document.querySelector('main')
+          const productPreviewObserver = new MutationObserver(checkProductPreview)
+          productPreviewObserver.observe(mainTag,config)
+    
+          const cartElement = document.querySelector('[data-qa="user-section-zyroecommerceshoppingcart"]')
+          const cartObserver = new MutationObserver(watchCart)
+          cartObserver.observe(cartElement,config)
         }
       }
 
@@ -273,18 +286,6 @@ window.addEventListener("load", function () {
           }
         }
 
-
-      const config = {
-        childList: true,
-        // subtree: true
-      }
-      const mainTag = document.querySelector('main')
-      const productPreviewObserver = new MutationObserver(checkProductPreview)
-      productPreviewObserver.observe(mainTag,config)
-
-      const cartElement = document.querySelector('[data-qa="user-section-zyroecommerceshoppingcart"]')
-      const cartObserver = new MutationObserver(watchCart)
-      cartObserver.observe(cartElement,config)
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
