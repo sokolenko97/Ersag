@@ -346,6 +346,15 @@ window.addEventListener("load", function () {
           : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
         // Use history.pushState to update the URL without reloading the page
         window.history.pushState({ path: newUrl }, "", newUrl);
+
+        const thanksTitle = document.querySelector('.payment-info__title')
+        thanksTitle.innerText = 'Дякуюмо за Ваше замовлення!'
+
+        const thanksText = document.querySelector('.payment-info__text')
+        thanksText.innerText = "Ми зв'яжемось з Вами найближчим часом."
+
+        const thanksButton = document.querySelector('.payment-info__button')
+        thanksButton.innerText = 'Зрозуміло'
       }
     })
     .catch((error) => {
