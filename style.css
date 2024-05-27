@@ -159,6 +159,10 @@ main {
     flex-grow: 1 !important;
 } */
 
+.product-carousel{
+  align-items: center !important;
+}
+
 @media screen and (max-width: 920px) {
   .quantity-picker{
     --size: 38px !important;
