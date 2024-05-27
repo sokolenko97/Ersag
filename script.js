@@ -340,14 +340,16 @@ window.addEventListener("load", function () {
       }
 
       function showThankYouPopup(e) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+      
         // Get current URL
         const currentUrl = window.location.href;
         // Check if the URL already has query parameters
-        const newUrl = currentUrl.includes("?")
-          ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess`
-          : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
-        // Use history.pushState to update the URL without reloading the page
-        window.history.pushState({ path: newUrl }, "", newUrl);
+        const newUrl = currentUrl.includes('?') ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess` : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
+        
+        // Update the form action and submit the form
+        this.action = newUrl;
+        this.submit(); // Re-submit the form with the new action URL
 
         // const thanksTitle = document.querySelector('.payment-info__title')
         // thanksTitle.innerText = 'Дякуюмо за Ваше замовлення!'
