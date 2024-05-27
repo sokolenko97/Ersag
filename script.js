@@ -301,17 +301,17 @@ window.addEventListener("load", function () {
       }
       function openCheckputFormPopup(e) {
         const modalWrapper = document.createElement('div')
-        modalWrapper.setAttribute('data-v-35831679')
+        modalWrapper.setAttribute('data-v-35831679', '')
         modalWrapper.className = 'modal-wrapper'
 
         const modalBackgroundEl = document.createElement('div')
-        modalBackgroundEl.setAttribute('data-v-35831679')
+        modalBackgroundEl.setAttribute('data-v-35831679', '')
         modalBackgroundEl.className = 'modal-backdrop'
         modalWrapper.append(modalBackgroundEl)
 
         const modalEl = document.createElement('div')
-        modalEl.setAttribute('data-v-35831679')
-        modalEl.setAttribute('style="--modal-background-color: var(--color-light);--padding: 16px;--width: auto;--max-width: unset;--overflow: unset;--height: auto;--mobile-height: auto;"')
+        modalEl.setAttribute('data-v-35831679','')
+        modalEl.setAttribute('style',"--modal-background-color: var(--color-light);--padding: 16px;--width: auto;--max-width: unset;--overflow: unset;--height: auto;--mobile-height: auto;")
         modalEl.className = 'modal'
         modalWrapper.append(modalEl)
 
