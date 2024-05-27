@@ -81,7 +81,6 @@ window.addEventListener("load", function () {
               const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
               
               let productID
-              console.log(astraIslandPagesObj[key][1].name[1]);
 
               Object.keys(astraIslandPagesObj).forEach(key => {
                 if (astraIslandPagesObj[key][1].name) {
@@ -93,11 +92,9 @@ window.addEventListener("load", function () {
                 }
               });
               if (productID) {
-                console.log(productID);
                 matchingProduct = productsArray.find(
                   (product) => product.id === productID
                 );
-                console.log(matchingProduct);
                 if (matchingProduct) {
                   createProductSubtitle(element,matchingProduct)
                 }
@@ -124,18 +121,14 @@ window.addEventListener("load", function () {
 
       function matchTheProduct(productsArray) {
         const elementTitle = document.querySelector('.block-product__title')
-        console.log(productsArray);
-        console.log(elementTitle);
         if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(
             (product) => product.title.trim() === elementTitle.innerText.trim()
           );
 
-          console.log(matchingProduct);
           if (matchingProduct){
             const productPoints = Number(matchingProduct.ribbon_text)
             const productSKU = matchingProduct.variants[0].sku
-            console.log(productPoints,productSKU);
             addProductSKUandPoints(productPoints,productSKU)
           }
         }
