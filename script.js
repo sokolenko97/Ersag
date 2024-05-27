@@ -44,22 +44,22 @@ window.addEventListener("load", function () {
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
-          
+
           clearInterval(checkProductListInterval);
         }
       }
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
-      function createProductSubtitle(element,matchingProduct) {
-          const subtitle = matchingProduct.subtitle;
-          const newElement = document.createElement("p");
-          newElement.innerText = subtitle;
-          newElement.className = "product-subtitle";
+      function createProductSubtitle(element, matchingProduct) {
+        const subtitle = matchingProduct.subtitle;
+        const newElement = document.createElement("p");
+        newElement.innerText = subtitle;
+        newElement.className = "product-subtitle";
 
-          // Insert the new element as the next sibling
-          element.after(newElement);
-        }
+        // Insert the new element as the next sibling
+        element.after(newElement);
+      }
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
@@ -72,19 +72,26 @@ window.addEventListener("load", function () {
             );
 
             if (matchingProduct) {
-              createProductSubtitle(element,matchingProduct)
-            }
-            else{
-              const astraIslandEl = document.querySelector('[props^="{\\"page-data"]')
-              const astraIslandElPropsString = astraIslandEl.getAttribute('props')
-              const astraIslandElPropsObj = JSON.parse(astraIslandElPropsString)
-              const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
-              
-              let productID
+              createProductSubtitle(element, matchingProduct);
+            } else {
+              const astraIslandEl = document.querySelector(
+                '[props^="{\\"page-data"]'
+              );
+              const astraIslandElPropsString =
+                astraIslandEl.getAttribute("props");
+              const astraIslandElPropsObj = JSON.parse(
+                astraIslandElPropsString
+              );
+              const astraIslandPagesObj =
+                astraIslandElPropsObj["page-data"][1].pages[1];
 
-              Object.keys(astraIslandPagesObj).forEach(key => {
+              let productID;
+
+              Object.keys(astraIslandPagesObj).forEach((key) => {
                 if (astraIslandPagesObj[key][1].name) {
-                  if (astraIslandPagesObj[key][1].name[1].trim() === elementTitle) {
+                  if (
+                    astraIslandPagesObj[key][1].name[1].trim() === elementTitle
+                  ) {
                     if (astraIslandPagesObj[key][1].productId) {
                       productID = astraIslandPagesObj[key][1].productId[1];
                     }
@@ -96,7 +103,7 @@ window.addEventListener("load", function () {
                   (product) => product.id === productID
                 );
                 if (matchingProduct) {
-                  createProductSubtitle(element,matchingProduct)
+                  createProductSubtitle(element, matchingProduct);
                 }
               }
             }
@@ -106,36 +113,35 @@ window.addEventListener("load", function () {
         });
       }
 
-      function addProductSKUandPoints(points,SKU) {
-        const additionalInfoDiv = document.querySelector('.block-product__additional-info')
-        const pointsElement = document.createElement('p')
-        pointsElement.className = 'block-product__points'
-        additionalInfoDiv.append(pointsElement)
-        pointsElement.innerText = `Бали: ${points}`
+      function addProductSKUandPoints(points, SKU) {
+        const additionalInfoDiv = document.querySelector(
+          ".block-product__additional-info"
+        );
+        const pointsElement = document.createElement("p");
+        pointsElement.className = "block-product__points";
+        additionalInfoDiv.append(pointsElement);
+        pointsElement.innerText = `Бали: ${points}`;
 
-        const SKUElement = document.createElement('p')
-        SKUElement.className = 'block-product__SKU'
-        additionalInfoDiv.append(SKUElement)
-        SKUElement.innerText = `Артікул: ${SKU}`
+        const SKUElement = document.createElement("p");
+        SKUElement.className = "block-product__SKU";
+        additionalInfoDiv.append(SKUElement);
+        SKUElement.innerText = `Артікул: ${SKU}`;
       }
 
       function matchTheProduct(productsArray) {
-        const elementTitle = document.querySelector('.block-product__title')
+        const elementTitle = document.querySelector(".block-product__title");
         if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(
             (product) => product.title.trim() === elementTitle.innerText.trim()
           );
 
-          if (matchingProduct){
-            const productPoints = Number(matchingProduct.ribbon_text)
-            const productSKU = matchingProduct.variants[0].sku
-            addProductSKUandPoints(productPoints,productSKU)
+          if (matchingProduct) {
+            const productPoints = Number(matchingProduct.ribbon_text);
+            const productSKU = matchingProduct.variants[0].sku;
+            addProductSKUandPoints(productPoints, productSKU);
           }
         }
       }
-
-      // Now you can use the productsData constant to work with the products
-      // Check if the .product-list-item__price-wrapper element has been loaded
 
       let dropDownArrow = document.querySelector(
         ".block-header-item__mobile-dropdown-trigger"
@@ -145,7 +151,6 @@ window.addEventListener("load", function () {
 
       let productsMenuButton = document.querySelector('[href="/tovari"]');
       productsMenuButton.removeAttribute("href");
-
 
       // Moving Product HTML elements
 
@@ -160,7 +165,7 @@ window.addEventListener("load", function () {
           const productBuyButton = document.querySelector(
             ".block-product__button-wrapper"
           );
-          
+
           productDetailsElement.append(productBuyButton);
 
           let productImageContainer = document.querySelector(
@@ -169,7 +174,7 @@ window.addEventListener("load", function () {
 
           productImageContainer.parentElement.append(productDetailsElement);
         }
-        matchTheProduct(productsData)
+        matchTheProduct(productsData);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -200,7 +205,9 @@ window.addEventListener("load", function () {
         const productBtn = document.querySelector(
           ".block-product__button--primary"
         );
-        const astraIslandEl = document.querySelector('[props^="{\\"page-data"]')
+        const astraIslandEl = document.querySelector(
+          '[props^="{\\"page-data"]'
+        );
         if (productLoadCheck?.innerText === "Історія") {
           addImagetoTitle(
             "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-cropped-m7VpwbLZWNCKgeJQ.svg",
@@ -239,18 +246,22 @@ window.addEventListener("load", function () {
         } else if (productBtn?.innerText) {
           moveProductPageHTMLBlocks();
           clearInterval(check);
-        } else if (astraIslandEl){
+        } else if (astraIslandEl) {
           const config = {
             childList: true,
             // subtree: true
-          }
-          const mainTag = document.querySelector('main')
-          const productPreviewObserver = new MutationObserver(checkProductPreview)
-          productPreviewObserver.observe(mainTag,config)
-    
-          const cartElement = document.querySelector('[data-qa="user-section-zyroecommerceshoppingcart"]')
-          const cartObserver = new MutationObserver(watchCart)
-          cartObserver.observe(cartElement,config)
+          };
+          const mainTag = document.querySelector("main");
+          const productPreviewObserver = new MutationObserver(
+            checkProductPreview
+          );
+          productPreviewObserver.observe(mainTag, config);
+
+          const cartElement = document.querySelector(
+            '[data-qa="user-section-zyroecommerceshoppingcart"]'
+          );
+          const cartObserver = new MutationObserver(watchCart);
+          cartObserver.observe(cartElement, config);
         }
       }
 
@@ -258,34 +269,36 @@ window.addEventListener("load", function () {
 
       // Preview product - delete More details link
 
-      function changeCloseButtonSize(size='26') {
-        const closeButton = document.querySelector('.close-button > svg')
-        if (closeButton){
-          closeButton.setAttribute('width', size)
-          closeButton.setAttribute('height', size)
+      function changeCloseButtonSize(size = "26") {
+        const closeButton = document.querySelector(".close-button > svg");
+        if (closeButton) {
+          closeButton.setAttribute("width", size);
+          closeButton.setAttribute("height", size);
         }
       }
 
       function checkProductPreview(mutationRecords) {
-        changeCloseButtonSize()
+        changeCloseButtonSize();
         const previewBlockClass = document.querySelector(
-          ".block-product--in-preview");
+          ".block-product--in-preview"
+        );
         const productBuyButton = document.querySelector(
           ".block-product__button-wrapper"
         );
         if (previewBlockClass) {
-          const productQuantityWrapperDiv = document.querySelector('.block-product__quantity-wrapper')
-          productQuantityWrapperDiv.append(productBuyButton)
+          const productQuantityWrapperDiv = document.querySelector(
+            ".block-product__quantity-wrapper"
+          );
+          productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-        function watchCart(mutationRecords) {
-            const checkoutButton = document.querySelector('.cart__checkout-button')
-            if (checkoutButton) {
-              changeCloseButtonSize()
-              checkoutButton.replaceWith(checkoutButton.cloneNode(true))
-          }
+      function watchCart(mutationRecords) {
+        const checkoutButton = document.querySelector(".cart__checkout-button");
+        if (checkoutButton) {
+          changeCloseButtonSize();
+          checkoutButton.replaceWith(checkoutButton.cloneNode(true));
         }
-
+      }
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
