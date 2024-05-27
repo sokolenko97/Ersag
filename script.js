@@ -208,31 +208,31 @@ window.addEventListener("load", function () {
         );
         if (productLoadCheck?.innerText === "Історія") {
           addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnnd3-4nnn-cropped-m7VpwbLZWNCKgeJQ.svg",
+            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/history-YX4Pe2vBN2cOqKr3.svg",
             "Історія",
             0
           );
 
           addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nnd1-4nnd1-2n-d2d-ddegnnd-d2d3-4nnn-mePLvJBXVjc9MMXJ.svg",
+            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/chemical-ALpJy83Ql2HX3alJ.svg",
             "Хімічні властивості",
             1
           );
 
           addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-ddegnnd3-4nnd2ddegd1-2d1-2n-dJoJ6bVOwOtKXJB4.svg",
+            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/usage-AwvrgOxBGPtz46yv.svg",
             "застосовують",
             2
           );
 
           addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/d-nd3-4nd-d-d3-4doddegd-ddegd1-2d1-2n-YanBzBM97WcZQolZ.svg",
+            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/contraindications-YbNa7bQPKgT5nJ46.svg",
             "Протипоказання",
             4
           );
 
           addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/nd-d3-4nnd--YKbJ6lpvXDcDa0Gy.svg",
+            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/how-to-use-m6LvQ8nEeotyXoXe.svg",
             "Спосіб застосування",
             3
           );
