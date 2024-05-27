@@ -258,7 +258,13 @@ window.addEventListener("load", function () {
           const cartElement = document.querySelector(
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
-          const cartObserver = new MutationObserver(watchCart);
+          const cartObserver = new MutationObserver(
+            changeButtonEvent(
+              undefined,
+              ".cart__checkout-button",
+              openCheckputFormPopup
+            )
+          );
           cartObserver.observe(cartElement, config);
         }
       }
@@ -290,41 +296,60 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-      function watchCart(mutationRecords) {
-        const checkoutButton = document.querySelector(".cart__checkout-button");
+      function changeButtonEvent(mutationRecords, selector, clickFunc) {
+        const checkoutButton = document.querySelector(selector);
         if (checkoutButton) {
           changeCloseButtonSize();
-        const clonedButton = checkoutButton.cloneNode(true);
-        checkoutButton.replaceWith(clonedButton);
-        clonedButton.addEventListener('click', openCheckputFormPopup);
+          const clonedButton = checkoutButton.cloneNode(true);
+          checkoutButton.replaceWith(clonedButton);
+          clonedButton.addEventListener("click", clickFunc);
         }
       }
       function openCheckputFormPopup(e) {
         const closeCartButton = document.querySelector(".close-button");
-        closeCartButton.click()
-        
-        const modalWrapper = document.createElement('div')
-        modalWrapper.setAttribute('data-v-35831679', '')
-        modalWrapper.className = 'modal-wrapper'
+        closeCartButton.click();
 
-        const modalBackgroundEl = document.createElement('div')
-        modalBackgroundEl.setAttribute('data-v-35831679', '')
-        modalBackgroundEl.className = 'modal-backdrop'
-        modalWrapper.append(modalBackgroundEl)
+        const modalWrapper = document.createElement("div");
+        modalWrapper.setAttribute("data-v-35831679", "");
+        modalWrapper.className = "modal-wrapper";
 
-        const modalEl = document.createElement('div')
-        modalEl.setAttribute('data-v-35831679','')
-        modalEl.setAttribute('style',"--modal-background-color: var(--color-light);--padding: 16px;--width: auto;--max-width: unset;--overflow: unset;--height: auto;--mobile-height: auto;")
-        modalEl.className = 'modal'
-        modalWrapper.append(modalEl)
+        const modalBackgroundEl = document.createElement("div");
+        modalBackgroundEl.setAttribute("data-v-35831679", "");
+        modalBackgroundEl.className = "modal-backdrop";
+        modalWrapper.append(modalBackgroundEl);
 
-        const orderForm = document.querySelector('.layout-element__component--GridForm')
-        const formCopy = orderForm.cloneNode(true)
-        modalEl.append(formCopy)
-        formCopy.removeAttribute('id')
+        const modalEl = document.createElement("div");
+        modalEl.setAttribute("data-v-35831679", "");
+        modalEl.setAttribute(
+          "style",
+          "--modal-background-color: var(--color-light);--padding: 16px;--width: auto;--max-width: unset;--overflow: unset;--height: auto;--mobile-height: auto;"
+        );
+        modalEl.className = "modal";
+        modalWrapper.append(modalEl);
+
+        const orderForm = document.querySelector(
+          ".layout-element__component--GridForm"
+        );
+        const formCopy = orderForm.cloneNode(true);
+        modalEl.append(formCopy);
+        formCopy.removeAttribute("id");
 
         const mainTag = document.querySelector("main");
-        mainTag.append(modalWrapper)
+        mainTag.append(modalWrapper);
+
+        const sendOrderBtn = formCopy.firstElementChild.lastElementChild;
+        changeButtonEvent(undefined, sendOrderBtn, showThankYouPopup);
+      }
+
+      function showThankYouPopup(e) {
+        // Get current URL
+        const currentUrl = window.location.href;
+        // Check if the URL already has query parameters
+        const newUrl = currentUrl.includes("?")
+          ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess`
+          : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
+        // Use history.pushState to update the URL without reloading the page
+        window.history.pushState({ path: newUrl }, "", newUrl);
       }
     })
     .catch((error) => {
