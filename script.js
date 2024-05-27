@@ -81,7 +81,7 @@ window.addEventListener("load", function () {
               const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
               
               let productID
-
+              console.log(elementTitle);
               Object.keys(astraIslandPagesObj).forEach(key => {
                 if (astraIslandPagesObj[key][1].name) {
                   if (astraIslandPagesObj[key][1].name[1] === elementTitle) {
