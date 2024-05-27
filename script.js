@@ -51,24 +51,47 @@ window.addEventListener("load", function () {
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
+      function createProductSubtitle(matchingProduct) {
+          const subtitle = matchingProduct.subtitle;
+          const newElement = document.createElement("p");
+          newElement.innerText = subtitle;
+          newElement.className = "product-subtitle";
+
+          // Insert the new element as the next sibling
+          element.after(newElement);
+        }
+
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
           const elementTitle = element.innerText;
 
           // Check if productsArray is an array
           if (Array.isArray(productsArray)) {
-            const matchingProduct = productsArray.find(
+            let matchingProduct = productsArray.find(
               (product) => product.title === elementTitle
             );
 
             if (matchingProduct) {
-              const subtitle = matchingProduct.subtitle;
-              const newElement = document.createElement("p");
-              newElement.innerText = subtitle;
-              newElement.className = "product-subtitle";
+              createProductSubtitle(matchingProduct)
+            }
+            else{
+              const astraIslandEl = document.querySelector('[props^="{\\"page-data"]')
+              const astraIslandElPropsString = astraIslandEl.getAttribute('props')
+              const astraIslandElPropsObj = JSON.parse(astraIslandElPropsString)
+              const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
+              let productID
 
-              // Insert the new element as the next sibling
-              element.after(newElement);
+              for (const key in astraIslandPagesObj) {
+                if (key[1].name[1] === elementTitle) {
+                  productID = key[1].productId[1]
+                }
+              }
+              matchingProduct = productsArray.find(
+                (product) => product.id === productID
+              );
+              if (matchingProduct) {
+                createProductSubtitle(matchingProduct)
+              }
             }
           } else {
             console.error("productsArray is not an array.");
