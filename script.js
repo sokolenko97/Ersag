@@ -91,13 +91,15 @@ window.addEventListener("load", function () {
                   }
                 }
               });
-              console.log(productID);
-              matchingProduct = productsArray.find(
-                (product) => product.id === productID
-              );
-              console.log(matchingProduct);
-              if (matchingProduct) {
-                createProductSubtitle(element,matchingProduct)
+              if (productID) {
+                console.log(productID);
+                matchingProduct = productsArray.find(
+                  (product) => product.id === productID
+                );
+                console.log(matchingProduct);
+                if (matchingProduct) {
+                  createProductSubtitle(element,matchingProduct)
+                }
               }
             }
           } else {
