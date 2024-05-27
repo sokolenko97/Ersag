@@ -38,6 +38,10 @@ main {
 
 /* Product page */
 
+.block-product__title{
+  --h3-font-size: 52px !important;
+}
+
 /*image*/
 
 .product-carousel__image-wrapper.product-carousel__image-wrapper--contain {
@@ -63,7 +67,8 @@ main {
 }
 
 .block-product__price-data-wrapper {
-  transform: translate(100px, 0px);
+  /* transform: translate(100px, 0px); */
+  margin-left: 3% !important;
 }
 
 .block-product.block-product--in-preview {
