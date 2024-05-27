@@ -63,12 +63,12 @@ window.addEventListener("load", function () {
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
-          const elementTitle = element.innerText;
+          const elementTitle = element.innerText.trim();
 
           // Check if productsArray is an array
           if (Array.isArray(productsArray)) {
             let matchingProduct = productsArray.find(
-              (product) => product.title === elementTitle
+              (product) => product.title.trim() === elementTitle
             );
 
             if (matchingProduct) {
@@ -81,10 +81,11 @@ window.addEventListener("load", function () {
               const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
               
               let productID
-              console.log(elementTitle);
+              console.log(astraIslandPagesObj[key][1].name[1]);
+
               Object.keys(astraIslandPagesObj).forEach(key => {
                 if (astraIslandPagesObj[key][1].name) {
-                  if (astraIslandPagesObj[key][1].name[1] === elementTitle) {
+                  if (astraIslandPagesObj[key][1].name[1].trim() === elementTitle) {
                     if (astraIslandPagesObj[key][1].productId) {
                       productID = astraIslandPagesObj[key][1].productId[1];
                     }
@@ -127,7 +128,7 @@ window.addEventListener("load", function () {
         console.log(elementTitle);
         if (Array.isArray(productsArray)) {
           const matchingProduct = productsArray.find(
-            (product) => product.title === elementTitle.innerText
+            (product) => product.title.trim() === elementTitle.innerText.trim()
           );
 
           console.log(matchingProduct);
