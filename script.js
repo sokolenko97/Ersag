@@ -300,6 +300,9 @@ window.addEventListener("load", function () {
         }
       }
       function openCheckputFormPopup(e) {
+        const closeCartButton = document.querySelector(".close-button");
+        closeCartButton.click()
+        
         const modalWrapper = document.createElement('div')
         modalWrapper.setAttribute('data-v-35831679', '')
         modalWrapper.className = 'modal-wrapper'
