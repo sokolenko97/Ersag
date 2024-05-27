@@ -308,7 +308,7 @@ window.addEventListener("load", function () {
         modalBackgroundEl.className = 'modal-backdrop'
         modalWrapper.append(modalBackgroundEl)
 
-        const modalBackgroundEl = document.createElement('div')
+        const modalEl = document.createElement('div')
         modalEl.setAttribute('data-v-35831679')
         modalEl.setAttribute('style="--modal-background-color: var(--color-light);--padding: 16px;--width: auto;--max-width: unset;--overflow: unset;--height: auto;--mobile-height: auto;"')
         modalEl.className = 'modal'
