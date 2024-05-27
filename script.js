@@ -317,6 +317,9 @@ window.addEventListener("load", function () {
 
         const orderForm = document.querySelector('.layout-element__component--GridForm')
         modalEl.append(orderForm.cloneNode(true))
+
+        const mainTag = document.querySelector("main");
+        mainTag.append(modalWrapper)
       }
     })
     .catch((error) => {
