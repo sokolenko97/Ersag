@@ -297,7 +297,7 @@ window.addEventListener("load", function () {
         if (checkoutButton) {
           changeCloseButtonSize();
           const clonedButton = checkoutButton.cloneNode(true);
-          checkoutButton.replaceWith(clonedButton);
+          // checkoutButton.replaceWith(clonedButton);
           clonedButton.addEventListener(event, clickFunc);
         }
       }
