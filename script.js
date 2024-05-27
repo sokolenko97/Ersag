@@ -298,7 +298,7 @@ window.addEventListener("load", function () {
           checkoutButton.addEventListener('click', openCheckputFormPopup)
         }
       }
-      function openCheckputFormPopup() {
+      function openCheckputFormPopup(e) {
         const modalWrapper = document.createElement('div')
         modalWrapper.setAttribute('data-v-35831679')
         modalWrapper.className = 'modal-wrapper'
