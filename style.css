@@ -28,6 +28,12 @@ main {
   height: auto !important;
 }
 
+.modal{
+  .layout-element__component--GridForm{
+    width: 100% !important;
+  }
+}
+
 /* Hide gifts price */
 
 #zYS1VA{

@@ -316,7 +316,9 @@ window.addEventListener("load", function () {
         modalWrapper.append(modalEl)
 
         const orderForm = document.querySelector('.layout-element__component--GridForm')
-        modalEl.append(orderForm.cloneNode(true))
+        const formCopy = orderForm.cloneNode(true)
+        modalEl.append(formCopy)
+        formCopy.removeAttribute('id')
 
         const mainTag = document.querySelector("main");
         mainTag.append(modalWrapper)
