@@ -79,15 +79,18 @@ window.addEventListener("load", function () {
               const astraIslandElPropsString = astraIslandEl.getAttribute('props')
               const astraIslandElPropsObj = JSON.parse(astraIslandElPropsString)
               const astraIslandPagesObj = astraIslandElPropsObj["page-data"][1].pages[1]
+              
               let productID
 
-              for (const key in astraIslandPagesObj) {
-                if (key[1]?.name) {
-                  if (key[1].name[1] === elementTitle) {
-                    productID = key[1].productId[1]
+              Object.keys(astraIslandPagesObj).forEach(key => {
+                if (astraIslandPagesObj[key][1].name) {
+                  if (astraIslandPagesObj[key][1].name[1] === elementTitle) {
+                    if (astraIslandPagesObj[key][1].productId) {
+                      productID = astraIslandPagesObj[key][1].productId[1];
+                    }
                   }
                 }
-              }
+              });
               console.log(productID);
               matchingProduct = productsArray.find(
                 (product) => product.id === productID
