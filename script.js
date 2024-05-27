@@ -259,7 +259,7 @@ window.addEventListener("load", function () {
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
           const cartObserver = new MutationObserver((mutationRecords) => {
-            changeButtonEvent(mutationRecords, ".cart__checkout-button", openCheckputFormPopup);
+            changeButtonEvent(".cart__checkout-button", openCheckputFormPopup);
           });
           cartObserver.observe(cartElement, config);
         }
@@ -292,7 +292,7 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-      function changeButtonEvent(mutationRecords, selector, clickFunc) {
+      function changeButtonEvent(selector, clickFunc) {
         const checkoutButton = document.querySelector(selector);
         if (checkoutButton) {
           changeCloseButtonSize();
