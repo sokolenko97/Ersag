@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
 
       let checkProductListInterval = setInterval(checkProductList, 1);
 
-      function createProductSubtitle(matchingProduct) {
+      function createProductSubtitle(element,matchingProduct) {
           const subtitle = matchingProduct.subtitle;
           const newElement = document.createElement("p");
           newElement.innerText = subtitle;
@@ -72,7 +72,7 @@ window.addEventListener("load", function () {
             );
 
             if (matchingProduct) {
-              createProductSubtitle(matchingProduct)
+              createProductSubtitle(element,matchingProduct)
             }
             else{
               const astraIslandEl = document.querySelector('[props^="{\\"page-data"]')
@@ -92,7 +92,7 @@ window.addEventListener("load", function () {
               );
               console.log(matchingProduct);
               if (matchingProduct) {
-                createProductSubtitle(matchingProduct)
+                createProductSubtitle(element,matchingProduct)
               }
             }
           } else {
