@@ -367,8 +367,10 @@ window.addEventListener("load", function () {
       function addCartToButton(productsArray) {
         const mainTag = document.querySelector('main')
         const cloneMain = mainTag.replaceWith(mainTag.cloneNode(true))
-        const productCards = document.querySelectorAll('[class$="button-wrapper"]');
-        if (cloneMain && productCards) {
+        if (cloneMain) {
+          const productCards = document.querySelectorAll('[class$="button-wrapper"]');
+        }
+        if (productCards) {
           productCards.forEach(element => {
             let clonedButtonWrapper = element.cloneNode(true)
             element.replaceWith(clonedButtonWrapper);
