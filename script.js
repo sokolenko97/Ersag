@@ -371,7 +371,7 @@ window.addEventListener("load", function () {
         })
       }
 
-      addCartToButton()
+      // addCartToButton()
 
     })
     .catch((error) => {
