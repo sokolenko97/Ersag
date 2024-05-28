@@ -363,9 +363,10 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const buyButtons = document.querySelectorAll('product-list-item product-list-item--centered');
-        if (buyButtons) {
-          buyButtons.forEach(element => {
+        const productCards = document.querySelectorAll('product-list-item product-list-item--centered');
+        const buyButton = document.querySelector('.product-list-item__button--primary');
+        if (buyButton.onclick !== null && productCards) {
+          productCards.forEach(element => {
             let clonedProduct = element?.cloneNode(true);
             let clonedButtonWrapper = clonedProduct?.lastElementChild
             element.replaceWith(clonedProduct);
