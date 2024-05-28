@@ -37,6 +37,7 @@ window.addEventListener("load", function () {
         const productImgLoadCheck = document.querySelector(
           ".product-list-item__image"
         );
+        console.log(productImgLoadCheck);
         if (productImgLoadCheck) {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
@@ -54,6 +55,8 @@ window.addEventListener("load", function () {
         const newElement = document.createElement("p");
         newElement.innerText = subtitle;
         newElement.className = "product-subtitle";
+        console.log(element)
+        console.log(newElement);;
 
         // Insert the new element as the next sibling
         element.after(newElement);
@@ -62,12 +65,13 @@ window.addEventListener("load", function () {
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
           const elementTitle = element.innerText.trim();
-
+          console.log(elementTitle);
           // Check if productsArray is an array
           if (Array.isArray(productsArray)) {
             let matchingProduct = productsArray.find(
               (product) => product.title.trim() === elementTitle
             );
+            console.log(matchTheProduct);
 
             if (matchingProduct) {
               createProductSubtitle(element, matchingProduct);
@@ -360,6 +364,18 @@ window.addEventListener("load", function () {
         // const thanksButton = document.querySelector('.payment-info__button')
         // thanksButton.innerText = 'Зрозуміло'
       }
+
+      // const snipcartCode = '<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script> <div id="snipcart" data-config-modal-style="side" data-api-key="NzQ2MGI0YzktN2MxNy00N2FhLTgwMmQtZGZkODk0YTM5MGRiNjM4NTI1MTQ4OTkyNDA1NDkw" hidden></div>'
+      // document.body.innerHTML += snipcartCode
+
+      // function addCartToButton() {
+      //   const buyButtons = document.querySelectorAll('.block-product__button--primary')
+      //   buyButtons.forEach(element => {
+      //     element.classList.add('snipcart-add-item')
+      //   })
+      // }
+
+
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
