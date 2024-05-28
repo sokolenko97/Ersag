@@ -370,6 +370,9 @@ window.addEventListener("load", function () {
         })
       }
 
+      const cartScript = document.createElement('script')
+      cartScript.innerText = 'console.log("script works")'
+
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
