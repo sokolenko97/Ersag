@@ -368,6 +368,7 @@ window.addEventListener("load", function () {
         const mainTag = document.querySelector('main')
         const cloneMain = mainTag.replaceWith(mainTag.cloneNode(true))
         let productCards
+        console.log(cloneMain);
         setTimeout(() => {
           if (cloneMain) {
             productCards = document.querySelectorAll('[class$="button-wrapper"]');
