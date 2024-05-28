@@ -390,7 +390,7 @@ window.addEventListener("load", function () {
           let productSubtitle = productTitle.nextElementSibling
           if (productSubtitle?.classList.contains('product-subtitle')) {
             let productSubtitlText = productSubtitle.innerText.trim()
-            clonedButton.setAttribute('data-item-name',productSubtitleText)
+            clonedButton.setAttribute('data-item-description',productSubtitleText)
           }
 
         })
