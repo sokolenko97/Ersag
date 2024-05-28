@@ -43,7 +43,9 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          addCartToButton(productsData)
+          setTimeout(() => {
+            addCartToButton(productsData)
+          }, 4000);
         }
       }
 
