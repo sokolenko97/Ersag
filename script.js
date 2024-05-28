@@ -370,6 +370,7 @@ window.addEventListener("load", function () {
         let productCards
         if (cloneMain) {
           productCards = document.querySelectorAll('[class$="button-wrapper"]');
+          console.log(productCards);
         }
         if (productCards) {
           productCards.forEach(element => {
