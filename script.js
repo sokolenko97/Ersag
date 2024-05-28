@@ -364,14 +364,15 @@ window.addEventListener("load", function () {
 
       function addCartToButton() {
         const buyButtons = document.querySelectorAll('[data-qa$="btn-addtobag"]');
-        console.log(buyButtons);
         buyButtons.forEach(element => {
           element.classList.add('snipcart-add-item')
         })
       }
 
-      const cartScript = document.createElement('script')
-      cartScript.innerText = 'console.log("script works")'
+      // const cartScript = document.createElement('script')
+      // cartScript.innerText = 'console.log("script works")'
+
+      // document.body.prepend(cartScript)
 
     })
     .catch((error) => {
