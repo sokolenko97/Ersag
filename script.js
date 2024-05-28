@@ -365,6 +365,7 @@ window.addEventListener("load", function () {
       function addCartToButton() {
         const buyButtons = document.querySelectorAll('[data-qa$="btn-addtobag"]');
         buyButtons.forEach(element => {
+          element.replaceWith(element.cloneNode(true));
           element.classList.add('snipcart-add-item')
         })
       }
