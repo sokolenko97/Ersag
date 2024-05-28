@@ -173,7 +173,7 @@ window.addEventListener("load", function () {
           productImageContainer.parentElement.append(productDetailsElement);
         }
         matchTheProduct(productsData);
-        addCartToButton()
+        addCartToButton(productsData)
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -256,13 +256,13 @@ window.addEventListener("load", function () {
           );
           productPreviewObserver.observe(mainTag, config);
 
-          const cartElement = document.querySelector(
-            '[data-qa="user-section-zyroecommerceshoppingcart"]'
-          );
-          const cartObserver = new MutationObserver((mutationRecords) => {
-            changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
-          });
-          cartObserver.observe(cartElement, config);
+          // const cartElement = document.querySelector(
+          //   '[data-qa="user-section-zyroecommerceshoppingcart"]'
+          // );
+          // const cartObserver = new MutationObserver((mutationRecords) => {
+          //   changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
+          // });
+          // cartObserver.observe(cartElement, config);
         }
       }
 
