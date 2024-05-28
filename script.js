@@ -368,11 +368,11 @@ window.addEventListener("load", function () {
         const mainTag = document.querySelector('main')
         const cloneMain = mainTag.replaceWith(mainTag.cloneNode(true))
         let productCards
-        if (cloneMain) {
-          productCards = document.querySelectorAll('[class$="button-wrapper"]');
-          console.log(productCards);
-        }
         setTimeout(() => {
+          if (cloneMain) {
+            productCards = document.querySelectorAll('[class$="button-wrapper"]');
+            console.log(productCards);
+          }
           if (productCards) {
             productCards.forEach(element => {
               let clonedButtonWrapper = element.cloneNode(true)
