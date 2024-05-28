@@ -372,54 +372,56 @@ window.addEventListener("load", function () {
           productCards = document.querySelectorAll('[class$="button-wrapper"]');
           console.log(productCards);
         }
-        if (productCards) {
-          productCards.forEach(element => {
-            let clonedButtonWrapper = element.cloneNode(true)
-            element.replaceWith(clonedButtonWrapper);
-            console.log(clonedButtonWrapper);
-
-            let clonedButton = clonedButtonWrapper?.firstElementChild
-            console.log(clonedButton);
-
-            clonedButton.classList.add('snipcart-add-item')
-            // clonedButton.addEventListener('click', function(event) {
-            //   event.preventDefault();})
+        setTimeout(() => {
+          if (productCards) {
+            productCards.forEach(element => {
+              let clonedButtonWrapper = element.cloneNode(true)
+              element.replaceWith(clonedButtonWrapper);
+              console.log(clonedButtonWrapper);
   
-            let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
-            if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
-              let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
-              clonedButton.setAttribute('data-item-price',stringToNum)
-            }
+              let clonedButton = clonedButtonWrapper?.firstElementChild
+              console.log(clonedButton);
   
-            let productImageWrapper = clonedButtonWrapper?.previousElementSibling?.firstElementChild
-            if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
-              let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
-              clonedButton.setAttribute('data-item-image',productImageURL)
-            }
-  
-            let productTitle = productImageWrapper?.nextElementSibling
-            if (productTitle?.classList.contains('product-list-item__title')) {
-              let productTitleText = productTitle?.innerText?.trim()
-              clonedButton.setAttribute('data-item-name',productTitleText)
-            }
-  
-            let productSubtitle = productTitle?.nextElementSibling
-            if (productSubtitle?.classList.contains('product-subtitle')) {
-              let productSubtitleText = productSubtitle.innerText?.trim()
-              clonedButton.setAttribute('data-item-description',productSubtitleText)
-            }
-  
-            if (Array.isArray(productsArray)) {
-              let matchingProduct = productsArray?.find(
-                (product) => product?.title?.trim() === productTitle?.innerText?.trim()
-              );
-              if (matchingProduct) {
-                clonedButton.setAttribute('data-item-id',matchingProduct.id);
+              clonedButton.classList.add('snipcart-add-item')
+              // clonedButton.addEventListener('click', function(event) {
+              //   event.preventDefault();})
+    
+              let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
+              if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
+                let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
+                clonedButton.setAttribute('data-item-price',stringToNum)
               }
-            }
-  
-          })
-        }
+    
+              let productImageWrapper = clonedButtonWrapper?.previousElementSibling?.firstElementChild
+              if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
+                let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
+                clonedButton.setAttribute('data-item-image',productImageURL)
+              }
+    
+              let productTitle = productImageWrapper?.nextElementSibling
+              if (productTitle?.classList.contains('product-list-item__title')) {
+                let productTitleText = productTitle?.innerText?.trim()
+                clonedButton.setAttribute('data-item-name',productTitleText)
+              }
+    
+              let productSubtitle = productTitle?.nextElementSibling
+              if (productSubtitle?.classList.contains('product-subtitle')) {
+                let productSubtitleText = productSubtitle.innerText?.trim()
+                clonedButton.setAttribute('data-item-description',productSubtitleText)
+              }
+    
+              if (Array.isArray(productsArray)) {
+                let matchingProduct = productsArray?.find(
+                  (product) => product?.title?.trim() === productTitle?.innerText?.trim()
+                );
+                if (matchingProduct) {
+                  clonedButton.setAttribute('data-item-id',matchingProduct.id);
+                }
+              }
+    
+            })
+          }
+        }, 1000);
         
       }
 
