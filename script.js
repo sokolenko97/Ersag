@@ -375,12 +375,19 @@ window.addEventListener("load", function () {
             clonedButton.setAttribute('data-item-price',stringToNum)
           }
 
-          let imageWrapper = element.previousElementSibling.firstElementChild
-          if (imageWrapper.classList.contains('product-list-item__image-wrapper')) {
-            let imageURL = imageWrapper.firstElementChild.getAttribute('src')
-            clonedButton.setAttribute('data-item-image',imageURL)
+          let productImageWrapper = element.previousElementSibling.firstElementChild
+          if (productImageWrapper.classList.contains('product-list-item__image-wrapper')) {
+            let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
+            clonedButton.setAttribute('data-item-image',productImageURL)
           }
 
+          let productTitleWrapper = productImageWrapper.nextElementSibling
+          if (productTitleWrapper.classList.contains('product-list-item__title')) {
+            let productTitle = productTitleWrapper.innerText.trim()
+            clonedButton.setAttribute('data-item-name',productTitle)
+          }
+
+          
         })
       }
 
