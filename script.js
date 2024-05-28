@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
-          addCartToButton(productsData);
+          addCartToButton(productsData)
           clearInterval(checkProductListInterval);
         }
       }
@@ -173,7 +173,7 @@ window.addEventListener("load", function () {
           productImageContainer.parentElement.append(productDetailsElement);
         }
         matchTheProduct(productsData);
-        addCartToButton();
+        addCartToButton()
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -260,11 +260,7 @@ window.addEventListener("load", function () {
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
           const cartObserver = new MutationObserver((mutationRecords) => {
-            changeButtonEvent(
-              "click",
-              ".cart__checkout-button",
-              openCheckputFormPopup
-            );
+            changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
           });
           cartObserver.observe(cartElement, config);
         }
@@ -297,7 +293,7 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-      function changeButtonEvent(event, selector, clickFunc) {
+      function changeButtonEvent(event,selector, clickFunc) {
         const checkoutButton = document.querySelector(selector);
         if (checkoutButton) {
           changeCloseButtonSize();
@@ -340,20 +336,18 @@ window.addEventListener("load", function () {
 
         const sendOrderBtn = formCopy.firstElementChild.lastElementChild;
         // sendOrderBtn.setAttribute('type','button')
-        sendOrderBtn.classList.add("form-button");
+        sendOrderBtn.classList.add('form-button')
         // changeButtonEvent('submit','.form-button', showThankYouPopup);
       }
 
       function showThankYouPopup(e) {
         event.preventDefault(); // Prevent the form from submitting the traditional way
-
+      
         // Get current URL
         const currentUrl = window.location.href;
         // Check if the URL already has query parameters
-        const newUrl = currentUrl.includes("?")
-          ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess`
-          : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
-
+        const newUrl = currentUrl.includes('?') ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess` : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
+        
         // Update the form action and submit the form
         this.action = newUrl;
         this.submit(); // Re-submit the form with the new action URL
@@ -369,80 +363,50 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const buyButtons = document.querySelectorAll(
-          '[class$="button-wrapper"]'
-        );
+        const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         if (buyButtons) {
-          buyButtons.forEach((element) => {
+          buyButtons.forEach(element => {
             let clonedButton = element?.firstElementChild?.cloneNode(true);
             element.firstElementChild.replaceWith(clonedButton);
-            clonedButton.classList.add("snipcart-add-item");
-
-            let productPriceWrapper =
-              element?.previousElementSibling?.lastElementChild;
-            if (
-              productPriceWrapper?.classList.contains(
-                "product-list-item__price-wrapper"
-              )
-            ) {
-              let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
-              clonedButton.setAttribute("data-item-price", stringToNum);
+            clonedButton.classList.add('snipcart-add-item')
+  
+            let productPriceWrapper = element?.previousElementSibling?.lastElementChild
+            if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
+              let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
+              clonedButton.setAttribute('data-item-price',stringToNum)
             }
-
-            let productImageWrapper =
-              element?.previousElementSibling?.firstElementChild;
-            if (
-              productImageWrapper?.classList.contains(
-                "product-list-item__image-wrapper"
-              )
-            ) {
-              let productImageURL =
-                productImageWrapper.firstElementChild.getAttribute("src");
-              clonedButton.setAttribute("data-item-image", productImageURL);
+  
+            let productImageWrapper = element?.previousElementSibling?.firstElementChild
+            if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
+              let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
+              clonedButton.setAttribute('data-item-image',productImageURL)
             }
-
-            let productTitle = productImageWrapper?.nextElementSibling;
-            if (productTitle?.classList.contains("product-list-item__title")) {
-              let productTitleText = productTitle?.innerText?.trim();
-              clonedButton.setAttribute("data-item-name", productTitleText);
+  
+            let productTitle = productImageWrapper?.nextElementSibling
+            if (productTitle?.classList.contains('product-list-item__title')) {
+              let productTitleText = productTitle?.innerText?.trim()
+              clonedButton.setAttribute('data-item-name',productTitleText)
             }
-
-            let productSubtitle = productTitle?.nextElementSibling;
-            if (productSubtitle?.classList.contains("product-subtitle")) {
-              let productSubtitleText = productSubtitle.innerText?.trim();
-              clonedButton.setAttribute(
-                "data-item-description",
-                productSubtitleText
+  
+            let productSubtitle = productTitle?.nextElementSibling
+            if (productSubtitle?.classList.contains('product-subtitle')) {
+              let productSubtitleText = productSubtitle.innerText?.trim()
+              clonedButton.setAttribute('data-item-description',productSubtitleText)
+            }
+  
+            if (Array.isArray(productsArray)) {
+              let matchingProduct = productsArray?.find(
+                (product) => product?.title?.trim() === productTitle?.innerText?.trim()
               );
+              console.log(matchingProduct);
+              if (matchingProduct) {
+                clonedButton.setAttribute('data-item-id',matchingProduct.id);
+              }
             }
-
-            function findMatchingProduct(productsArray, productTitleText) {
-              return productsArray?.find(
-                (product) => product?.title?.trim() === productTitleText
-              );
-            }
-
-            // Usage
-            let matchingProduct = findMatchingProduct(
-              productsArray,
-              productTitle?.innerText?.trim()
-            );
-            console.log(matchingProduct);
-            if (matchingProduct) {
-              clonedButton.setAttribute("data-item-id", product.id);
-            }
-
-            // if (Array.isArray(productsArray)) {
-            //   let matchingProduct = productsArray?.find(
-            //     (product) => product?.title?.trim() === productTitleText
-            //   );
-            //   console.log(matchingProduct);
-            //   if (matchingProduct) {
-            //     clonedButton.setAttribute('data-item-id',product.id);
-            //   }
-            // }
-          });
+  
+          })
         }
+        
       }
 
       // function addBuyButtonAtribute(buyButtonEl=clonedButton,buttonWrapEl=element,classToCheck,attribute) {
@@ -452,6 +416,7 @@ window.addEventListener("load", function () {
       // cartScript.innerText = 'console.log("script works")'
 
       // document.body.prepend(cartScript)
+
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
