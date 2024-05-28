@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
           setTimeout(() => {
-            addCartToButton(productsData)
+            addCartToButton(productsData);
           }, 4000);
         }
       }
@@ -175,7 +175,7 @@ window.addEventListener("load", function () {
           productImageContainer.parentElement.append(productDetailsElement);
         }
         matchTheProduct(productsData);
-        addCartToButton(productsData)
+        addCartToButton(productsData);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -295,7 +295,7 @@ window.addEventListener("load", function () {
           productQuantityWrapperDiv.append(productBuyButton);
         }
       }
-      function changeButtonEvent(event,selector, clickFunc) {
+      function changeButtonEvent(event, selector, clickFunc) {
         const checkoutButton = document.querySelector(selector);
         if (checkoutButton) {
           changeCloseButtonSize();
@@ -338,18 +338,20 @@ window.addEventListener("load", function () {
 
         const sendOrderBtn = formCopy.firstElementChild.lastElementChild;
         // sendOrderBtn.setAttribute('type','button')
-        sendOrderBtn.classList.add('form-button')
+        sendOrderBtn.classList.add("form-button");
         // changeButtonEvent('submit','.form-button', showThankYouPopup);
       }
 
       function showThankYouPopup(e) {
         event.preventDefault(); // Prevent the form from submitting the traditional way
-      
+
         // Get current URL
         const currentUrl = window.location.href;
         // Check if the URL already has query parameters
-        const newUrl = currentUrl.includes('?') ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess` : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
-        
+        const newUrl = currentUrl.includes("?")
+          ? `${currentUrl}&open-modal=EcommerceCheckoutSuccess`
+          : `${currentUrl}?open-modal=EcommerceCheckoutSuccess`;
+
         // Update the form action and submit the form
         this.action = newUrl;
         this.submit(); // Re-submit the form with the new action URL
@@ -365,65 +367,77 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const mainTag = document.querySelector('main')
-        const cloneMain = mainTag.replaceWith(mainTag.cloneNode(true))
-        let productCards
-        console.log(cloneMain);
-        setTimeout(() => {
-          if (cloneMain) {
-            productCards = document.querySelectorAll('[class$="button-wrapper"]');
-            console.log(productCards);
-          }
-          if (productCards) {
-            productCards.forEach(element => {
-              let clonedButtonWrapper = element.cloneNode(true)
-              element.replaceWith(clonedButtonWrapper);
-              console.log(clonedButtonWrapper);
-  
-              let clonedButton = clonedButtonWrapper?.firstElementChild
-              console.log(clonedButton);
-  
-              clonedButton.classList.add('snipcart-add-item')
-              // clonedButton.addEventListener('click', function(event) {
-              //   event.preventDefault();})
-    
-              let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
-              if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
-                let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
-                clonedButton.setAttribute('data-item-price',stringToNum)
-              }
-    
-              let productImageWrapper = clonedButtonWrapper?.previousElementSibling?.firstElementChild
-              if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
-                let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
-                clonedButton.setAttribute('data-item-image',productImageURL)
-              }
-    
-              let productTitle = productImageWrapper?.nextElementSibling
-              if (productTitle?.classList.contains('product-list-item__title')) {
-                let productTitleText = productTitle?.innerText?.trim()
-                clonedButton.setAttribute('data-item-name',productTitleText)
-              }
-    
-              let productSubtitle = productTitle?.nextElementSibling
-              if (productSubtitle?.classList.contains('product-subtitle')) {
-                let productSubtitleText = productSubtitle.innerText?.trim()
-                clonedButton.setAttribute('data-item-description',productSubtitleText)
-              }
-    
-              if (Array.isArray(productsArray)) {
-                let matchingProduct = productsArray?.find(
-                  (product) => product?.title?.trim() === productTitle?.innerText?.trim()
-                );
-                if (matchingProduct) {
-                  clonedButton.setAttribute('data-item-id',matchingProduct.id);
-                }
-              }
-    
-            })
-          }
-        }, 1000);
+        const mainTag = document.querySelector("main");
+        const cloneMain = mainTag.cloneNode(true);
+        mainTag.replaceWith(cloneMain);
         
+        let productCards;
+        if (cloneMain) {
+          productCards = document.querySelectorAll('[class$="button-wrapper"]');
+          console.log(productCards);
+        }
+        if (productCards) {
+          productCards.forEach((element) => {
+            let clonedButtonWrapper = element.cloneNode(true);
+            element.replaceWith(clonedButtonWrapper);
+            console.log(clonedButtonWrapper);
+
+            let clonedButton = clonedButtonWrapper?.firstElementChild;
+            console.log(clonedButton);
+
+            clonedButton.classList.add("snipcart-add-item");
+            // clonedButton.addEventListener('click', function(event) {
+            //   event.preventDefault();})
+
+            let productPriceWrapper =
+              clonedButtonWrapper?.previousElementSibling?.lastElementChild;
+            if (
+              productPriceWrapper?.classList.contains(
+                "product-list-item__price-wrapper"
+              )
+            ) {
+              let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
+              clonedButton.setAttribute("data-item-price", stringToNum);
+            }
+
+            let productImageWrapper =
+              clonedButtonWrapper?.previousElementSibling?.firstElementChild;
+            if (
+              productImageWrapper?.classList.contains(
+                "product-list-item__image-wrapper"
+              )
+            ) {
+              let productImageURL =
+                productImageWrapper.firstElementChild.getAttribute("src");
+              clonedButton.setAttribute("data-item-image", productImageURL);
+            }
+
+            let productTitle = productImageWrapper?.nextElementSibling;
+            if (productTitle?.classList.contains("product-list-item__title")) {
+              let productTitleText = productTitle?.innerText?.trim();
+              clonedButton.setAttribute("data-item-name", productTitleText);
+            }
+
+            let productSubtitle = productTitle?.nextElementSibling;
+            if (productSubtitle?.classList.contains("product-subtitle")) {
+              let productSubtitleText = productSubtitle.innerText?.trim();
+              clonedButton.setAttribute(
+                "data-item-description",
+                productSubtitleText
+              );
+            }
+
+            if (Array.isArray(productsArray)) {
+              let matchingProduct = productsArray?.find(
+                (product) =>
+                  product?.title?.trim() === productTitle?.innerText?.trim()
+              );
+              if (matchingProduct) {
+                clonedButton.setAttribute("data-item-id", matchingProduct.id);
+              }
+            }
+          });
+        }
       }
 
       // function addBuyButtonAtribute(buyButtonEl=clonedButton,buttonWrapEl=element,classToCheck,attribute) {
@@ -433,7 +447,6 @@ window.addEventListener("load", function () {
       // cartScript.innerText = 'console.log("script works")'
 
       // document.body.prepend(cartScript)
-
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
