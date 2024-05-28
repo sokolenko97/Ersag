@@ -11,6 +11,12 @@ main {
   --body-font-weight: 400 !important;
 }
 
+/* Cart */
+
+.snipcart-test-banner{
+  display: none !important;
+}
+
 .option-select__select{
   padding-right: 35px !important;
 }
