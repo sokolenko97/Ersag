@@ -374,8 +374,18 @@ window.addEventListener("load", function () {
             let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
             clonedButton.setAttribute('data-item-price',stringToNum)
           }
+
+          let imageWrapper = element.previousElementSibling.firstElementChild
+          if (imageWrapper.classList.contains('product-list-item__image-wrapper')) {
+            let imageURL = imageWrapper.firstElementChild.getAttribute('src')
+            clonedButton.setAttribute('data-item-image',imageURL)
+          }
+
         })
       }
+
+      // function addBuyButtonAtribute(buyButtonEl=clonedButton,buttonWrapEl=element,classToCheck,attribute) {
+      // }
 
       // const cartScript = document.createElement('script')
       // cartScript.innerText = 'console.log("script works")'
