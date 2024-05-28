@@ -366,12 +366,13 @@ window.addEventListener("load", function () {
         const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         if (buyButtons) {
           buyButtons.forEach(element => {
-            let clonedButtonWrapper = element?.cloneNode(true);
-            element.replaceWith(clonedButtonWrapper);
+            // let clonedButtonWrapper = element?.cloneNode(true);
+            // element.replaceWith(clonedButtonWrapper);
+            let clonedButtonWrapper = element
             let clonedButton = clonedButtonWrapper?.firstElementChild
             clonedButton.classList.add('snipcart-add-item')
-            clonedButton.addEventListener('click', function(event) {
-              event.stopPropagation();})
+            // clonedButton.addEventListener('click', function(event) {
+            //   event.stopPropagation();})
   
             let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
             if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
