@@ -376,7 +376,7 @@ window.addEventListener("load", function () {
             console.log(clonedButtonWrapper);
 
             let clonedButton = clonedButtonWrapper?.firstElementChild
-            console.log(closedButton);
+            console.log(clonedButton);
 
             clonedButton.classList.add('snipcart-add-item')
             // clonedButton.addEventListener('click', function(event) {
