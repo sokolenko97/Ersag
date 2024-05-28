@@ -371,13 +371,13 @@ window.addEventListener("load", function () {
             let clonedButton = clonedButtonWrapper?.firstElementChild
             clonedButton.classList.add('snipcart-add-item')
   
-            let productPriceWrapper = element?.previousElementSibling?.lastElementChild
+            let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
             if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
               let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
               clonedButton.setAttribute('data-item-price',stringToNum)
             }
   
-            let productImageWrapper = element?.previousElementSibling?.firstElementChild
+            let productImageWrapper = clonedButtonWrapper?.previousElementSibling?.firstElementChild
             if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
               let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
               clonedButton.setAttribute('data-item-image',productImageURL)
