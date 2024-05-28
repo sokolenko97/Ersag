@@ -370,7 +370,8 @@ window.addEventListener("load", function () {
             element.replaceWith(clonedButtonWrapper);
             let clonedButton = clonedButtonWrapper?.firstElementChild
             clonedButton.classList.add('snipcart-add-item')
-            clonedButton.addEventListener('click', (e) => e.stopPropagation())
+            clonedButton.addEventListener('click', function(event) {
+              event.stopPropagation();})
   
             let productPriceWrapper = clonedButtonWrapper?.previousElementSibling?.lastElementChild
             if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
