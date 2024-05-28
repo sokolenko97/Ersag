@@ -364,7 +364,9 @@ window.addEventListener("load", function () {
 
       function addCartToButton(productsArray) {
         const productCards = document.querySelectorAll('.product-list-item product-list-item--centered');
+        console.log(productCards);
         const buyButton = document.querySelector('.product-list-item__button--primary');
+        console.log(buyButton.onclick);
         if (buyButton.onclick !== null && productCards) {
           productCards.forEach(element => {
             let clonedProduct = element?.cloneNode(true);
