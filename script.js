@@ -374,8 +374,10 @@ window.addEventListener("load", function () {
           productCards.forEach(element => {
             let clonedButtonWrapper = element.cloneNode(true)
             element.replaceWith(clonedButtonWrapper);
+            console.log(clonedButtonWrapper);
 
             let clonedButton = clonedButtonWrapper?.firstElementChild
+            console.log(clonedButton);
 
             clonedButton.classList.add('snipcart-add-item')
             // clonedButton.addEventListener('click', function(event) {
