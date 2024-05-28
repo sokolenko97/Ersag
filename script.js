@@ -425,7 +425,7 @@ window.addEventListener("load", function () {
             // Usage
             let matchingProduct = findMatchingProduct(
               productsArray,
-              productTitleText
+              productTitle?.innerText?.trim()
             );
             console.log(matchingProduct);
             if (matchingProduct) {
