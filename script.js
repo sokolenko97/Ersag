@@ -45,7 +45,7 @@ window.addEventListener("load", function () {
           clearInterval(checkProductListInterval);
           setTimeout(() => {
             addCartToButton(productsData)
-          }, 2000);
+          }, 4000);
         }
       }
 
