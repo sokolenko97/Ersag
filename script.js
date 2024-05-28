@@ -366,7 +366,7 @@ window.addEventListener("load", function () {
         const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         if (buyButtons) {
           buyButtons.forEach(element => {
-            let clonedButtonWrapper = element?.cloneNode(true);
+            let clonedButtonWrapper = element?.cloneNode(false);
             element.replaceWith(clonedButtonWrapper);
             let clonedButton = clonedButtonWrapper?.firstElementChild
             clonedButton.classList.add('snipcart-add-item')
