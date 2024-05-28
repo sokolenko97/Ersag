@@ -363,7 +363,7 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const productCards = document.querySelectorAll('.product-list-item product-list-item--centered');
+        const productCards = document.querySelectorAll('.product-list-item--centered');
         console.log(productCards);
 
         if (productCards) {
