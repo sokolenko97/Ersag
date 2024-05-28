@@ -363,11 +363,17 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton() {
-        const buyButtons = document.querySelectorAll('[data-qa$="btn-addtobag"]');
+        const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         buyButtons.forEach(element => {
-          let clonedButton = element.cloneNode(true);
-          element.replaceWith(clonedButton);
+          let clonedButton = element.firstElementChild.cloneNode(true);
+          element.firstElementChild.replaceWith(clonedButton);
           clonedButton.classList.add('snipcart-add-item')
+
+          let productPriceWrapper = element.previousElementSibling.lastElementChild
+          if (productPriceWrapper.classList.contains('product-list-item__price-wrapper')) {
+            let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
+            clonedButton.setAttribute('data-item-price',stringToNum)
+          }
         })
       }
 
