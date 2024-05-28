@@ -365,14 +365,13 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const productCards = document.querySelectorAll('.product-list-item--centered');
-
-        if (productCards) {
+        const mainTag = document.querySelector('main')
+        const cloneMain = mainTag.replaceWith(mainTag.cloneNode(true))
+        const productCards = document.querySelectorAll('[class$="button-wrapper"]');
+        if (cloneMain && productCards) {
           productCards.forEach(element => {
-            let clonedProduct = element?.cloneNode(true);
-
-            element.replaceWith(clonedProduct);
-            let clonedButtonWrapper = clonedProduct?.lastElementChild
+            let clonedButtonWrapper = element.cloneNode(true)
+            element.replaceWith(clonedButtonWrapper);
 
             let clonedButton = clonedButtonWrapper?.firstElementChild
 
