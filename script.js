@@ -366,37 +366,37 @@ window.addEventListener("load", function () {
         const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         if (buyButtons) {
           buyButtons.forEach(element => {
-            let clonedButton = element.firstElementChild.cloneNode(true);
+            let clonedButton = element?.firstElementChild?.cloneNode(true);
             element.firstElementChild.replaceWith(clonedButton);
             clonedButton.classList.add('snipcart-add-item')
   
-            let productPriceWrapper = element.previousElementSibling.lastElementChild
+            let productPriceWrapper = element?.previousElementSibling?.lastElementChild
             if (productPriceWrapper?.classList.contains('product-list-item__price-wrapper')) {
               let stringToNum = +productPriceWrapper.innerText.replace('₴', '');
               clonedButton.setAttribute('data-item-price',stringToNum)
             }
   
-            let productImageWrapper = element.previousElementSibling.firstElementChild
+            let productImageWrapper = element?.previousElementSibling?.firstElementChild
             if (productImageWrapper?.classList.contains('product-list-item__image-wrapper')) {
               let productImageURL = productImageWrapper.firstElementChild.getAttribute('src')
               clonedButton.setAttribute('data-item-image',productImageURL)
             }
   
-            let productTitle = productImageWrapper.nextElementSibling
+            let productTitle = productImageWrapper?.nextElementSibling
             if (productTitle?.classList.contains('product-list-item__title')) {
-              let productTitleText = productTitle.innerText.trim()
+              let productTitleText = productTitle?.innerText?.trim()
               clonedButton.setAttribute('data-item-name',productTitleText)
             }
   
             let productSubtitle = productTitle.nextElementSibling
             if (productSubtitle?.classList.contains('product-subtitle')) {
-              let productSubtitleText = productSubtitle.innerText.trim()
+              let productSubtitleText = productSubtitle.innerText?.trim()
               clonedButton.setAttribute('data-item-description',productSubtitleText)
             }
   
             if (Array.isArray(productsArray)) {
-              let matchingProduct = productsArray.find(
-                (product) => product.title.trim() === productTitle
+              let matchingProduct = productsArray?.find(
+                (product) => product?.title?.trim() === productTitle
               );
   
               if (matchingProduct) {
