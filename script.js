@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
-          addCartToButton()
+          addCartToButton(productsData)
           clearInterval(checkProductListInterval);
         }
       }
@@ -362,7 +362,7 @@ window.addEventListener("load", function () {
         // thanksButton.innerText = 'Зрозуміло'
       }
 
-      function addCartToButton() {
+      function addCartToButton(productsArray) {
         const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
         buyButtons.forEach(element => {
           let clonedButton = element.firstElementChild.cloneNode(true);
@@ -393,7 +393,18 @@ window.addEventListener("load", function () {
             clonedButton.setAttribute('data-item-description',productSubtitleText)
           }
 
+          // if (Array.isArray(productsArray)) {
+          //   let matchingProduct = productsArray.find(
+          //     (product) => product.title.trim() === elementTitle
+          //   );
+
+          //   if (matchingProduct) {
+          //     createProductSubtitle(element, matchingProduct);
+          //   }
+          // }
+
         })
+        
       }
 
       // function addBuyButtonAtribute(buyButtonEl=clonedButton,buttonWrapEl=element,classToCheck,attribute) {
