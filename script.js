@@ -42,8 +42,10 @@ window.addEventListener("load", function () {
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
-          addCartToButton(productsData)
           clearInterval(checkProductListInterval);
+          setTimeout(() => {
+            addCartToButton(productsData)
+          }, 2000);
         }
       }
 
