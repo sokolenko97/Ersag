@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
-
+          addCartToButton()
           clearInterval(checkProductListInterval);
         }
       }
@@ -173,6 +173,7 @@ window.addEventListener("load", function () {
           productImageContainer.parentElement.append(productDetailsElement);
         }
         matchTheProduct(productsData);
+        addCartToButton()
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
@@ -368,8 +369,6 @@ window.addEventListener("load", function () {
           element.classList.add('snipcart-add-item')
         })
       }
-
-      addCartToButton()
 
     })
     .catch((error) => {
