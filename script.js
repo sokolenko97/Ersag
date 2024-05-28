@@ -393,15 +393,15 @@ window.addEventListener("load", function () {
             clonedButton.setAttribute('data-item-description',productSubtitleText)
           }
 
-          // if (Array.isArray(productsArray)) {
-          //   let matchingProduct = productsArray.find(
-          //     (product) => product.title.trim() === elementTitle
-          //   );
+          if (Array.isArray(productsArray)) {
+            let matchingProduct = productsArray.find(
+              (product) => product.title.trim() === productTitle
+            );
 
-          //   if (matchingProduct) {
-          //     createProductSubtitle(element, matchingProduct);
-          //   }
-          // }
+            if (matchingProduct) {
+              clonedButton.setAttribute('data-item-id',product.id);
+            }
+          }
 
         })
         
