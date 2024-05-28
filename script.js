@@ -398,7 +398,6 @@ window.addEventListener("load", function () {
               let matchingProduct = productsArray?.find(
                 (product) => product?.title?.trim() === productTitle?.innerText?.trim()
               );
-              console.log(matchingProduct);
               if (matchingProduct) {
                 clonedButton.setAttribute('data-item-id',matchingProduct.id);
               }
