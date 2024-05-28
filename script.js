@@ -370,20 +370,17 @@ window.addEventListener("load", function () {
         const mainTag = document.querySelector("main");
         const cloneMain = mainTag.cloneNode(true);
         mainTag.replaceWith(cloneMain);
-        
+
         let productCards;
         if (cloneMain) {
           productCards = document.querySelectorAll('[class$="button-wrapper"]');
-          console.log(productCards);
         }
         if (productCards) {
           productCards.forEach((element) => {
             let clonedButtonWrapper = element.cloneNode(true);
             element.replaceWith(clonedButtonWrapper);
-            console.log(clonedButtonWrapper);
 
             let clonedButton = clonedButtonWrapper?.firstElementChild;
-            console.log(clonedButton);
 
             clonedButton.classList.add("snipcart-add-item");
             // clonedButton.addEventListener('click', function(event) {
