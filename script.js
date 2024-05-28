@@ -365,10 +365,11 @@ window.addEventListener("load", function () {
       }
 
       function addCartToButton(productsArray) {
-        const buyButtons = document.querySelectorAll('[class$="button-wrapper"]');
+        const buyButtons = document.querySelectorAll('product-list-item product-list-item--centered');
         if (buyButtons) {
           buyButtons.forEach(element => {
-            let clonedButtonWrapper = element?.cloneNode(true);
+            let clonedProduct = element?.cloneNode(true);
+            let clonedButtonWrapper = clonedProduct?.lastElementChild
             element.replaceWith(clonedButtonWrapper);
             let clonedButton = clonedButtonWrapper?.firstElementChild
             clonedButton.classList.add('snipcart-add-item')
