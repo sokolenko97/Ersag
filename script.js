@@ -360,19 +360,6 @@ window.addEventListener("load", function () {
         // const thanksButton = document.querySelector('.payment-info__button')
         // thanksButton.innerText = 'Зрозуміло'
       }
-
-      // const snipcartCode = '<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script> <div id="snipcart" data-config-modal-style="side" data-api-key="NzQ2MGI0YzktN2MxNy00N2FhLTgwMmQtZGZkODk0YTM5MGRiNjM4NTI1MTQ4OTkyNDA1NDkw" hidden></div>'
-      // document.body.innerHTML += snipcartCode
-
-      function addCartToButton() {
-        const buyButtons = document.querySelectorAll('.block-product__button--primary')
-        buyButtons.forEach(element => {
-          element.classList.add('snipcart-add-item')
-        })
-      }
-
-      // addCartToButton()
-
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
