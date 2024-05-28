@@ -364,12 +364,20 @@ window.addEventListener("load", function () {
 
       function addCartToButton(productsArray) {
         const productCards = document.querySelectorAll('.product-list-item product-list-item--centered');
+        console.log(productCards);
+
         if (productCards) {
           productCards.forEach(element => {
             let clonedProduct = element?.cloneNode(true);
+            console.log(clonedProduct);
+
             element.replaceWith(clonedProduct);
             let clonedButtonWrapper = clonedProduct?.lastElementChild
+            console.log(clonedButtonWrapper);
+
             let clonedButton = clonedButtonWrapper?.firstElementChild
+            console.log(closedButton);
+
             clonedButton.classList.add('snipcart-add-item')
             // clonedButton.addEventListener('click', function(event) {
             //   event.preventDefault();})
