@@ -388,7 +388,7 @@ window.addEventListener("load", function () {
               clonedButton.setAttribute('data-item-name',productTitleText)
             }
   
-            let productSubtitle = productTitle.nextElementSibling
+            let productSubtitle = productTitle?.nextElementSibling
             if (productSubtitle?.classList.contains('product-subtitle')) {
               let productSubtitleText = productSubtitle.innerText?.trim()
               clonedButton.setAttribute('data-item-description',productSubtitleText)
