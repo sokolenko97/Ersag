@@ -20,6 +20,11 @@ main {
   max-width: 100% !important;
 }
 
+.body-small{
+  /* text-transform: uppercase !important; */
+  font-weight: 600 !important;
+}
+
 /* Cart */
 
 .snipcart-test-banner{
@@ -191,12 +196,7 @@ main {
 }
 
 @media screen and (max-width: 920px) {
-  .body-small{
-    text-transform: uppercase !important;
-    font-weight: 600 !important;
-  }
-
-  .quantity-picker{
+   .quantity-picker{
     --size: 38px !important;
   }
   .block-product__option-select-wrapper,
