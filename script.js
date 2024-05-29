@@ -48,8 +48,10 @@ window.addEventListener("load", function () {
           }, 1000);
         }
       }
-
+      setTimeout(() => {
       let checkProductListInterval = setInterval(checkProductList, 1);
+      }, 1000);
+
 
       function createProductSubtitle(element, matchingProduct) {
         const subtitle = matchingProduct.subtitle;
