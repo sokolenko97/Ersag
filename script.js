@@ -41,9 +41,9 @@ window.addEventListener("load", function () {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
-          setTimeout(() => {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
+          setTimeout(() => {
             // addCartToButton(productsData);
           }, 1000);
         }
