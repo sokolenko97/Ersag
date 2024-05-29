@@ -34,8 +34,9 @@ window.addEventListener("load", function () {
       const productsData = products.products;
 
       function checkProductList() {
+        let productImgLoadCheck
         setTimeout(() => {
-        const productImgLoadCheck = document.querySelector(
+        productImgLoadCheck = document.querySelector(
           ".product-list-item__image"
         );
         }, 1000);
