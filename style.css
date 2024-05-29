@@ -11,6 +11,12 @@ main {
   --body-font-weight: 400 !important;
 }
 
+/*Sticky Bar*/
+
+.block-sticky-bar-layout{
+  max-width: 100% !important;
+}
+
 /* Cart */
 
 .snipcart-test-banner{
@@ -182,6 +188,11 @@ main {
 }
 
 @media screen and (max-width: 920px) {
+  .body-small{
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+  }
+
   .quantity-picker{
     --size: 38px !important;
   }
