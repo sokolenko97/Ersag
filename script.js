@@ -162,10 +162,10 @@ window.addEventListener("load", function () {
       let productsMenuButton = document.querySelector('[href="/tovari"]');
       productsMenuButton.removeAttribute("href");
 
-      const stickyBar = document.querySelector('[data-block-id="stickyBar"]')
-      const mainTag = document.querySelector('main')
+      // const stickyBar = document.querySelector('[data-block-id="stickyBar"]')
+      // const mainTag = document.querySelector('main')
 
-      mainTag.append(stickyBar)
+      // mainTag.append(stickyBar)
 
       // Moving Product HTML elements
 
