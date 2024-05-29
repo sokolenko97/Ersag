@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
           setTimeout(() => {
-            addCartToButton(productsData);
+            // addCartToButton(productsData);
           }, 4000);
         }
       }
@@ -175,7 +175,7 @@ window.addEventListener("load", function () {
           productImageContainer.parentElement.append(productDetailsElement);
         }
         matchTheProduct(productsData);
-        addCartToButton(productsData);
+        // addCartToButton(productsData);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
