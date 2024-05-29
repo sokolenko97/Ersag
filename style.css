@@ -12,6 +12,10 @@ main {
 }
 
 /*Sticky Bar*/
+
+.block-sticky-bar{
+  z-index: 1 !important;
+}
 .block-sticky-bar-layout{
   max-width: 100% !important;
 }
