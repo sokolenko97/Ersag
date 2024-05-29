@@ -189,7 +189,7 @@ main {
 @media screen and (max-width: 920px) {
   .body-small{
     text-transform: uppercase !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
   }
 
   .quantity-picker{
