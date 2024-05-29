@@ -258,13 +258,13 @@ window.addEventListener("load", function () {
           );
           productPreviewObserver.observe(mainTag, config);
 
-          // const cartElement = document.querySelector(
-          //   '[data-qa="user-section-zyroecommerceshoppingcart"]'
-          // );
-          // const cartObserver = new MutationObserver((mutationRecords) => {
-          //   changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
-          // });
-          // cartObserver.observe(cartElement, config);
+          const cartElement = document.querySelector(
+            '[data-qa="user-section-zyroecommerceshoppingcart"]'
+          );
+          const cartObserver = new MutationObserver((mutationRecords) => {
+            changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
+          });
+          cartObserver.observe(cartElement, config);
         }
       }
 
