@@ -12,10 +12,11 @@ main {
 }
 
 /*Sticky Bar*/
-
+.block-sticky-bar{
+  bottom: 0 !important;
+}
 .block-sticky-bar-layout{
   max-width: 100% !important;
-  bottom: 0 !important;
 }
 
 /* Cart */
