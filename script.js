@@ -38,14 +38,14 @@ window.addEventListener("load", function () {
           ".product-list-item__image"
         );
         if (productImgLoadCheck) {
+          setTimeout(() => {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          setTimeout(() => {
             // addCartToButton(productsData);
-          }, 4000);
+          }, 1000);
         }
       }
 
