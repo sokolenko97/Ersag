@@ -48,8 +48,10 @@ window.addEventListener("load", function () {
           }, 1000);
         }
       }
+
+      let checkProductListInterval
       setTimeout(() => {
-      let checkProductListInterval = setInterval(checkProductList, 1);
+        checkProductListInterval = setInterval(checkProductList, 1);
       }, 1000);
 
 
