@@ -38,10 +38,10 @@ window.addEventListener("load", function () {
           ".product-list-item__image"
         );
         if (productImgLoadCheck) {
-          setTimeout(() => {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
+          setTimeout(() => {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
             // addCartToButton(productsData);
