@@ -255,6 +255,7 @@ main {
   }
   .product-carousel__image-wrapper--contain {
     height: auto !important;
+    padding-bottom: 43% !important;
   }
 
   .block-product__price-data-wrapper {
