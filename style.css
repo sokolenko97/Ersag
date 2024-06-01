@@ -76,6 +76,7 @@ main {
   .product-carousel__main-image {
     --image-border-radius: 50% !important;
     max-width: 526px !important;
+    max-height: 526px !important;
   }
 }
 
