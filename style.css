@@ -70,6 +70,10 @@ main {
 
 /*image*/
 
+.product-carousel__image-wrapper--contain {
+  padding-bottom: 43% !important;
+}
+
 .product-carousel__image-wrapper.product-carousel__image-wrapper--contain {
   justify-content: center !important;
   border-color: transparent !important;
@@ -195,6 +199,7 @@ main {
   align-items: center !important;
 }
 
+
 @media screen and (max-width: 920px) {
    .quantity-picker{
     --size: 38px !important;
@@ -255,7 +260,6 @@ main {
   }
   .product-carousel__image-wrapper--contain {
     height: auto !important;
-    padding-bottom: 43% !important;
   }
 
   .block-product__price-data-wrapper {
