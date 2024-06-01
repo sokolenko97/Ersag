@@ -74,7 +74,6 @@ main {
 .product-carousel__image-wrapper.product-carousel__image-wrapper--contain {
   justify-content: center !important;
   border-color: transparent !important;
-  padding-bottom: 43% !important;
   .product-carousel__main-image {
     --image-border-radius: 50% !important;
     max-width: 526px !important;
@@ -142,6 +141,9 @@ main {
     .block-product.block-product--in-preview {
       flex-direction: row !important;
     }
+  }
+  .product-carousel__image-wrapper--contain {
+    padding-bottom: 43% !important;
   }
 }
 
