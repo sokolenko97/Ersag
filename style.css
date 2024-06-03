@@ -141,7 +141,7 @@ main {
     .block-product.block-product--in-preview {
       flex-direction: row !important;
       .product-carousel__image-wrapper--contain {
-        padding-bottom: 0px !important;
+        padding-bottom: 100% !important;
       }
     }
   }
