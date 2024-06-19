@@ -35,11 +35,11 @@ window.addEventListener("load", function () {
 
       function checkProductList() {
         let productImgLoadCheck
-        setTimeout(() => {
+        // setTimeout(() => {
         productImgLoadCheck = document.querySelector(
           ".product-list-item__image"
         );
-        }, 1000);
+        // }, 1000);
         if (productImgLoadCheck) {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
@@ -56,9 +56,9 @@ window.addEventListener("load", function () {
       }
 
       let checkProductListInterval
-      // setTimeout(() => {
+      setTimeout(() => {
         checkProductListInterval = setInterval(checkProductList, 1);
-      // }, 1000);
+      }, 1000);
 
 
       function createProductSubtitle(element, matchingProduct) {
