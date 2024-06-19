@@ -236,6 +236,9 @@ main {
   }
   .product-list-item__button--primary {
     pointer-events: auto !important;
+    justify-content: center !important;
+    min-width: 90px !important;
+    min-height: 40px !important;
   }
   /* Product page replacements */
   .block-product__description {
