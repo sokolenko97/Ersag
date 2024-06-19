@@ -11,6 +11,12 @@ main {
   --body-font-weight: 400 !important;
 }
 
+/* Sorting */
+
+.product-list-sorting__select{
+  text-align: left !important;
+}
+
 /*Sticky Bar*/
 
 .block-sticky-bar{
