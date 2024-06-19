@@ -56,9 +56,9 @@ window.addEventListener("load", function () {
       }
 
       let checkProductListInterval
-      setTimeout(() => {
+      // setTimeout(() => {
         checkProductListInterval = setInterval(checkProductList, 1);
-      }, 1000);
+      // }, 1000);
 
 
       function createProductSubtitle(element, matchingProduct) {
