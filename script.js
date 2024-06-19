@@ -50,9 +50,9 @@ window.addEventListener("load", function () {
             // addCartToButton(productsData);
           }, 1000);
         }
-        else{
-          clearInterval(checkProductListInterval)
-        }
+        // else{
+        //   clearInterval(checkProductListInterval)
+        // }
       }
 
       let checkProductListInterval
