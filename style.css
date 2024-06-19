@@ -44,6 +44,12 @@ main {
   display: none !important;
 }
 
+/* Products list */
+
+.product-list-item__content{
+  height: 100% !important;
+}
+
 .product-list__link {
   /*#e8e3c7*/
   background-color: rgb(203, 229, 245);
