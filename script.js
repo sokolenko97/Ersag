@@ -457,8 +457,11 @@ window.addEventListener("load", function () {
         }
       }
 
-      function changeFormSuccess(formDiv) {
-        if (formDiv) {
+      function changeFormSuccess(mutationRecords) {
+        const registrationForm = document.querySelector(
+          ".layout-element__component--GridForm"
+        );
+        if (registrationForm) {
           const successMessage = document.querySelector('.success-message__heading')
           if (successMessage) {
             successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
@@ -471,7 +474,7 @@ window.addEventListener("load", function () {
       );
 
       const formObserver = new MutationObserver(
-        changeFormSuccess(registrationForm)
+        changeFormSuccess
       );
 
       const formConfig = {
