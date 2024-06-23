@@ -135,7 +135,7 @@ window.addEventListener("load", function () {
         const SKUElement = document.createElement("p");
         SKUElement.className = "block-product__SKU";
         additionalInfoDiv.append(SKUElement);
-        SKUElement.innerText = `Артікул: ${SKU}`;
+        SKUElement.innerText = `Артикул: ${SKU}`;
       }
 
       function matchTheProduct(productsArray) {
