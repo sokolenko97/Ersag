@@ -263,6 +263,7 @@ window.addEventListener("load", function () {
           moveProductPageHTMLBlocks();
           clearInterval(check);
         } else if (astraIslandEl) {
+          moveProductPageHTMLBlocks();
           const config = {
             childList: true,
             // subtree: true
