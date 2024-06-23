@@ -458,6 +458,7 @@ window.addEventListener("load", function () {
       }
 
       function changeFormSuccess(mutationRecords) {
+        console.log('Mutator runs');
         const registrationForm = document.querySelector(
           ".layout-element__component--GridForm"
         );
