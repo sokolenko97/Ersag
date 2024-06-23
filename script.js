@@ -457,13 +457,28 @@ window.addEventListener("load", function () {
         }
       }
 
-      // function addBuyButtonAtribute(buyButtonEl=clonedButton,buttonWrapEl=element,classToCheck,attribute) {
-      // }
+      function changeFormSuccess(formDiv) {
+        if (formDiv) {
+          const successMessage = document.querySelector('.success-message__heading')
+          if (successMessage) {
+            successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
+          }
+        }
+      }
 
-      // const cartScript = document.createElement('script')
-      // cartScript.innerText = 'console.log("script works")'
+      const registrationForm = document.querySelector(
+        ".layout-element__component--GridForm"
+      );
 
-      // document.body.prepend(cartScript)
+      const formObserver = new MutationObserver(
+        changeFormSuccess(registrationForm)
+      );
+
+      const formConfig = {
+        childList: true
+      }
+      formObserver.observe(registrationForm, formConfig);
+
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
