@@ -459,10 +459,10 @@ window.addEventListener("load", function () {
 
       function changeFormSuccess(mutationRecords) {
         console.log('Mutator runs');
-        const registrationForm = document.querySelector(
+        const registrationFormDiv = document.querySelector(
           ".layout-element__component--GridForm"
         );
-        if (registrationForm) {
+        if (registrationFormDiv) {
           setTimeout(() => {
             const successMessage = document.querySelector('.success-message__heading')
             if (successMessage) {
@@ -472,18 +472,29 @@ window.addEventListener("load", function () {
         } else console.log('No form found');
       }
 
-      const registrationForm = document.querySelector(
+      const registrationFormDiv = document.querySelector(
         ".layout-element__component--GridForm"
       );
-
-      const formObserver = new MutationObserver(
-        changeFormSuccess
+      const registrationForm = document.querySelector(
+        ".form__control"
       );
 
-      const formConfig = {
-        childList: true
-      }
-      formObserver.observe(registrationForm, formConfig);
+      registrationForm.addEventListener('submit', (e) => {
+        const successMessage = document.querySelector('.success-message__heading')
+            if (successMessage) {
+              successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
+            } else console.log('No message yet');
+      })
+      
+
+      // const formObserver = new MutationObserver(
+      //   changeFormSuccess
+      // );
+
+      // const formConfig = {
+      //   childList: true
+      // }
+      // formObserver.observe(registrationFormDiv, formConfig);
 
     })
     .catch((error) => {
