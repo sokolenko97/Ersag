@@ -159,7 +159,7 @@ window.addEventListener("load", function () {
       dropDownArrow.setAttribute("checked", "");
       dropDownArrow.setAttribute("disabled", "");
 
-      let productsMenuButton = document.querySelector('[href="/tovari"]');
+      let productsMenuButton = document.querySelector('[href="/products"]');
       productsMenuButton.removeAttribute("href");
 
       const stickyBar = document.querySelector('[data-block-id="stickyBar"]')
