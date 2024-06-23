@@ -189,7 +189,9 @@ window.addEventListener("load", function () {
             ".product-carousel__image-wrapper--contain"
           );
 
-          productImageContainer.parentElement.append(productDetailsElement);
+          if (productImageContainer) {
+            productImageContainer.parentElement.append(productDetailsElement);
+          }
         }
         matchTheProduct(productsData);
         // addCartToButton(productsData);
