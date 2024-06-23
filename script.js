@@ -181,7 +181,9 @@ window.addEventListener("load", function () {
             ".block-product__button-wrapper"
           );
 
-          productDetailsElement.append(productBuyButton);
+          if (productDetailsElement) {
+            productDetailsElement.append(productBuyButton);
+          }
 
           let productImageContainer = document.querySelector(
             ".product-carousel__image-wrapper--contain"
