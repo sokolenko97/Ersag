@@ -480,10 +480,12 @@ window.addEventListener("load", function () {
       );
 
       registrationForm.addEventListener('submit', (e) => {
-        const successMessage = document.querySelector('.success-message__heading')
-            if (successMessage) {
-              successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
-            } else console.log('No message yet');
+        setTimeout(() => {
+          const successMessage = document.querySelector('.success-message__heading')
+              if (successMessage) {
+                successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
+              } else console.log('No message yet');
+        }, 1000);
       })
       
 
