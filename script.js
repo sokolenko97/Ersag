@@ -127,10 +127,10 @@ window.addEventListener("load", function () {
         const additionalInfoDiv = document.querySelector(
           ".block-product__additional-info"
         );
-        const pointsElement = document.createElement("p");
-        pointsElement.className = "block-product__points";
-        additionalInfoDiv.append(pointsElement);
-        pointsElement.innerText = `Бали: ${points}`;
+        // const pointsElement = document.createElement("p");
+        // pointsElement.className = "block-product__points";
+        // additionalInfoDiv.append(pointsElement);
+        // pointsElement.innerText = `Бали: ${points}`;
 
         const SKUElement = document.createElement("p");
         SKUElement.className = "block-product__SKU";
