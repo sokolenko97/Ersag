@@ -140,7 +140,7 @@ window.addEventListener("load", function () {
 
       function matchTheProduct(productsArray) {
         const elementTitle = document.querySelector(".block-product__title");
-        if (Array.isArray(productsArray)) {
+        if (Array.isArray(productsArray) && elementTitle) {
           const matchingProduct = productsArray.find(
             (product) => product.title.trim() === elementTitle.innerText.trim()
           );
