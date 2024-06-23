@@ -468,7 +468,7 @@ window.addEventListener("load", function () {
                   successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
                   clearInterval(checksuccessMessage);
                 } else console.log('No message yet');
-          }, 500);
+          }, 100);
       })
       
 
