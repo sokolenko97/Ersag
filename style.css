@@ -203,6 +203,7 @@ main {
   font-size: 15px;
   margin-bottom: 8px;
   flex-grow: 1;
+  font-style: italic;
 }
 .site-drawer__close-button{
   padding-bottom: 0px !important;
