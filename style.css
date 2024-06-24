@@ -9,6 +9,7 @@ body{
 main {
   --font-secondary: "Montserrat", serif !important;
   --body-font-weight: 400 !important;
+  --grid-button-primary-font-weight: 400 !important;
 }
 
 /* Sorting */
