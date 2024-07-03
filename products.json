@@ -1,5 +1,5 @@
 {
-    "id": "prod_01HWGR7YXZPQ3J9NBA2BR4113W",
+    "id": "20",
             "price": 1476.00,
             "image": [
                 "https://cdn.zyrosite.com/cdn-ecommerce/store_01HW8RT3XXCQ1MM8AF42T8QGP5%2Fassets%2F1714254232651-%C3%90%C2%B1%C3%91%C2%80%C3%90%C2%BE%C3%90%C2%BC%C3%90%C2%B5%C3%90%C2%BB%C3%90%C2%B0%C3%90%C2%B8%C3%90%C2%BD.png",
@@ -7,4 +7,9 @@
             ],
             "name": "Бромелайн",
              "url": "/"
+},
+{
+  "id": "prod_01HWGR7YXZPQ3J9NBA2BR4113W",
+  "price": 1476.00,
+  "url": "/"
 }
