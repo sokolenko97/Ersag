@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
           setTimeout(() => {
-            addCartToButton(productsData);
+            // addCartToButton(productsData);
           }, 1000);
         }
         // else{
@@ -87,6 +87,7 @@ window.addEventListener("load", function () {
               const astraIslandEl = document.querySelector(
                 '[props^="{\\"page-data"]'
               );
+              let productID;
               if (astraIslandEl) {
                 const astraIslandElPropsString =
                   astraIslandEl.getAttribute("props");
@@ -96,7 +97,6 @@ window.addEventListener("load", function () {
                 const astraIslandPagesObj =
                   astraIslandElPropsObj["page-data"][1].pages[1];
   
-                let productID;
   
                 Object.keys(astraIslandPagesObj).forEach((key) => {
                   if (astraIslandPagesObj[key][1].name) {
@@ -196,7 +196,7 @@ window.addEventListener("load", function () {
           }
         }
         matchTheProduct(productsData);
-        addCartToButton(productsData);
+        // addCartToButton(productsData);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
