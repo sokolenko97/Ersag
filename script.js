@@ -419,28 +419,28 @@ window.addEventListener("load", function () {
             // clonedButton.addEventListener('click', function(event) {
             //   event.preventDefault();})
 
-            // let productPriceWrapper =
-            //   clonedButtonWrapper?.previousElementSibling?.lastElementChild;
-            // if (
-            //   productPriceWrapper?.classList.contains(
-            //     "product-list-item__price-wrapper"
-            //   )
-            // ) {
-            //   let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
-            //   clonedButton.setAttribute("data-item-price", stringToNum);
-            // }
-
             let productPriceWrapper =
-              clonedButtonWrapper?.previousElementSibling
-            let productPrice = productPriceWrapper.querySelector('.product-list-item__price-wrapper')
-              if (productPrice) {
-
-                console.log(productPriceWrapper.innerText);
-
+              clonedButtonWrapper?.previousElementSibling?.lastElementChild?.lastElementChild;
+            if (
+              productPriceWrapper?.classList.contains(
+                "product-list-item__price-wrapper"
+              )
+            ) {
               let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
-              console.log(stringToNum);
               clonedButton.setAttribute("data-item-price", stringToNum);
             }
+
+            // let productPriceWrapper =
+            //   clonedButtonWrapper?.previousElementSibling
+            // let productPrice = productPriceWrapper.querySelector('.product-list-item__price-wrapper')
+            //   if (productPrice) {
+
+            //     console.log(productPriceWrapper.innerText);
+
+            //   let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
+            //   console.log(stringToNum);
+            //   clonedButton.setAttribute("data-item-price", stringToNum);
+            // }
 
             let productImageWrapper =
               clonedButtonWrapper?.previousElementSibling?.firstElementChild;
