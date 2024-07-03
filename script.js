@@ -46,19 +46,22 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          setTimeout(() => {
-                addCartToButton(productsData);
-          }, 5000);
+          // setTimeout(() => {
+          //       addCartToButton(productsData);
+          // }, 5000);
         }
         // else{
         //   clearInterval(checkProductListInterval)
         // }
       }
 
+      setTimeout(() => {
+        addCartToButton(productsData);
+  }, 5000);
+
       let checkProductListInterval
       setTimeout(() => {
         checkProductListInterval = setInterval(checkProductList, 1);
-        clearInterval(checkProductListInterval);
       }, 1000);
 
 
