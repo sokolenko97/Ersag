@@ -457,17 +457,18 @@ window.addEventListener("load", function () {
         }
       }
 
-      function removeFreeWidget() {
+      function removeFreeWidget(className) {
        const checkTelegraWidget = setInterval(() => {
-          const s = document.querySelector('[class^="FloatingWindow__Container"]');
+          const s = document.querySelector(className);
           if (s?.lastElementChild?.hasAttribute('href')) {
             s.lastElementChild.remove()
             clearInterval(checkTelegraWidget);
           }
         }, 10);
       }     
-      
-      removeFreeWidget()
+
+      removeFreeWidget('[class^="FloatingWindow__Container"]');
+      removeFreeWidget('[class^="Button__Component"]');
 
     })
     .catch((error) => {
