@@ -464,7 +464,7 @@ window.addEventListener("load", function () {
             s.lastElementChild.remove()
             clearInterval(checkTelegraWidget);
           }
-        }, 1000);
+        }, 500);
       }     
 
       removeFreeWidget()
