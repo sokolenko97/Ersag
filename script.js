@@ -46,9 +46,11 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          let snipcart = setInterval(() => {
-              addCartToButton(productsData);
-            }, 1000);
+          setTimeout(() => {
+            let snipcart = setInterval(() => {
+                addCartToButton(productsData);
+              }, 1000);
+          }, 3000);
         }
         // else{
         //   clearInterval(checkProductListInterval)
@@ -196,9 +198,11 @@ window.addEventListener("load", function () {
           }
         }
         matchTheProduct(productsData);
-        let snipcart = setInterval(() => {
-          addCartToButton(productsData);
-        }, 1000);
+        setTimeout(() => {
+          let snipcart = setInterval(() => {
+            addCartToButton(productsData);
+          }, 1000);
+        }, 3000);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
