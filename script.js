@@ -46,9 +46,9 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          setTimeout(() => {
-                addCartToButton(productsData);
-          }, 5000);
+          // setTimeout(() => {
+          //       addCartToButton(productsData);
+          // }, 5000);
         }
         // else{
         //   clearInterval(checkProductListInterval)
@@ -196,9 +196,9 @@ window.addEventListener("load", function () {
           }
         }
         matchTheProduct(productsData);
-        setTimeout(() => {
-            addCartToButton(productsData);
-        }, 5000);
+        // setTimeout(() => {
+        //     addCartToButton(productsData);
+        // }, 5000);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
