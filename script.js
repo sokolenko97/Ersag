@@ -457,7 +457,7 @@ window.addEventListener("load", function () {
         }
       }
 
-      function removeFreeWidget(params) {
+      function removeFreeWidget() {
        const checkTelegraWidget = setInterval(() => {
           const s = document.querySelector('[class^="FloatingWindow__Container"]');
           if (s?.lastElementChild?.hasAttribute('href')) {
