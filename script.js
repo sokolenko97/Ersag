@@ -229,6 +229,11 @@ window.addEventListener("load", function () {
         const productBtn = document.querySelector(
           ".block-product__button--primary"
         );
+
+        const productsButtons = document.querySelector('.product-list-item__button--primary');
+        if (productsButtons) {
+          productsButtons.classList.toggle('snipcart-add-item')
+        }
         const astraIslandEl = document.querySelector(
           '[props^="{\\"page-data"]'
         );
