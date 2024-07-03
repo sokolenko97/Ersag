@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          let snipcart =  setInterval(() => {
+          let snipcart = setInterval(() => {
               addCartToButton(productsData);
             }, 1000);
         }
@@ -196,7 +196,9 @@ window.addEventListener("load", function () {
           }
         }
         matchTheProduct(productsData);
-        addCartToButton(productsData);
+        let snipcart = setInterval(() => {
+          addCartToButton(productsData);
+        }, 1000);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
