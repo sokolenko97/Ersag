@@ -457,13 +457,17 @@ window.addEventListener("load", function () {
         }
       }
 
-      const checkTelegraWidget = setInterval(() => {
-        const s = document.querySelector('[class^="FloatingWindow__Container"]');
-        if (s?.lastElementChild?.hasAttribute('href')) {
-          s.lastElementChild.remove()
-          clearInterval(checkTelegraWidget);
-        }
-      }, 1000);
+      function removeFreeWidget() {
+        const checkTelegraWidget = setInterval(() => {
+          const s = document.querySelector('[class^="FloatingWindow__Container"]');
+          if (s?.lastElementChild?.hasAttribute('href')) {
+            s.lastElementChild.remove()
+            clearInterval(checkTelegraWidget);
+          }
+        }, 1000);
+      }
+
+      removeFreeWidget()
       
 
     })
