@@ -419,13 +419,21 @@ window.addEventListener("load", function () {
             // clonedButton.addEventListener('click', function(event) {
             //   event.preventDefault();})
 
+            // let productPriceWrapper =
+            //   clonedButtonWrapper?.previousElementSibling?.lastElementChild;
+            // if (
+            //   productPriceWrapper?.classList.contains(
+            //     "product-list-item__price-wrapper"
+            //   )
+            // ) {
+            //   let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
+            //   clonedButton.setAttribute("data-item-price", stringToNum);
+            // }
+
             let productPriceWrapper =
-              clonedButtonWrapper?.previousElementSibling?.lastElementChild;
-            if (
-              productPriceWrapper?.classList.contains(
-                "product-list-item__price-wrapper"
-              )
-            ) {
+              clonedButtonWrapper?.previousElementSibling
+            let productPrice = productPriceWrapper.querySelector('.product-list-item__price-wrapper')
+              if (productPrice) {
               let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
               clonedButton.setAttribute("data-item-price", stringToNum);
             }
@@ -442,7 +450,7 @@ window.addEventListener("load", function () {
               clonedButton.setAttribute("data-item-image", productImageURL);
             }
 
-            let productTitle = productImageWrapper?.nextElementSibling;
+            let productTitle = productImageWrapper?.nextElementSibling?.firstElementChild;
             if (productTitle?.classList.contains("product-list-item__title")) {
               let productTitleText = productTitle?.innerText?.trim();
               clonedButton.setAttribute("data-item-name", productTitleText);
