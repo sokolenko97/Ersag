@@ -1,4 +1,5 @@
-{
+[
+    {
     "id": "20",
             "price": 1476.00,
             "image": [
@@ -7,9 +8,10 @@
             ],
             "name": "Бромелайн",
              "url": "/"
-},
-{
-  "id": "prod_01HWGR7YXZPQ3J9NBA2BR4113W",
-  "price": 1476.00,
-  "url": "/"
-}
+    },
+    {
+      "id": "prod_01HWGR7YXZPQ3J9NBA2BR4113W",
+      "price": 1476.00,
+      "url": "/"
+    }
+]
