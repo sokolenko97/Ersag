@@ -49,6 +49,7 @@ window.addEventListener("load", function () {
           setTimeout(() => {
             let snipcart = setInterval(() => {
                 addCartToButton(productsData);
+                clearInterval(snipcart);
               }, 1000);
           }, 5000);
         }
@@ -398,7 +399,7 @@ window.addEventListener("load", function () {
         const mainTag = document.querySelector("main");
         const cloneMain = mainTag.cloneNode(true);
         mainTag.replaceWith(cloneMain);
-
+      
         let productCards;
         if (cloneMain) {
           productCards = document.querySelectorAll('[class$="button-wrapper"]');
@@ -463,7 +464,6 @@ window.addEventListener("load", function () {
             }
           });
         }
-        clearInterval(snipcart);
       }
 
       function removeFreeWidget(className) {
