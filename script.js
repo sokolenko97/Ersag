@@ -46,9 +46,9 @@ window.addEventListener("load", function () {
           );
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
-          // setTimeout(() => {
-          //       addCartToButton(productsData);
-          // }, 5000);
+          setTimeout(() => {
+                addCartToButton(productsData);
+          }, 5000);
         }
         // else{
         //   clearInterval(checkProductListInterval)
@@ -58,6 +58,7 @@ window.addEventListener("load", function () {
       let checkProductListInterval
       setTimeout(() => {
         checkProductListInterval = setInterval(checkProductList, 1);
+        clearInterval(checkProductListInterval);
       }, 1000);
 
 
@@ -230,10 +231,10 @@ window.addEventListener("load", function () {
           ".block-product__button--primary"
         );
 
-        const productsButtons = document.querySelector('.product-list-item__button--primary');
-        if (productsButtons) {
-          productsButtons.classList.toggle('snipcart-add-item')
-        }
+        // const productsButtons = document.querySelector('.product-list-item__button--primary');
+        // if (productsButtons) {
+        //   productsButtons.classList.toggle('snipcart-add-item')
+        // }
         const astraIslandEl = document.querySelector(
           '[props^="{\\"page-data"]'
         );
