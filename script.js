@@ -464,6 +464,10 @@ window.addEventListener("load", function () {
             s.lastElementChild.remove()
             clearInterval(checkTelegraWidget);
           }
+          if (s?.firstElementChild?.hasAttribute('href')) {
+            s.firstElementChild.remove()
+            clearInterval(checkTelegraWidget);
+          }
         }, 10);
       }     
 
