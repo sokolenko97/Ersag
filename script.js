@@ -47,10 +47,7 @@ window.addEventListener("load", function () {
           createElementForNextSibling(productSibling, productsData);
           clearInterval(checkProductListInterval);
           setTimeout(() => {
-            let snipcart = setInterval(() => {
                 addCartToButton(productsData);
-                clearInterval(snipcart);
-              }, 1000);
           }, 5000);
         }
         // else{
@@ -200,9 +197,7 @@ window.addEventListener("load", function () {
         }
         matchTheProduct(productsData);
         setTimeout(() => {
-          let snipcart = setInterval(() => {
             addCartToButton(productsData);
-          }, 1000);
         }, 5000);
       }
 
