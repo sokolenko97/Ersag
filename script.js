@@ -457,12 +457,15 @@ window.addEventListener("load", function () {
         }
       }
 
-      const s = document.querySelector('[class^="FloatingWindow__Container"]');
-      setTimeout(() => {
-        if (s?.lastElementChild?.hasAttribute('href')) {
-          s.lastElementChild.remove()
-        }
-      }, 5000);
+      function removeFreeWidget(params) {
+       const checkTelegraWidget = setInterval(() => {
+          const s = document.querySelector('[class^="FloatingWindow__Container"]');
+          if (s?.lastElementChild?.hasAttribute('href')) {
+            s.lastElementChild.remove()
+            clearInterval(checkTelegraWidget);
+          }
+        }, 1000);
+      }     
       
 
     })
