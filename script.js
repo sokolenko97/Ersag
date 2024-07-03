@@ -87,27 +87,29 @@ window.addEventListener("load", function () {
               const astraIslandEl = document.querySelector(
                 '[props^="{\\"page-data"]'
               );
-              const astraIslandElPropsString =
-                astraIslandEl.getAttribute("props");
-              const astraIslandElPropsObj = JSON.parse(
-                astraIslandElPropsString
-              );
-              const astraIslandPagesObj =
-                astraIslandElPropsObj["page-data"][1].pages[1];
-
-              let productID;
-
-              Object.keys(astraIslandPagesObj).forEach((key) => {
-                if (astraIslandPagesObj[key][1].name) {
-                  if (
-                    astraIslandPagesObj[key][1].name[1].trim() === elementTitle
-                  ) {
-                    if (astraIslandPagesObj[key][1].productId) {
-                      productID = astraIslandPagesObj[key][1].productId[1];
+              if (astraIslandEl) {
+                const astraIslandElPropsString =
+                  astraIslandEl.getAttribute("props");
+                const astraIslandElPropsObj = JSON.parse(
+                  astraIslandElPropsString
+                );
+                const astraIslandPagesObj =
+                  astraIslandElPropsObj["page-data"][1].pages[1];
+  
+                let productID;
+  
+                Object.keys(astraIslandPagesObj).forEach((key) => {
+                  if (astraIslandPagesObj[key][1].name) {
+                    if (
+                      astraIslandPagesObj[key][1].name[1].trim() === elementTitle
+                    ) {
+                      if (astraIslandPagesObj[key][1].productId) {
+                        productID = astraIslandPagesObj[key][1].productId[1];
+                      }
                     }
                   }
-                }
-              });
+                });
+              }
               if (productID) {
                 matchingProduct = productsArray.find(
                   (product) => product.id === productID
