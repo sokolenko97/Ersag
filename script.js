@@ -434,7 +434,11 @@ window.addEventListener("load", function () {
               clonedButtonWrapper?.previousElementSibling
             let productPrice = productPriceWrapper.querySelector('.product-list-item__price-wrapper')
               if (productPrice) {
+
+                console.log(productPriceWrapper.innerText);
+
               let stringToNum = +productPriceWrapper.innerText.replace("₴", "");
+              console.log(stringToNum);
               clonedButton.setAttribute("data-item-price", stringToNum);
             }
 
