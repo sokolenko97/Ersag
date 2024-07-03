@@ -457,19 +457,12 @@ window.addEventListener("load", function () {
         }
       }
 
-      // const registrationForm = document.querySelector(
-      //   ".form__control"
-      // );
-
-      // registrationForm.addEventListener('submit', (e) => {
-      //    const checksuccessMessage = setInterval(() => {
-      //       const successMessage = document.querySelector('.success-message__heading')
-      //           if (successMessage) {
-      //             successMessage.innerText = "Дякую! Ми з Вами зв'яжемось для підтвердження реєстрації найближчим часом."
-      //             clearInterval(checksuccessMessage);
-      //           }
-      //     }, 100);
-      // })
+      const s = document.querySelector('[class^="FloatingWindow__Container"]');
+      setTimeout(() => {
+        if (s?.lastElementChild?.hasAttribute('href')) {
+          s.lastElementChild.remove()
+        }
+      }, 5000);
       
 
     })
