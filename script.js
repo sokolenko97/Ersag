@@ -303,7 +303,7 @@ window.addEventListener("load", function () {
 
             let preSum = cartElement.querySelector('.cart__title--with-slot')
             if (preSum) {
-              preSum.childNodes[0].textContent = 'Підсумок'
+              preSum.childNodes[0].textContent = 'Підсумок:'
             }
           });
           cartObserver.observe(cartElement, config);
