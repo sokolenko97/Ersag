@@ -55,9 +55,13 @@ window.addEventListener("load", function () {
         // }
       }
 
-  //     setTimeout(() => {
-  //       addCartToButton(productsData);
-  // }, 3000);
+      let htmlEl = document.documentElement
+      htmlEl.setAttribute('lang', 'ua')
+      console.log(htmlEl)
+
+      setTimeout(() => {
+        addCartToButton(productsData);
+  }, 5000);
 
       let checkProductListInterval
       setTimeout(() => {
@@ -468,6 +472,11 @@ window.addEventListener("load", function () {
                 productSubtitleText
               );
             }
+
+            clonedButton.setAttribute(
+              "data-item-url",
+              'https://api.pro-ersag-ukraine.com/products.json'
+            );
 
             if (Array.isArray(productsArray)) {
               let matchingProduct = productsArray?.find(
