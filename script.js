@@ -314,6 +314,11 @@ window.addEventListener("load", function () {
             if (preSum) {
               preSum.childNodes[0].textContent = 'Підсумок:'
             }
+        let cartTitle = cartElement.querySelector('.cart__content-title')
+        cartTitle.textContent = 'Кошик'
+
+        let checkoutBtn = cartElement.querySelector('.cart__checkout-button')
+        checkoutBtn.textContent = 'Оформити замовлення'
       }
 
       // Preview product - delete More details link
