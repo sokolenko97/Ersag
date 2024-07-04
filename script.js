@@ -553,6 +553,9 @@ window.addEventListener("load", function () {
       removeFreeWidget('[class^="FloatingWindow__Container"]');
       removeFreeWidget('[class^="Button__Component"]');
 
+      const countdownTimerFreeLink = document.querySelector('.eapps-link')
+      countdownTimerFreeLink.remove()
+
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
