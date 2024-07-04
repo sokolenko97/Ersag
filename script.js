@@ -553,8 +553,11 @@ window.addEventListener("load", function () {
       removeFreeWidget('[class^="FloatingWindow__Container"]');
       removeFreeWidget('[class^="Button__Component"]');
 
-      const countdownTimerFreeLink = document.querySelector('.eapps-link')
-      countdownTimerFreeLink.remove()
+      const countdownTimerFreeRemove = setInterval(() => {
+        const countdownTimerFreeLink = document.querySelector('.eapps-link')
+        countdownTimerFreeLink.remove()
+        clearInterval(countdownTimerFreeRemove)
+      }, 10);
 
     })
     .catch((error) => {
