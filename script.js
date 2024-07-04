@@ -55,9 +55,9 @@ window.addEventListener("load", function () {
         // }
       }
 
-      setTimeout(() => {
-        addCartToButton(productsData);
-  }, 3000);
+  //     setTimeout(() => {
+  //       addCartToButton(productsData);
+  // }, 3000);
 
       let checkProductListInterval
       setTimeout(() => {
