@@ -333,6 +333,14 @@ window.addEventListener("load", function () {
         }
       }
 
+      const fullURL = window.location.href;
+      if (fullURL.includes('checkout?cart_id=')) {
+        const backBtn = document.querySelector('.cart-summary__text')
+        if (backBtn) {
+          backBtn.textContent = 'Повернутися в магазин'
+        }
+      } 
+
       // Preview product - delete More details link
 
       function changeCloseButtonSize(size = "26") {
