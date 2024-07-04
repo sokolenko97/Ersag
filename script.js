@@ -325,7 +325,9 @@ window.addEventListener("load", function () {
         }
 
         let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
-        console.log(productsQuantity);
+        if (productsQuantity) {
+          console.log(productsQuantity);
+        }
       }
 
       // Preview product - delete More details link
