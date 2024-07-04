@@ -57,7 +57,6 @@ window.addEventListener("load", function () {
 
       let htmlEl = document.documentElement
       htmlEl.setAttribute('lang', 'ua')
-      console.log(htmlEl)
 
       setTimeout(() => {
         addCartToButton(productsData);
