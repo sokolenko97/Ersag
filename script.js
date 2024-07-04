@@ -327,6 +327,9 @@ window.addEventListener("load", function () {
 
         let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
         if (productsQuantity) {
+          for (const span of productsQuantity) {
+            span.textContent ='К-сть'
+          }
         }
       }
 
