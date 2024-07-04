@@ -326,7 +326,6 @@ window.addEventListener("load", function () {
 
         let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
         if (productsQuantity) {
-          console.log(productsQuantity);
         }
       }
 
