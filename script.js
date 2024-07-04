@@ -555,8 +555,10 @@ window.addEventListener("load", function () {
 
       const countdownTimerFreeRemove = setInterval(() => {
         const countdownTimerFreeLink = document.querySelector('.eapps-link')
-        countdownTimerFreeLink.remove()
-        clearInterval(countdownTimerFreeRemove)
+        if (countdownTimerFreeLink) {
+          countdownTimerFreeLink.remove()
+          clearInterval(countdownTimerFreeRemove)
+        }
       }, 10);
 
     })
