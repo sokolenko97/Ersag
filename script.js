@@ -553,13 +553,15 @@ window.addEventListener("load", function () {
       removeFreeWidget('[class^="FloatingWindow__Container"]');
       removeFreeWidget('[class^="Button__Component"]');
 
-      const countdownTimerFreeRemove = setInterval(() => {
-        const countdownTimerFreeLink = document.querySelector('.eapps-link')
-        if (countdownTimerFreeLink) {
-          countdownTimerFreeLink.remove()
-          clearInterval(countdownTimerFreeRemove)
-        }
-      }, 10);
+      setTimeout(() => {
+        const countdownTimerFreeRemove = setInterval(() => {
+          const countdownTimerFreeLink = document.querySelector('.eapps-link')
+          if (countdownTimerFreeLink) {
+            countdownTimerFreeLink.remove()
+            clearInterval(countdownTimerFreeRemove)
+          }
+        }, 10);
+      }, 1000);
 
     })
     .catch((error) => {
