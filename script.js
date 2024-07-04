@@ -298,7 +298,13 @@ window.addEventListener("load", function () {
             '[data-qa="user-section-zyroecommerceshoppingcart"]'
           );
           const cartObserver = new MutationObserver((mutationRecords) => {
-            changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
+            // changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
+            changeCloseButtonSize();
+
+            let preSum = cartElement.querySelector('.cart__title--with-slot')
+            if (preSum) {
+              preSum.childNodes[0].textContent = 'Підсумок'
+            }
           });
           cartObserver.observe(cartElement, config);
         }
