@@ -342,7 +342,7 @@ window.addEventListener("load", function () {
           }
         }
 
-        checkoutBtn.addEventListener('click', translateCheckoutPage)
+        // checkoutBtn.addEventListener('click', translateCheckoutPage)
       }
 
       function translateCheckoutPage() {
