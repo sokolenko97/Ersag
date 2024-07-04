@@ -315,10 +315,17 @@ window.addEventListener("load", function () {
               preSum.childNodes[0].textContent = 'Підсумок:'
             }
         let cartTitle = cartElement.querySelector('.cart__content-title')
-        cartTitle.textContent = 'Кошик'
+        if (cartTitle) {
+          cartTitle.textContent = 'Кошик'
+        }
 
         let checkoutBtn = cartElement.querySelector('.cart__checkout-button')
-        checkoutBtn.textContent = 'Оформити замовлення'
+        if (checkoutBtn) {
+          checkoutBtn.textContent = 'Оформити замовлення'
+        }
+
+        let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
+        console.log(productsQuantity);
       }
 
       // Preview product - delete More details link
