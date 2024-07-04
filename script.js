@@ -553,20 +553,6 @@ window.addEventListener("load", function () {
       removeFreeWidget('[class^="FloatingWindow__Container"]');
       removeFreeWidget('[class^="Button__Component"]');
 
-      function removeFreeCounterLine() {
-          const countdownTimerFreeRemove = setInterval(() => {
-            const countdownTimerFreeLink = document.querySelector('.eapps-link')
-            if (countdownTimerFreeLink) {
-              countdownTimerFreeLink.remove()
-              clearInterval(countdownTimerFreeRemove)
-            }
-          }, 10);
-      }
-
-      setTimeout(() => {
-        removeFreeCounterLine()
-      }, 1000);
-
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
