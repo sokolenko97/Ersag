@@ -152,12 +152,6 @@ main {
 
 @media screen and (min-width: 920px) {
 
-/* Countdown */
-
-.eapps-countdown-timer-header-title-text{
-  font-size: 40px !important;
-}
-
   .block-product-wrapper {
     .block-product.block-product--in-preview {
       flex-direction: row !important;
@@ -226,6 +220,13 @@ main {
 
 
 @media screen and (max-width: 920px) {
+
+/* Countdown */
+
+.eapps-countdown-timer-header-title-text{
+  font-size: 40px !important;
+}
+
    .quantity-picker{
     --size: 38px !important;
   }
