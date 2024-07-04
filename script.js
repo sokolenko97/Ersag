@@ -58,9 +58,9 @@ window.addEventListener("load", function () {
       let htmlEl = document.documentElement
       htmlEl.setAttribute('lang', 'ua')
 
-      setTimeout(() => {
-        addCartToButton(productsData);
-  }, 5000);
+  //     setTimeout(() => {
+  //       addCartToButton(productsData);
+  // }, 5000);
 
       let checkProductListInterval
       setTimeout(() => {
