@@ -17,6 +17,16 @@ window.addEventListener("load", function () {
   // Execute code only after the page and its resources are fully loaded
   // setTimeout(function() {
 
+  window.onload = function() {
+    const fullURL = window.location.href;
+    if (fullURL.includes('checkout?cart_id=')) {
+      const backBtn = document.querySelector('.cart-summary__text')
+      if (backBtn) {
+        backBtn.textContent = 'Повернутися в магазин'
+      }
+    }
+}
+
   const apiUrl =
     "https://api-ecommerce.zyro.com/store/store_01HW8RT3XXCQ1MM8AF42T8QGP5/products";
 
@@ -331,14 +341,25 @@ window.addEventListener("load", function () {
             span.textContent ='К-сть'
           }
         }
+
+        checkoutBtn.addEventListener('click', translateCheckoutPage)
       }
 
-      const fullURL = window.location.href;
-      if (fullURL.includes('checkout?cart_id=')) {
-        const backBtn = document.querySelector('.cart-summary__text')
-        if (backBtn) {
-          backBtn.textContent = 'Повернутися в магазин'
-        }
+      function translateCheckoutPage() {
+        window.onload = function() {
+//         setTimeout(() => {
+          // const translate = setInterval(() => {
+            const fullURL = window.location.href;
+            if (fullURL.includes('checkout?cart_id=')) {
+              const backBtn = document.querySelector('.cart-summary__text')
+              if (backBtn) {
+                backBtn.textContent = 'Повернутися в магазин'
+                // clearInterval(translate)
+              }
+            }
+          // }, 1000);
+        // }, 1000);
+      }
       } 
 
       // Preview product - delete More details link
