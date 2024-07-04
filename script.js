@@ -556,7 +556,6 @@ window.addEventListener("load", function () {
       function removeFreeCounterLine() {
           const countdownTimerFreeRemove = setInterval(() => {
             const countdownTimerFreeLink = document.querySelector('.eapps-link')
-            console.log(countdownTimerFreeLink);
             if (countdownTimerFreeLink) {
               countdownTimerFreeLink.remove()
               clearInterval(countdownTimerFreeRemove)
