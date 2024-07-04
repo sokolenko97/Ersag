@@ -223,7 +223,7 @@ main {
 
 /* Countdown */
 
-.eapps-countdown-timer-header-title-text{
+#eapps-countdown-timer-1 .eapps-countdown-timer-header-title{
   font-size: 40px !important;
 }
 
