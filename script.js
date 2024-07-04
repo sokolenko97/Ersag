@@ -301,16 +301,20 @@ window.addEventListener("load", function () {
             // changeButtonEvent("click",".cart__checkout-button", openCheckputFormPopup);
             changeCloseButtonSize();
 
-            let preSum = cartElement.querySelector('.cart__title--with-slot')
-            if (preSum) {
-              preSum.childNodes[0].textContent = 'Підсумок:'
-            }
+            translateCart(cartElement)
           });
           cartObserver.observe(cartElement, config);
         }
       }
 
       let check = setInterval(productCheck, 1);
+
+      function translateCart(cartElement) {
+        let preSum = cartElement.querySelector('.cart__title--with-slot')
+            if (preSum) {
+              preSum.childNodes[0].textContent = 'Підсумок:'
+            }
+      }
 
       // Preview product - delete More details link
 
