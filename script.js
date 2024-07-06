@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
-          if (productSibling) {
+          if (productSibling.length != 0) {
             createElementForNextSibling(productSibling, productsData);
             clearInterval(checkProductListInterval);
           }
