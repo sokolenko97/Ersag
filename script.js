@@ -200,9 +200,9 @@ window.addEventListener("load", function () {
   
            if (productImageContainer) {
                productImageContainer.parentElement.append(productDetailsElement);
+               clearInterval(pageLoadCheck)
            }
 
-              clearInterval(pageLoadCheck)
             }
           }, 100);
         }
