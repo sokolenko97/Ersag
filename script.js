@@ -190,7 +190,7 @@ window.addEventListener("load", function () {
             ".block-product__button-wrapper"
           );
 
-          if (productDetailsElement) {
+          if (productDetailsElement && productBuyButton) {
             productDetailsElement.append(productBuyButton);
           }
 
@@ -198,7 +198,7 @@ window.addEventListener("load", function () {
             ".product-carousel__image-wrapper--contain"
           );
 
-          if (productImageContainer) {
+          if (productImageContainer && productDetailsElement) {
             productImageContainer.parentElement.append(productDetailsElement);
           }
         }
@@ -305,6 +305,9 @@ window.addEventListener("load", function () {
           });
           cartObserver.observe(cartElement, config);
           clearInterval(check);
+        }
+        else {
+          moveProductPageHTMLBlocks();
         }
       }
 
