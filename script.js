@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
           );
           if (productSibling.length != 0) {
             createElementForNextSibling(productSibling, productsData);
-            clearInterval(checkProductListInterval);
+            // clearInterval(checkProductListInterval);
           }
           // setTimeout(() => {
           //       addCartToButton(productsData);
@@ -78,6 +78,7 @@ window.addEventListener("load", function () {
 
         // Insert the new element as the next sibling
         element.after(newElement);
+        clearInterval(checkProductListInterval);
       }
 
       function createElementForNextSibling(elementsArray, productsArray) {
