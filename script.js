@@ -190,17 +190,19 @@ window.addEventListener("load", function () {
             ".block-product__button-wrapper"
           );
 
-          if (productDetailsElement && productBuyButton) {
-            productDetailsElement.append(productBuyButton);
-          }
+          const pageLoadCheck = setInterval(() => {
+            if (productDetailsElement && productBuyButton) {
+              productDetailsElement.append(productBuyButton);
+  
+            let productImageContainer = document.querySelector(
+              ".product-carousel__image-wrapper--contain"
+            );
+  
+              productImageContainer.parentElement.append(productDetailsElement);
 
-          let productImageContainer = document.querySelector(
-            ".product-carousel__image-wrapper--contain"
-          );
-
-          if (productImageContainer && productDetailsElement) {
-            productImageContainer.parentElement.append(productDetailsElement);
-          }
+              clearInterval(pageLoadCheck)
+            }
+          }, 1000);
         }
         // matchTheProduct(productsData);
         // setTimeout(() => {
