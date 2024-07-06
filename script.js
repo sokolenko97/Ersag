@@ -259,7 +259,6 @@ window.addEventListener("load", function () {
         );
         if (productLoadCheck?.innerText === "Історія") {
           const imageCheck = document.querySelector('.subtitle')
-          console.log(imageCheck);
           if (imageCheck === null) {
             addImagetoTitle(
               "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/history-YX4Pe2vBN2cOqKr3.svg",
