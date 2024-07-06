@@ -141,7 +141,7 @@ main {
 /* Points and SKU */
 
 .block-product__price-wrapper{
-  column-gap: 70px !important;
+  /* column-gap: 70px !important; */
   .block-product__additional-info{
     flex-direction: column !important;
     p{
