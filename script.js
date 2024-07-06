@@ -44,8 +44,10 @@ window.addEventListener("load", function () {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
-          createElementForNextSibling(productSibling, productsData);
-          clearInterval(checkProductListInterval);
+          if (productSibling) {
+            createElementForNextSibling(productSibling, productsData);
+            clearInterval(checkProductListInterval);
+          }
           // setTimeout(() => {
           //       addCartToButton(productsData);
           // }, 5000);
