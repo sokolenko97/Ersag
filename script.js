@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
           ".product-list-item__image"
         );
         // }, 1000);
-        if (productImgLoadCheck) {
+        if (productImgLoadCheck.complete) {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
