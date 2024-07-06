@@ -111,10 +111,10 @@ main {
   margin-right: 30px !important;
 }
 
-.block-product__price-data-wrapper {
-  /* transform: translate(100px, 0px); */
-  /* margin-left: 3% !important; */
-}
+/* .block-product__price-data-wrapper {
+  transform: translate(100px, 0px);
+  margin-left: 3% !important;
+} */
 
 .block-product.block-product--in-preview {
   align-items: center !important;
