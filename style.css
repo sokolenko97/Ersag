@@ -161,12 +161,12 @@ main {
       flex-direction: row !important;
       .product-carousel__image-wrapper--contain {
         padding-bottom: 100% !important;
-        width: 90% !important;
       }
     }
   }
   .product-carousel__image-wrapper--contain {
     padding-bottom: 43% !important;
+    width: 90% !important;
   }
 }
 
