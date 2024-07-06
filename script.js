@@ -78,7 +78,6 @@ window.addEventListener("load", function () {
 
         // Insert the new element as the next sibling
         element.after(newElement);
-        clearInterval(checkProductListInterval);
       }
 
       function createElementForNextSibling(elementsArray, productsArray) {
@@ -93,6 +92,7 @@ window.addEventListener("load", function () {
 
             if (matchingProduct) {
               createProductSubtitle(element, matchingProduct);
+              clearInterval(checkProductListInterval);
             } else {
               const astraIslandEl = document.querySelector(
                 '[props^="{\\"page-data"]'
@@ -126,6 +126,7 @@ window.addEventListener("load", function () {
                 );
                 if (matchingProduct) {
                   createProductSubtitle(element, matchingProduct);
+                  clearInterval(checkProductListInterval);
                 }
               }
             }
