@@ -204,8 +204,13 @@ window.addEventListener("load", function () {
                clearInterval(check);
            }
 
-           const emptyProductContent = document.querySelector('.block-product__content-wrapper')
-            }
+           const productDescription = document.querySelector('.block-product__description')
+
+           if (productDescription === null) {
+            const emptyProductContent = document.querySelector('.block-product__content-wrapper')
+            productImageContainer.append(emptyProductContent)
+             }
+           }
 
             
           }, 100);
