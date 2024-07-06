@@ -201,9 +201,13 @@ window.addEventListener("load", function () {
            if (productImageContainer) {
                productImageContainer.parentElement.append(productDetailsElement);
                clearInterval(pageLoadCheck)
+               clearInterval(check);
            }
 
+           const emptyProductContent = document.querySelector('.block-product__content-wrapper')
             }
+
+            
           }, 100);
         }
         // matchTheProduct(productsData);
@@ -279,13 +283,13 @@ window.addEventListener("load", function () {
             3
           );
           moveProductPageHTMLBlocks();
-          clearInterval(check);
+          // clearInterval(check);
         } else if (shampooProductCheck?.innerText.includes("Властивості")) {
           moveProductPageHTMLBlocks();
-          clearInterval(check);
+          // clearInterval(check);
         } else if (productBtn?.innerText) {
           moveProductPageHTMLBlocks();
-          clearInterval(check);
+          // clearInterval(check);
         } else if (astraIslandEl) {
           moveProductPageHTMLBlocks();
           const config = {
@@ -308,11 +312,11 @@ window.addEventListener("load", function () {
             translateCart(cartElement)
           });
           cartObserver.observe(cartElement, config);
-          clearInterval(check);
+          // clearInterval(check);
         }
         else {
           moveProductPageHTMLBlocks();
-          clearInterval(check);
+          // clearInterval(check);
         }
       }
 
