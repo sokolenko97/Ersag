@@ -258,37 +258,41 @@ window.addEventListener("load", function () {
           '[props^="{\\"page-data"]'
         );
         if (productLoadCheck?.innerText === "Історія") {
-          addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/history-YX4Pe2vBN2cOqKr3.svg",
-            "Історія",
-            0
-          );
-
-          addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/chemical-ALpJy83Ql2HX3alJ.svg",
-            "Хімічні властивості",
-            1
-          );
-
-          addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/usage-AwvrgOxBGPtz46yv.svg",
-            "застосовують",
-            2
-          );
-
-          addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/contraindications-YbNa7bQPKgT5nJ46.svg",
-            "Протипоказання",
-            4
-          );
-
-          addImagetoTitle(
-            "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/how-to-use-m6LvQ8nEeotyXoXe.svg",
-            "Спосіб застосування",
-            3
-          );
+          const imageCheck = document.querySelector('.subtitle')
+          console.log(imageCheck);
+          if (imageCheck === null) {
+            addImagetoTitle(
+              "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/history-YX4Pe2vBN2cOqKr3.svg",
+              "Історія",
+              0
+            );
+  
+            addImagetoTitle(
+              "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/chemical-ALpJy83Ql2HX3alJ.svg",
+              "Хімічні властивості",
+              1
+            );
+  
+            addImagetoTitle(
+              "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/usage-AwvrgOxBGPtz46yv.svg",
+              "застосовують",
+              2
+            );
+  
+            addImagetoTitle(
+              "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/contraindications-YbNa7bQPKgT5nJ46.svg",
+              "Протипоказання",
+              4
+            );
+  
+            addImagetoTitle(
+              "https://assets.zyrosite.com/YbNaeGqzDzTQoObX/how-to-use-m6LvQ8nEeotyXoXe.svg",
+              "Спосіб застосування",
+              3
+            );
+          }
           moveProductPageHTMLBlocks();
-          // clearInterval(check);
+          clearInterval(check);
         } else if (shampooProductCheck?.innerText.includes("Властивості")) {
           moveProductPageHTMLBlocks();
           // clearInterval(check);
