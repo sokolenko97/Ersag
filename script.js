@@ -213,7 +213,7 @@ window.addEventListener("load", function () {
            }
 
             
-          }, 100);
+          }, 10);
         }
         // matchTheProduct(productsData);
         // setTimeout(() => {
