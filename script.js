@@ -204,7 +204,7 @@ window.addEventListener("load", function () {
 
               clearInterval(pageLoadCheck)
             }
-          }, 1000);
+          }, 100);
         }
         // matchTheProduct(productsData);
         // setTimeout(() => {
