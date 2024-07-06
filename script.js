@@ -78,7 +78,6 @@ window.addEventListener("load", function () {
 
         // Insert the new element as the next sibling
         element.after(newElement);
-        clearInterval(checkProductListInterval);
       }
 
       function createElementForNextSibling(elementsArray, productsArray) {
