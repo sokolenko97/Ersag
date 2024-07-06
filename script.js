@@ -202,7 +202,7 @@ window.addEventListener("load", function () {
             productImageContainer.parentElement.append(productDetailsElement);
           }
         }
-        matchTheProduct(productsData);
+        // matchTheProduct(productsData);
         // setTimeout(() => {
         //     addCartToButton(productsData);
         // }, 5000);
