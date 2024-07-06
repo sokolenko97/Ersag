@@ -308,6 +308,7 @@ window.addEventListener("load", function () {
         }
         else {
           moveProductPageHTMLBlocks();
+          clearInterval(check);
         }
       }
 
