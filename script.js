@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
           ".product-list-item__image"
         );
         // }, 1000);
-        if (productImgLoadCheck.complete) {
+        if (productImgLoadCheck?.complete) {
           let productSibling = document.querySelectorAll(
             ".product-list-item__title"
           );
@@ -206,6 +206,12 @@ window.addEventListener("load", function () {
                productImageContainer.parentElement.append(productDetailsElement);
                clearInterval(pageLoadCheck)
                clearInterval(check);
+
+               const productImages = document.querySelectorAll('.product-carousel__image-list-element')
+               if (productImages?.length === 2) {
+                const productImagesWrap = productImages.closest('.product-carousel__image-list')
+                console.log(productImagesWrap);
+               }
            }
 
            const productDescription = document.querySelector('.block-product__description')
