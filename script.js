@@ -209,8 +209,8 @@ window.addEventListener("load", function () {
 
                const productImages = document.querySelectorAll('.product-carousel__image-list-element')
                if (productImages?.length === 2) {
-                const productImagesWrap = productImages.closest('.product-carousel__image-list')
-                console.log(productImagesWrap);
+                const productImagesWrap = productImages[0].closest('.product-carousel__image-list')
+                productImagesWrap.style.marginRight = '30px'
                }
            }
 
