@@ -107,9 +107,15 @@ main {
   }
 }
 
+/* Main page hover*/
+
 .image--link[data-v-47c05b4e]:hover{
   filter: contrast(.9) !important;
   transform: scale(1.05) !important;
+}
+
+.image.image--grid.loaded.image-wrapper--desktop:hover{
+  transform: scale(1.1) !important;
 }
 /* .product-carousel__image-list{
   margin-right: 30px !important;
