@@ -107,6 +107,10 @@ main {
   }
 }
 
+.image--link[data-v-47c05b4e]:hover{
+  filter: contrast(.9) !important;
+  transform: scale(1.05) !important;
+}
 /* .product-carousel__image-list{
   margin-right: 30px !important;
 } */
