@@ -582,7 +582,6 @@ window.addEventListener("load", function () {
 
       removeFreeWidget('[class^="FloatingWindow__Container"]');
       removeFreeWidget('[class^="Button__Component"]');
-      removeFreeWidget('[class^="Window__Content"]');
 
 
     })
