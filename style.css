@@ -241,6 +241,7 @@ main {
 
 .block-layout--layout{
 	max-width: 400px !important;
+	min-height: 250px !important;
 }
 
 #eapps-countdown-timer-1 .eapps-countdown-timer-header-title{
