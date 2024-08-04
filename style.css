@@ -243,9 +243,9 @@ main {
 		padding: 0 !important;
 	}
 
-.block-layout--layout{
+/* .block-layout--layout{
 	--2c660f9c: 0px !important;
-}
+} */
 
 #eapps-countdown-timer-1 .eapps-countdown-timer-header-title{
   font-size: 40px !important;
