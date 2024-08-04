@@ -76,6 +76,10 @@ main {
   }
 }
 
+.eapps-countdown-timer-has-background{
+	padding: 0 !important;
+}
+
 /* Product page */
 
 .block-product__title{
