@@ -218,7 +218,7 @@ main {
   }
 }
 .product-subtitle {
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 8px;
   flex-grow: 1;
   font-style: italic;
@@ -272,9 +272,9 @@ main {
     }
   }
 
-  /* .product-subtitle {
+  .product-subtitle {
     font-size: 13px;
-  } */
+  }
   .block-product__title {
     text-align: center !important;
   }
