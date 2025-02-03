@@ -4,8 +4,8 @@
   style.textContent = `
     .scroll-to-top-widget {
       position: fixed;
-      bottom: 32px;
-      left: 32px;
+      bottom: 20px;
+      left: 20px;
       padding: 16px;
       background-color: rgba(255, 255, 255, 0.9);
       color: #333;
