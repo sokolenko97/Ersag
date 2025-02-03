@@ -5,10 +5,10 @@
     .scroll-to-top-widget {
       position: fixed;
       bottom: 32px;
-      right: 32px;
+      left: 32px;
       padding: 16px;
-      background-color: #3b82f6;
-      color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
       border-radius: 9999px;
       border: none;
       cursor: pointer;
@@ -19,7 +19,7 @@
     }
 
     .scroll-to-top-widget:hover {
-      background-color: #2563eb;
+      background-color: rgba(255, 255, 255, 1);
       transform: scale(1.1);
     }
 
@@ -31,6 +31,7 @@
       width: 20px;
       height: 20px;
       display: block;
+      stroke: #333;
     }
   `;
   document.head.appendChild(style);
