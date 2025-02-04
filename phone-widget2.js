@@ -3,7 +3,7 @@
   const WIDGET_CONFIG = {
     avatar: "https://files.elfsightcdn.com/eafe4a4d-3436-495d-b748-5bdce62d911d/23484da5-3937-4bd5-8ead-aac15551110f/%D0%BB%D0%BE%D0%B3%D0%BE.png",
     name: "Поліна",
-    greeting: "Вітаю Вас на своєму сайті!👋 \n Є питання або побажання?",
+    greeting: `Вітаю Вас на своєму сайті!👋 \n Є питання або побажання?\n\n Пишіть, буду рада допомогти!`,
     contacts: {
       phone: "0637566136",      // Your phone number
       telegram: "+380637566136",  // Your Telegram username
