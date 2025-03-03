@@ -52,7 +52,7 @@
                 setTimeout(() => {
                      preloader.remove();
                 }, 500);
-            }, 2000); // Preloader duration (2s)
+            }, 1000); // Preloader duration (2s)
         });
     });
 })();
