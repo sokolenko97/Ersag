@@ -51,7 +51,7 @@
                 preloader.style.transition = "opacity 0.5s ease";
 
                 setTimeout(() => {
-                    preloader.remove();
+                    // preloader.remove();
                 }, 500);
             }, 2000); // Preloader duration (2s)
         });
