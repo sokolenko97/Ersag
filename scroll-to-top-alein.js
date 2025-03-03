@@ -5,7 +5,7 @@
     .scroll-to-top-widget {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px;
       padding: 8px;
       background: none;
       border: none;
