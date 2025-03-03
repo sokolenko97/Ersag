@@ -25,8 +25,7 @@
         logo.src = "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=298,fit=crop,q=95/mk3qWGnZMVUJMN9E/logo-YrDqgnG2MPTB1aWa.png"; // Use full URL if required
         logo.id = "logo";
         Object.assign(logo.style, {
-            width: "100px", // Adjust as needed
-            filter: "invert(1)", // Make logo white
+            width: "300px", // Adjust as needed
             animation: "fadeInOut 2s ease-in-out infinite",
         });
 
@@ -51,7 +50,7 @@
                 preloader.style.transition = "opacity 0.5s ease";
 
                 setTimeout(() => {
-                    // preloader.remove();
+                     preloader.remove();
                 }, 500);
             }, 2000); // Preloader duration (2s)
         });
