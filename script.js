@@ -232,9 +232,13 @@ window.addEventListener("load", function () {
         // }, 5000);
       }
 
+      let discountApplied = false;
+
       function applyDiscountPrice() {
+        if (discountApplied) return;
         const priceEl = document.querySelector('.block-product__price.body-large');
         if (!priceEl) return;
+        discountApplied = true;
 
         const priceWrapper = priceEl.closest('.block-product__price-wrapper');
         if (priceWrapper) {
