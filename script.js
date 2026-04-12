@@ -50,7 +50,6 @@ function applyDiscountPrice() {
 }
 
 window.addEventListener("load", function () {
-  applyDiscountPrice(); 
   // Execute code only after the page and its resources are fully loaded
   // setTimeout(function() {
 
