@@ -206,6 +206,7 @@ window.addEventListener("load", function () {
                productImageContainer.parentElement.append(productDetailsElement);
                clearInterval(pageLoadCheck)
                clearInterval(check);
+               applyDiscountPrice();
 
                const productImages = document.querySelectorAll('.product-carousel__image-list-element')
                if (productImages?.length === 2) {
@@ -229,6 +230,27 @@ window.addEventListener("load", function () {
         // setTimeout(() => {
         //     addCartToButton(productsData);
         // }, 5000);
+      }
+
+      function applyDiscountPrice() {
+        const priceEl = document.querySelector('.block-product__price.body-large');
+        if (!priceEl) return;
+
+        const priceWrapper = priceEl.closest('.block-product__price-wrapper');
+        if (priceWrapper) {
+          priceWrapper.style.flexDirection = 'column';
+        }
+
+        const rawPrice = parseFloat(priceEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+        if (isNaN(rawPrice)) return;
+
+        const discounted = (rawPrice * 0.8).toFixed(2);
+
+        const discountEl = priceEl.cloneNode(true);
+        discountEl.textContent = `₴${discounted} зі знижкою`;
+
+        priceEl.style.textDecoration = 'line-through';
+        priceEl.after(discountEl);
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
