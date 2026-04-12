@@ -83,6 +83,7 @@ window.addEventListener("load", function () {
           );
           if (productSibling.length != 0) {
             createElementForNextSibling(productSibling, productsData);
+            applyDiscountPrice()
             // clearInterval(checkProductListInterval);
           }
           // setTimeout(() => {
