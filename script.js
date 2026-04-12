@@ -13,7 +13,44 @@ document.addEventListener("cut", (event) => {
   event.preventDefault();
 });
 
+let discountApplied = false;
+
+function applyDiscountPrice() {
+  if (discountApplied) return;
+  const priceEl = document.querySelector('.block-product__price.body-large');
+  if (!priceEl) return;
+  discountApplied = true;
+
+  const priceWrapper = priceEl.closest('.block-product__price-wrapper');
+  if (priceWrapper) {
+    priceWrapper.style.flexDirection = 'column';
+  }
+
+  const rawPrice = parseFloat(priceEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+  if (isNaN(rawPrice)) return;
+
+  const discounted = Math.floor(rawPrice * 0.8);
+
+  const discountEl = priceEl.cloneNode(true);
+  discountEl.textContent = `₴${discounted} зі знижкою`;
+
+  priceEl.style.textDecoration = 'line-through';
+  priceEl.after(discountEl);
+
+  document.querySelectorAll('.product-list-item__price-wrapper span').forEach(span => {
+    const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+    if (isNaN(raw)) return;
+    const discounted = Math.floor(raw * 0.8);
+    const clone = span.cloneNode(true);
+    clone.textContent = `₴${discounted} зі знижкою`;
+    clone.style.display = 'block';
+    span.style.textDecoration = 'line-through';
+    span.after(clone);
+  });
+}
+
 window.addEventListener("load", function () {
+  applyDiscountPrice(); 
   // Execute code only after the page and its resources are fully loaded
   // setTimeout(function() {
 
@@ -232,41 +269,7 @@ window.addEventListener("load", function () {
         // }, 5000);
       }
 
-      let discountApplied = false;
 
-      function applyDiscountPrice() {
-        if (discountApplied) return;
-        const priceEl = document.querySelector('.block-product__price.body-large');
-        if (!priceEl) return;
-        discountApplied = true;
-
-        const priceWrapper = priceEl.closest('.block-product__price-wrapper');
-        if (priceWrapper) {
-          priceWrapper.style.flexDirection = 'column';
-        }
-
-        const rawPrice = parseFloat(priceEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
-        if (isNaN(rawPrice)) return;
-
-        const discounted = Math.floor(rawPrice * 0.8);
-
-        const discountEl = priceEl.cloneNode(true);
-        discountEl.textContent = `₴${discounted} зі знижкою`;
-
-        priceEl.style.textDecoration = 'line-through';
-        priceEl.after(discountEl);
-
-        document.querySelectorAll('.product-list-item__price-wrapper span').forEach(span => {
-          const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
-          if (isNaN(raw)) return;
-          const discounted = Math.floor(raw * 0.8);
-          const clone = span.cloneNode(true);
-          clone.textContent = `₴${discounted} зі знижкою`;
-          clone.style.display = 'block';
-          span.style.textDecoration = 'line-through';
-          span.after(clone);
-        });
-      }
 
       function addImagetoTitle(url, innerText, h2Number) {
         const producDescriptionParagraph = document.querySelectorAll(
