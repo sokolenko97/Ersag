@@ -668,17 +668,9 @@ window.addEventListener("load", function () {
   const searchPriceObserver = new MutationObserver(() => {
     if (document.querySelector('.search-result-item__price')) {
       applySearchPriceDiscount();
-      searchPriceObserver.disconnect();
     }
   });
   searchPriceObserver.observe(document.body, { childList: true, subtree: true });
-
-  let searchDebounce;
-  document.body.addEventListener('input', (e) => {
-    if (!e.target.matches('.site-element-search-bar__input')) return;
-    clearTimeout(searchDebounce);
-    searchDebounce = setTimeout(() => applySearchPriceDiscount(), 300);
-  });
 
   // }, 0); // Adjust the delay as needed
 });
