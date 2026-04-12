@@ -248,13 +248,24 @@ window.addEventListener("load", function () {
         const rawPrice = parseFloat(priceEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
         if (isNaN(rawPrice)) return;
 
-        const discounted = (rawPrice * 0.8).toFixed(2);
+        const discounted = Math.floor(rawPrice * 0.8);
 
         const discountEl = priceEl.cloneNode(true);
         discountEl.textContent = `₴${discounted} зі знижкою`;
 
         priceEl.style.textDecoration = 'line-through';
         priceEl.after(discountEl);
+
+        document.querySelectorAll('.product-list-item__price-wrapper span').forEach(span => {
+          const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+          if (isNaN(raw)) return;
+          const discounted = Math.floor(raw * 0.8);
+          const clone = span.cloneNode(true);
+          clone.textContent = `₴${discounted} зі знижкою`;
+          clone.style.display = 'block';
+          span.style.textDecoration = 'line-through';
+          span.after(clone);
+        });
       }
 
       function addImagetoTitle(url, innerText, h2Number) {
