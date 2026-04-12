@@ -13,6 +13,26 @@ document.addEventListener("cut", (event) => {
   event.preventDefault();
 });
 
+let listDiscountApplied = false;
+
+function applyListPriceDiscount() {
+  if (listDiscountApplied) return;
+  const wrappers = document.querySelectorAll('.product-list-item__price-wrapper span');
+  if (!wrappers.length) return;
+  listDiscountApplied = true;
+
+  wrappers.forEach(span => {
+    const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+    if (isNaN(raw)) return;
+    const discounted = Math.floor(raw * 0.8);
+    const clone = span.cloneNode(true);
+    clone.textContent = `₴${discounted} зі знижкою`;
+    clone.style.display = 'block';
+    span.style.textDecoration = 'line-through';
+    span.after(clone);
+  });
+}
+
 let discountApplied = false;
 
 function applyDiscountPrice() {
@@ -37,16 +57,7 @@ function applyDiscountPrice() {
   priceEl.style.textDecoration = 'line-through';
   priceEl.after(discountEl);
 
-  document.querySelectorAll('.product-list-item__price-wrapper span').forEach(span => {
-    const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
-    if (isNaN(raw)) return;
-    const discounted = Math.floor(raw * 0.8);
-    const clone = span.cloneNode(true);
-    clone.textContent = `₴${discounted} зі знижкою`;
-    clone.style.display = 'block';
-    span.style.textDecoration = 'line-through';
-    span.after(clone);
-  });
+  applyListPriceDiscount();
 }
 
 window.addEventListener("load", function () {
@@ -82,7 +93,6 @@ window.addEventListener("load", function () {
           );
           if (productSibling.length != 0) {
             createElementForNextSibling(productSibling, productsData);
-            applyDiscountPrice()
             // clearInterval(checkProductListInterval);
           }
           // setTimeout(() => {
@@ -628,6 +638,14 @@ window.addEventListener("load", function () {
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
+
+  const listPriceObserver = new MutationObserver(() => {
+    if (document.querySelector('.product-list-item__price-wrapper')) {
+      applyListPriceDiscount();
+      listPriceObserver.disconnect();
+    }
+  });
+  listPriceObserver.observe(document.body, { childList: true, subtree: true });
 
   // }, 0); // Adjust the delay as needed
 });
