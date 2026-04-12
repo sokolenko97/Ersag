@@ -33,6 +33,26 @@ function applyListPriceDiscount() {
   });
 }
 
+let searchDiscountApplied = false;
+
+function applySearchPriceDiscount() {
+  if (searchDiscountApplied) return;
+  const spans = document.querySelectorAll('.search-result-item__price > span > span');
+  if (!spans.length) return;
+  searchDiscountApplied = true;
+
+  spans.forEach(span => {
+    const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+    if (isNaN(raw)) return;
+    const discounted = Math.floor(raw * 0.8);
+    const clone = span.cloneNode(true);
+    clone.textContent = `₴${discounted} зі знижкою`;
+    clone.style.display = 'block';
+    span.style.textDecoration = 'line-through';
+    span.after(clone);
+  });
+}
+
 let discountApplied = false;
 
 function applyDiscountPrice() {
@@ -646,6 +666,14 @@ window.addEventListener("load", function () {
     }
   });
   listPriceObserver.observe(document.body, { childList: true, subtree: true });
+
+  const searchPriceObserver = new MutationObserver(() => {
+    if (document.querySelector('.search-result-item__price')) {
+      applySearchPriceDiscount();
+      searchPriceObserver.disconnect();
+    }
+  });
+  searchPriceObserver.observe(document.body, { childList: true, subtree: true });
 
   // }, 0); // Adjust the delay as needed
 });
