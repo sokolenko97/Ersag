@@ -13,17 +13,13 @@ document.addEventListener("cut", (event) => {
   event.preventDefault();
 });
 
-let listDiscountApplied = false;
-
 function applyListPriceDiscount() {
-  if (listDiscountApplied) return;
   const wrappers = document.querySelectorAll('.product-list-item__price-wrapper span');
-  if (!wrappers.length) return;
-  listDiscountApplied = true;
-
   wrappers.forEach(span => {
+    if (span.dataset.discounted) return;
     const raw = parseFloat(span.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
     if (isNaN(raw)) return;
+    span.dataset.discounted = '1';
     const discounted = Math.floor(raw * 0.8);
     const clone = span.cloneNode(true);
     clone.textContent = `₴${discounted} зі знижкою`;
@@ -658,10 +654,7 @@ window.addEventListener("load", function () {
     });
 
   const listPriceObserver = new MutationObserver(() => {
-    if (document.querySelector('.product-list-item__price-wrapper')) {
-      applyListPriceDiscount();
-      listPriceObserver.disconnect();
-    }
+    applyListPriceDiscount();
   });
   listPriceObserver.observe(document.body, { childList: true, subtree: true });
 
