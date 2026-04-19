@@ -445,6 +445,7 @@ main {
 
 .discount-btn {
   position: relative;
+  animation: 1.25s linear infinite discount-pulse;
 }
 
 .discount-btn::before {
@@ -463,6 +464,21 @@ main {
   font-weight: 700;
   color: #fff;
   transition: transform 0.2s;
+}
+
+@keyframes discount-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(.5);
+  }
+  50% {
+    opacity: .8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(.5);
+  }
 }
 
 .cart__footer{
