@@ -449,7 +449,7 @@ main {
 
 .discount-btn::before {
   content: "20%";
-  background-color: var(--h-bg-danger-default, #ef4444);
+  background-color: #ef4444;
   border-radius: 100%;
   width: 24px;
   height: 24px;
