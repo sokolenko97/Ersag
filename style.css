@@ -323,7 +323,8 @@ main {
       text-align: center;
     }
   }
-  .block-product__button-wrapper {
+  .block-product__button-wrapper 
+  .block-product__primary-buttons{
     align-items: center !important;
   }
 
