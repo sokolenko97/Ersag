@@ -29,6 +29,21 @@ function applyListPriceDiscount() {
   });
 }
 
+function addDiscountButton() {
+  const checkoutBtn = document.querySelector('.cart__checkout-button');
+  if (!checkoutBtn || document.querySelector('.discount-badge')) return;
+
+  const discountBtn = checkoutBtn.cloneNode(true);
+  discountBtn.textContent = 'Отримати знижку';
+  const badge = document.createElement('div');
+  badge.classList.add('discount-badge');
+  discountBtn.addEventListener('click', () => {
+    window.location.href = '/yak-zamoviti-zareyestruvatis';
+  });
+  discountBtn.appendChild(badge);
+  checkoutBtn.after(discountBtn);
+}
+
 function applySearchPriceDiscount() {
   const spans = document.querySelectorAll('.search-result-item__price > span > span');
   if (!spans.length) return;
@@ -422,18 +437,6 @@ window.addEventListener("load", function () {
           checkoutBtn.textContent = 'Оформити замовлення'
         }
 
-        if (checkoutBtn && !cartElement.querySelector('.discount-badge')) {
-          const discountBtn = checkoutBtn.cloneNode(true);
-          discountBtn.textContent = 'Отримати знижку';
-          const badge = document.createElement('div');
-          badge.classList.add('discount-badge');
-          discountBtn.addEventListener('click', ()=>{
-            window.location.href = '/yak-zamoviti-zareyestruvatis';
-          });
-          discountBtn.appendChild(badge);
-          checkoutBtn.after(discountBtn);
-        }
-
         let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
         if (productsQuantity) {
           for (const span of productsQuantity) {
@@ -679,6 +682,13 @@ window.addEventListener("load", function () {
     }
   });
   searchPriceObserver.observe(document.body, { childList: true, subtree: true });
+
+  const discountBtnObserver = new MutationObserver(() => {
+    if (document.querySelector('.cart__checkout-button')) {
+      addDiscountButton();
+    }
+  });
+  discountBtnObserver.observe(document.body, { childList: true, subtree: true });
 
   // }, 0); // Adjust the delay as needed
 });
