@@ -454,5 +454,5 @@ main {
 }
 
 .cart__footer{
-  height: auto;
+  height: auto !important;
 }
