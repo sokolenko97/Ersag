@@ -274,6 +274,9 @@ window.addEventListener("load", function () {
                 const productImagesWrap = productImages[0].closest('.product-carousel__image-list')
                 productImagesWrap.style.marginRight = '30px'
                }
+
+               const singleProductBlock = document.querySelector('.block-product__main-info')
+               singleProductBlock?.style?.flexDirection = 'column'
            }
 
            const productDescription = document.querySelector('.block-product__description')
