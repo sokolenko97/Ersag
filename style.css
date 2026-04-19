@@ -88,6 +88,7 @@ main {
 .product-carousel__image-wrapper.product-carousel__image-wrapper--contain {
   justify-content: center !important;
   border-color: transparent !important;
+  max-width: 526px !important;
   .product-carousel__main-image {
     --image-border-radius: 50% !important;
     max-width: 526px !important;
