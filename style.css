@@ -445,10 +445,10 @@ main {
 
 .discount-btn {
   position: relative;
-  animation: 1.25s linear infinite discount-pulse;
 }
 
 .discount-btn::before {
+  animation: 1.25s linear infinite discount-pulse;
   content: "20%";
   background-color: #ef4444;
   border-radius: 100%;
