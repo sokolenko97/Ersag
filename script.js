@@ -276,7 +276,7 @@ window.addEventListener("load", function () {
                }
 
                const singleProductBlock = document.querySelector('.block-product__main-info')
-               singleProductBlock?.style?.flexDirection = 'column'
+               singleProductBlock.style.flexDirection = 'column'
            }
 
            const productDescription = document.querySelector('.block-product__description')
