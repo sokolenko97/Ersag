@@ -147,7 +147,7 @@ window.addEventListener("load", function () {
 
       function createElementForNextSibling(elementsArray, productsArray) {
         elementsArray.forEach((element) => {
-          const elementTitle = element.innerText.trim();
+          const elementTitle = element.innerText.trim(); 
 
           // Check if productsArray is an array
           if (Array.isArray(productsArray)) {
