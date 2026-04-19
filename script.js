@@ -31,7 +31,7 @@ function applyListPriceDiscount() {
 
 function addDiscountButton() {
   const checkoutBtn = document.querySelector('.cart__checkout-button');
-  if (!checkoutBtn || document.querySelector('.discount-badge')) return;
+  if (!checkoutBtn || document.querySelector('.discount-btn')) return;
 
   const discountBtn = checkoutBtn.cloneNode(true);
   discountBtn.textContent = 'Отримати знижку';
