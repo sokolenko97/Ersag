@@ -35,12 +35,10 @@ function addDiscountButton() {
 
   const discountBtn = checkoutBtn.cloneNode(true);
   discountBtn.textContent = 'Отримати знижку';
-  const badge = document.createElement('div');
-  badge.classList.add('discount-badge');
+  discountBtn.classList.add('discount-btn');
   discountBtn.addEventListener('click', () => {
-    window.location.href = '/yak-zamoviti-zareyestruvatis';
+    window.location.href = '/yak-zamoviti-zareyestruvatis#forma';
   });
-  discountBtn.appendChild(badge);
   checkoutBtn.after(discountBtn);
 }
 
