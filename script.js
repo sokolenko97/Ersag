@@ -422,6 +422,18 @@ window.addEventListener("load", function () {
           checkoutBtn.textContent = 'Оформити замовлення'
         }
 
+        if (checkoutBtn && !cartElement.querySelector('.discount-badge')) {
+          const discountBtn = checkoutBtn.cloneNode(true);
+          discountBtn.textContent = 'Отримати знижку';
+          const badge = document.createElement('div');
+          badge.classList.add('discount-badge');
+          discountBtn.addEventListener('click', ()=>{
+            window.location.href = '/yak-zamoviti-zareyestruvatis';
+          });
+          discountBtn.appendChild(badge);
+          checkoutBtn.after(discountBtn);
+        }
+
         let productsQuantity = cartElement.getElementsByClassName('cart__quantity-title')
         if (productsQuantity) {
           for (const span of productsQuantity) {
